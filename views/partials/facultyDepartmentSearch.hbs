@@ -1,0 +1,22 @@
+<form action="/search" method="GET" class="faculty-department-search">
+  <div class="term-group">
+    <label class="sr-only" for="term">Search Keyword</label>
+    <input class="form-control" type="text" placeholder="Search Name or Keyword" id="term" name="term"/>
+  </div>
+  <span class="word-in">in</span>
+  <div class="department-group">
+    <label class="sr-only" for="department">Search for faculty in department</label>
+    <div class="input-group">
+      <select class="select-department form-control" id="department" name="department">
+        <option></option>
+        <option>English</option>
+        <option>Geology</option>
+        <option>Percussion</option>
+      </select><!--
+      --><button class="btn-fp btn-search form-control" type="submit">
+        <i class="search-icon fa fa-search"></i>
+        <span class="button-label">Search</span>
+      </button>
+    </div>
+  </div>
+</form>

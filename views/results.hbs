@@ -1,0 +1,34 @@
+<div class="main-content">
+  <div class="has-background search-again">
+    <div class="">
+      {{#if departmentSearch}}
+        {{> facultyDepartmentSearch}}
+      {{else}}
+        <div class="faculty-search fp-container">
+          {{> facultySearch}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="fp-container indent">
+    {{#if departmentSearch}}
+      <h1 class="search-results-title">Search results for: <em>{{department}}</em></h1>
+    {{else}}
+    <h1 class="search-results-title">Search results for: <em>{{term}}</em> in <em>{{department}}</em></h1>
+    <ul class="search-tabs" role="tablist">
+      <li id="search-tab-name" class="search-tab-name" role='tab' tabindex='0' aria-selected="true">Faculty Name</li>
+      <li id="search-scholarly-creative" class="search-scholarly-creative" role='tab' tabindex='0' aria-selected="false">Scholarly/ Creative Work</li>
+      <li id="search-interests" class="search-interests" role='tab' tabindex='0' aria-selected="false">Interests</li>
+      <li id="search-grants" class="search-grants" role='tab' tabindex='0' aria-selected="false">Grants</li>
+      <li id="search-awards" class="search-awards" role='tab' tabindex='0' aria-selected="true">Awards</li>
+    </ul>
+    {{/if}}
+    <ul>
+    {{#each results}}
+      <li>{{this._source.TITLE}}</li>
+    {{else}}
+      No results found
+    {{/each}}
+    </ul>
+  </div>
+</div>

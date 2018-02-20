@@ -1,0 +1,31 @@
+.search-results-title {
+  font-size: 2rem;
+}
+
+.search-tabs {
+  list-style: none;
+  display: flex;
+  align-items: bottom;
+  justify-content: space-between;
+  margin: 0 0 1rem 0;
+  width: 100%;
+  border-bottom: 1px solid $accent-gray;
+  padding: 1rem 0 0 0;
+  overflow: hidden;
+  font-size: 1.3rem;
+  li {
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 15rem;
+    text-align: center;
+    font-weight: 700;
+    &[aria-selected="true"] {
+      background-color: $sandstone;
+      color: $maroon;
+    }
+    //make the tabs the same size, regardles of text
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

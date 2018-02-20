@@ -1,0 +1,155 @@
+//common elements
+.btn-fp {
+  color: $white;
+  background-color: $cerulean;
+}
+
+input[type="text"] {
+  padding: 1rem;
+}
+
+.form-control {
+  border: 0;
+  box-shadow: 0px 0 10px $darkgray;
+  border-radius: 3px;
+  height: 4rem;
+}
+
+//faculty search (no department)
+form.faculty-search {
+  #term {
+    width: 50%;
+  }
+}
+
+//faculty and department search
+form.faculty-department-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .term-group {
+    flex-basis: 48%;
+    text-align: right;
+    #term {
+      width: 60%;
+    }
+  }
+  .word-in {
+    flex-basis: 4%;
+    text-align: center;
+  }
+  .department-group {
+    flex-basis: 48%;
+    text-align: left;
+    .input-group {
+      display: flex;
+      opacity: 0.99;
+      #department {
+        width: 50%;
+      }
+    }
+  }
+  //customize chosen box
+  .chosen-container {
+    background: $white;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .chosen-single {
+      background: $white;
+      border: 0;
+      box-shadow: none;
+      font-size: 1.5rem;
+      span {
+        height: 100%;
+        text-align: left;
+      }
+    }
+    .chosen-drop {
+      border-top: 1px solid #aaa;
+      .chosen-search-input {
+        border-radius: 3px;
+      }
+      .active-result {
+        font-size: 1.5rem;
+        line-height:1.8;
+        text-align: left;
+        &.highlighted {
+          background: $cerulean;
+        }
+      }
+    }
+  }
+  .chosen-container::before {
+    content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		border-radius: inherit;
+		box-shadow: 0px 0 10px $darkgray;
+		z-index: -1;
+  }
+  @media (max-width: $medium-breakpoint) {
+    display: block;
+    padding: 0rem 1rem 3rem 1rem;
+    .term-group {
+      text-align: center;
+      #term {
+        width: 100%;
+      }
+    }
+    .word-in {
+      padding: 0.5rem;
+      display: block;
+    }
+    .department-group {
+      text-align: center;
+      .input-group {
+        justify-content: center;
+        #department {
+          width: 100%;
+        }
+        button {
+          padding: 1rem;
+          .button-label {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+// @media (max-width: $medium-breakpoint) {
+//   //padding: 2.5rem 1rem 6rem 1rem;
+//   form.faculty-department-search {
+//     display: block;
+//     .term-group {
+//       text-align: center;
+//       #term {
+//         width: 100%;
+//       }
+//     }
+//     .word-in {
+//       padding: 0.5rem;
+//       display: block;
+//     }
+//     .department-group {
+//       text-align: center;
+//       .input-group {
+//         justify-content: center;
+//         #department {
+//           width: 100%;
+//         }
+//         button {
+//           padding: 1rem;
+//           .button-label {
+//             display: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
