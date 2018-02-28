@@ -7,7 +7,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/profile', function(req, res, next) {
-  res.render('profile')
+  //for testing
+  var profile = require('../data/profile.json');
+  res.render('profile', { profile: profile})
 })
 
 module.exports = router;

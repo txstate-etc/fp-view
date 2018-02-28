@@ -1,3 +1,104 @@
 <div class="main-content">
-  This is a profile page.
+  <h1 class="sr-only">Faculty Profile for {{profile.display_name}}</h1>
+  <div class="has-background">
+    <div class="fp-container profile-top section">
+      <div class="basic-info">
+        <div class="profile-image" style="background-image: url({{profile.photo_url}});">
+          <span class="sr-only">{{profile.display_name}}</span>
+        </div>
+        <div class="basic-details">
+          <div class="name">{{profile.display_name}}</div>
+          <div class="title-department">
+            {{profile.faculty_rank}} &mdash; {{profile.department}}
+            <!--TODO: Handle the case of multiple departments -->
+          </div>
+          <div class="office">{{profile.office_location}}</div>
+          <div class="phone">
+            <i class="fa fa-phone-square"></i>
+            phone: {{profile.phone_number}}
+          </div>
+          <div class="email">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:{{profile.email}}">{{profile.email}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-menu">
+        Navigation Menu Coming Soon
+      </div>
+    </div>
+  </div>
+  <div class="fp-container profile-bio section">
+    <h2 class="sr-only">Biography Section</h2>
+    <h3 class="label">Biography and Education</h3>
+    {{profile.biography}}
+    <h3 class="label">Teaching Interests</h3>
+    {{profile.teaching_interests}}
+    <h3 class="label">Research Interests</h3>
+    {{profile.research_interests}}
+  </div>
+  <div class="has-background profile-scholarly-creative section">
+    <div class="fp-container">
+      <h2>Selected Scholarly Creative Work</h2>
+      <ul class="scholarly-creative">
+        {{#each profile.scholarly_creative}}
+          <li><span>{{{this.citation}}}</span></li>
+        {{/each}}
+      </ul>
+      <div class="view-all">
+        <button>
+          <i class="fa fa-bookmark "></i>
+          <span>View all</span> Scholarly Creative Work
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="fp-container profile-awards-grants section">
+    <div class="profile-awards has-background">
+      <h2>Awards</h2>
+      <ul>
+        {{#each profile.awards}}
+        <li><span>{{this.award}}</span></li>
+        {{/each}}
+      </ul>
+      <div class="view-all">
+        <button>
+          <i class="fa fa-trophy"></i>
+          <span>View all</span> Awards
+        </button>
+      </div>
+    </div>
+    <div class="profile-grants has-background">
+      <h2>Grants</h2>
+      <ul>
+        {{#each profile.grants}}
+          <li><span>{{this.grant}}</span></li>
+        {{/each}}
+      </ul>
+      <div class="view-all">
+        <button>
+          <i class="fa fa-gift"></i>
+          <span>View all</span> Grants
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="fp-container profile-service section">
+    <h2>Service</h2>
+    <div class="services">
+      {{#each profile.service_activities}}
+      <div class="service">
+        <div class="role">{{this.role}}</div>
+        <div class="activity">{{this.organization}}</div>
+        <div class="period">{{this.service_period}}</div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="view-all">
+      <button>
+        <i class="fa fa-briefcase"></i>
+        <span>View all</span> Service
+      </button>
+    </div>
+  </div>
 </div>

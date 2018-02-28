@@ -14,6 +14,23 @@ body {
 *, *:before, *:after {
   box-sizing: border-box; }
 
+a {
+  color: #005481; }
+
+h2, h3 {
+  margin: 0; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside; }
+  ul li {
+    padding-bottom: 1rem; }
+    ul li:last-child {
+      padding-bottom: 0rem; }
+    ul li span {
+      padding-left: 1rem; }
+
 .fp-container {
   margin: 0 auto;
   padding-left: 2.4rem;
@@ -118,6 +135,105 @@ footer {
 
 .search-again {
   padding: 3rem 0rem; }
+
+.view-all {
+  text-align: center;
+  padding: 3rem 0rem; }
+  .view-all button span {
+    color: #005481; }
+
+.section {
+  padding-top: 2rem; }
+
+.profile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  @media (max-width: 800px) {
+    .profile-top {
+      display: block; } }
+  .profile-top .basic-info {
+    display: flex;
+    align-items: center; }
+    @media (max-width: 800px) {
+      .profile-top .basic-info {
+        display: block;
+        text-align: center; } }
+    .profile-top .basic-info .profile-image {
+      background: #eee no-repeat center;
+      background-size: cover;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%; }
+      @media (max-width: 800px) {
+        .profile-top .basic-info .profile-image {
+          width: 125px;
+          height: 125px;
+          margin: 0 auto; } }
+    .profile-top .basic-info .basic-details {
+      padding-left: 2rem; }
+      @media (max-width: 800px) {
+        .profile-top .basic-info .basic-details {
+          padding-left: 0; } }
+      .profile-top .basic-info .basic-details .name {
+        font-weight: bold;
+        font-size: 2rem; }
+      .profile-top .basic-info .basic-details .phone {
+        padding: 2rem 0 0.5rem 0; }
+      .profile-top .basic-info .basic-details .fa {
+        color: #005481; }
+  .profile-top .navigation-menu {
+    background-color: #ffffff; }
+
+.profile-bio {
+  padding-bottom: 6rem; }
+  .profile-bio .label {
+    padding-top: 2rem; }
+
+.profile-scholarly-creative h2 {
+  padding: 2rem 0rem;
+  font-size: 2rem; }
+
+.profile-scholarly-creative .fa-bookmark {
+  color: teal; }
+
+.profile-awards-grants {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: space-between; }
+  @media (max-width: 800px) {
+    .profile-awards-grants {
+      display: block; } }
+  .profile-awards-grants .profile-awards, .profile-awards-grants .profile-grants {
+    flex-basis: 45%;
+    padding: 2rem; }
+
+.profile-service {
+  padding-bottom: 8rem; }
+  .profile-service h2 {
+    padding: 2rem 0rem; }
+  .profile-service .services .service {
+    padding-bottom: 2.5rem;
+    padding-left: 2rem;
+    border-left: 2px solid gray;
+    position: relative; }
+    .profile-service .services .service:last-child {
+      padding-bottom: 0; }
+    .profile-service .services .service::before {
+      content: "";
+      height: 12px;
+      width: 12px;
+      background-color: lightgray;
+      border: 1px solid gray;
+      border-radius: 10px;
+      position: absolute;
+      left: -7px; }
+    .profile-service .services .service .role {
+      font-weight: bold;
+      font-size: 1.8rem;
+      line-height: 1; }
+    .profile-service .services .service .period {
+      color: gray; }
 
 .btn-fp {
   color: #ffffff;

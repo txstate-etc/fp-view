@@ -33,6 +33,26 @@ body {
     box-sizing: border-box;
 }
 
+a {color: $cerulean;}
+
+h2,h3 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+  li {
+    padding-bottom: 1rem;
+    &:last-child {
+      padding-bottom: 0rem;
+    }
+    span {
+      padding-left: 1rem;
+    }
+  }
+}
 .fp-container {
   margin: 0 auto;
   padding-left: 2.4rem;
@@ -159,7 +179,7 @@ footer {
       }
     }
     .image {
-    
+
     }
   }
 }
@@ -168,5 +188,127 @@ footer {
   padding: 3rem 0rem;
 }
 
+/////////////////////////////////////////////////
+.view-all {
+  text-align: center;
+  padding: 3rem 0rem;
+  button {
+    span {color: $cerulean}
+  }
+}
+.section {
+  padding-top: 2rem;
+}
+.profile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $medium-breakpoint) {
+    display: block;
+  }
+  .basic-info {
+    display: flex;
+    @media (max-width: $medium-breakpoint) {
+      display: block;
+      text-align: center;
+    }
+    align-items: center;
+    .profile-image {
+      background: #eee no-repeat center;
+      background-size: cover;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      @media (max-width: $medium-breakpoint) {
+        width: 125px;
+        height: 125px;
+        margin: 0 auto;
+      }
+    }
+    .basic-details {
+      padding-left: 2rem;
+      @media (max-width: $medium-breakpoint) {
+        padding-left: 0;
+      }
+      .name {
+        font-weight: bold;
+        font-size: 2rem;
+      }
+      .phone {
+        padding: 2rem 0 0.5rem 0;
+      }
+      .fa {
+        color: $cerulean;
+      }
+    }
+  }
+  .navigation-menu {
+    background-color: $white;
+  }
+}
+.profile-bio {
+  padding-bottom: 6rem;
+  .label {
+    padding-top: 2rem;
+  }
+}
+.profile-scholarly-creative {
+  h2 {
+    padding: 2rem 0rem;
+    font-size: 2rem;
+  }
+  .fa-bookmark {
+    color: teal;
+  }
+}
+
+.profile-awards-grants {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $medium-breakpoint) {
+    display:block;
+  }
+  .profile-awards, .profile-grants {
+    flex-basis: 45%;
+    padding: 2rem;
+  }
+}
+
+.profile-service {
+  padding-bottom: 8rem;
+  h2 {
+    padding: 2rem 0rem;
+  }
+  .services {
+    .service {
+      padding-bottom: 2.5rem;
+      padding-left: 2rem;
+      border-left: 2px solid gray;
+      position: relative;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      &::before {
+        content: "";
+        height: 12px;
+        width: 12px;
+        background-color: lightgray;
+        border: 1px solid gray;
+        border-radius: 10px;
+        position: absolute;
+        left: -7px;
+      }
+      .role {
+        font-weight: bold;
+        font-size: 1.8rem;
+        line-height: 1; //to line up with the circle things
+      }
+      .period {
+        color: gray;
+      }
+    }
+  }
+}
 @import 'forms';
 @import 'results';
