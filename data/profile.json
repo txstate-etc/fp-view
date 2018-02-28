@@ -1,0 +1,61 @@
+{
+  "display_name": "Dr. Jane Doe",
+  "faculty_rank": "Assistant Professor",
+  "department": "Department of Geology",
+  "office_location": "ALK 133",
+  "phone_number": "800-588-2300",
+  "email": "janerocks@txstate.edu",
+  "photo_url": "https://loremflickr.com/320/240",
+  "biography": "Dr. Jane Doe is an Assistant Professor of Geology at Texas State University. Dr. Doe completed her PhD in Science at the University of Chicago in 2001. Prior to joining the Texas State faculty, she worked as a researcher in NASA's Jet Propulsion Laboratory at the California Institute of Technology. Dr. Doe is a member of the American Institute of Professional Geologists, the Association for Women Geoscientists, and the Austin Geological Society. She serves as an advisor for the Association for Women in Science.",
+  "teaching_interests": "Physical Geology, Mineralogy, Planetary Geology",
+  "research_interests": "planetary geological processes, planetary comparison",
+  "scholarly_creative": [
+    {"citation": "Doe, J. (2017). <i>Space Rocks</i>. New York, NY: Oxford University Press."},
+    {"citation": "Doe, J., & Smith D.R. (2016). The Earth is Not Flat and Neither are the Other Planets, <i>Journal of Science Facts</i>, 31(3),15-18."},
+    {"citation": "Doe, J. (2016). Craters. In <i>A History of the Moon</i> (pp. 148-167). Chicago, IL: University of Chicago Press."},
+    {"citation": "Doe, J. (2014, June 12). Should Humans Travel to Mars. <i>The Northwest Herald</i>, p. C7."},
+    {"citation": "Doe, J. (2012). <i>Portrait of a Young Girl on the Moon</i> [Oil on canvas]. Prestigious Art Gallery, San Antonio, TX."}
+  ],
+  "awards": [
+    {"award": "2016: Department of Geology Award for General Excellence, Texas State University Department of Geology"},
+    {"award": "2016: College of Science and Engineering Award for Outstanding Teaching, Texas State University College of Science and Engineering"},
+    {"award": "2014: Award for Willingness to Teach Online Courses, Texas State University"},
+    {"award": "2012: Special Award for Services to NASA, National Aeronautics and Space Administration"},
+    {"award": "1993: Presidential Physical Fitness Award, President William Clinton"}
+  ],
+  "grants": [
+    {"grant": "Project MoonBase: Feasibility Study, State of Texas. July 2015 - July 2016"},
+    {"grant": "Armstrong Fellowship, Armstrong Foundation. May 2016 - November 2016"},
+    {"grant": "NCWIT Undergraduate Research Mentoring Award, State of North Carolina. 2015"},
+    {"grant": "Research Enhancement Program, Texas State University. March 2013."},
+    {"grant": "Conference Travel Grant, Texas State University. November 2012."}
+  ],
+  "service_activities": [
+    {
+      "role": "Member",
+      "organization": "Austin Geological Society",
+      "service_period": "January 2009 - Present",
+      "city": "Austin",
+      "state": "Texas"
+    },
+    {
+      "role": "Advisor",
+      "organization": "Texas State Geology Club",
+      "service_period": "January 2015 - Present"
+    },
+    {
+      "role": "Chair",
+      "organization": "Petrologist Search Committee",
+      "service_period": "September 2014 - March 2015"
+    },
+    {
+      "organization": "Bobcat Build",
+      "service_period": "April 2014"
+    },
+    {
+      "organization": "Society of Women Engineers",
+      "service_period": "January 2013 - December 2015",
+      "role": "Member"
+    }
+  ]
+}
