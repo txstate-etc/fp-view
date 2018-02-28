@@ -193,7 +193,12 @@ footer {
   text-align: center;
   padding: 3rem 0rem;
   button {
-    span {color: $cerulean}
+    span {color: $cerulean};
+    border: 3px solid $accent-gray;
+    border-radius: 5px;
+    padding: 1rem 4rem;
+    background-color: transparent;
+    cursor: pointer;
   }
 }
 .section {
