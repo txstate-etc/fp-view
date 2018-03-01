@@ -1,7 +1,7 @@
 <div class="main-content">
   <h1 class="sr-only">Faculty Profile for {{profile.display_name}}</h1>
   <div class="has-background">
-    <div class="fp-container profile-top section">
+    <div class="fp-container profile-top">
       <div class="basic-info">
         <div class="profile-image" style="background-image: url({{profile.photo_url}});">
           <span class="sr-only">{{profile.display_name}}</span>
@@ -24,7 +24,16 @@
         </div>
       </div>
       <div class="navigation-menu">
-        Navigation Menu Coming Soon
+        <div class="anchors">
+          <div class="anchor top left"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>
+          <div class="anchor top right"><a href="#awards">Awards</a></div>
+          <div class="anchor bottom left"><a href="#grants">Grants</a></div>
+          <div class="anchor bottom right"><a href="#service">Service</a></div>
+        </div>
+        <button>
+          <i class="fa fa-file"></i>
+          Download Faculty Uploaded CV
+        </button>
       </div>
     </div>
   </div>
@@ -38,6 +47,7 @@
     {{profile.research_interests}}
   </div>
   <div class="has-background profile-scholarly-creative section">
+    <a name="scholarly-creative"></a>
     <div class="fp-container">
       <h2>Selected Scholarly Creative Work</h2>
       <ul class="scholarly-creative">
@@ -55,6 +65,7 @@
   </div>
   <div class="fp-container profile-awards-grants section">
     <div class="profile-awards has-background">
+      <a name="awards"></a>
       <h2>Awards</h2>
       <ul>
         {{#each profile.awards}}
@@ -69,6 +80,7 @@
       </div>
     </div>
     <div class="profile-grants has-background">
+      <a name="grants"></a>
       <h2>Grants</h2>
       <ul>
         {{#each profile.grants}}
@@ -84,6 +96,7 @@
     </div>
   </div>
   <div class="fp-container profile-service section">
+    <a name="service"></a>
     <h2>Service</h2>
     <div class="services">
       <div class="column1">

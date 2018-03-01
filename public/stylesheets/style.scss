@@ -249,6 +249,62 @@ footer {
   }
   .navigation-menu {
     background-color: $white;
+    padding: 6rem 3rem 4rem 3rem;
+    @media (max-width: $medium-breakpoint) {
+      margin: 0rem -2.5rem;
+      padding: 0rem;
+      text-align: center;
+    }
+    .anchors {
+      @media (max-width: $medium-breakpoint) {
+        display: flex;
+        flex-wrap: wrap;
+        //border: 1px solid $darkgray;
+      }
+      .anchor {
+        @media (max-width: $medium-breakpoint) {
+          flex-basis: 50%;
+          border-top: 0px;
+          padding: 2rem;
+          &.top {
+            border-bottom: 1px solid $accent-gray;
+            border-top: 1px solid $darkgray;
+          }
+          &.left {
+            border-right: 1px solid $accent-gray;
+            border-left: 1px solid $darkgray;
+          }
+          &.bottom {
+            border-bottom: 1px solid $darkgray !important;
+          }
+          &.right {
+            border-right: 1px solid $darkgray;
+          }
+        }
+        padding: 1rem;
+        border-top: 1px solid $darkgray;
+        text-align:center;
+        a {
+          text-decoration: none;
+          color: black;
+        }
+        &:last-child {
+          border-bottom: 1px solid $darkgray;
+          @media (max-width: $medium-breakpoint) {
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+    button {
+      border: 3px solid $accent-gray;
+      border-radius: 5px;
+      padding: 1rem 4rem;
+      background-color: transparent;
+      cursor: pointer;
+      margin-top: 2.5rem;
+      color: $cerulean;
+    }
   }
 }
 .profile-bio {
@@ -309,7 +365,7 @@ footer {
       padding-left: 2rem;
       border-left: 2px solid gray;
       position: relative;
-      
+
       &::before {
         content: "";
         height: 12px;
