@@ -86,19 +86,41 @@
   <div class="fp-container profile-service section">
     <h2>Service</h2>
     <div class="services">
-      {{#each profile.service_activities}}
+      <div class="column1">
+        <div class="service-list">
+          {{#eachHalf profile.service_activities 0}}
+          <div class="service">
+            <div class="role">{{this.role}}</div>
+            <div class="activity">{{this.organization}}</div>
+            <div class="period">{{this.service_period}}</div>
+          </div>
+          {{/eachHalf}}
+        </div>
+      </div>
+      <div class="column2">
+        <div class="service-list">
+          {{#eachHalf profile.service_activities 1}}
+          <div class="service">
+            <div class="role">{{this.role}}</div>
+            <div class="activity">{{this.organization}}</div>
+            <div class="period">{{this.service_period}}</div>
+          </div>
+          {{/eachHalf}}
+        </div>
+        <div class="view-all">
+          <button>
+            <i class="fa fa-briefcase"></i>
+            <span>View all</span> Service
+          </button>
+        </div>
+      </div>
+      <!-- {{#each profile.service_activities}}
       <div class="service">
         <div class="role">{{this.role}}</div>
         <div class="activity">{{this.organization}}</div>
         <div class="period">{{this.service_period}}</div>
       </div>
-      {{/each}}
-    </div>
-    <div class="view-all">
-      <button>
-        <i class="fa fa-briefcase"></i>
-        <span>View all</span> Service
-      </button>
+      {{/each}} -->
     </div>
   </div>
 </div>

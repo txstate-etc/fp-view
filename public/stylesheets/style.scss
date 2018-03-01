@@ -286,14 +286,30 @@ footer {
     padding: 2rem 0rem;
   }
   .services {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $medium-breakpoint) {
+      display:block;
+    }
+    .column1, .column2 {
+      flex-basis: 45%;
+      .service-list {
+        .service:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+    .column1 .service-list .service:last-child {
+      @media (max-width: $medium-breakpoint) {
+        padding-bottom: 2.5rem;
+      }
+    }
     .service {
       padding-bottom: 2.5rem;
       padding-left: 2rem;
       border-left: 2px solid gray;
       position: relative;
-      &:last-child {
-        padding-bottom: 0;
-      }
+      
       &::before {
         content: "";
         height: 12px;
@@ -312,6 +328,9 @@ footer {
       .period {
         color: gray;
       }
+    }
+    .view-all {
+      text-align: left;
     }
   }
 }
