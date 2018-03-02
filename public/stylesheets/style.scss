@@ -8,8 +8,12 @@ $cerulean:            #005481;
 $sandstone:           #e8e3db;
 $darkgray:            #a9a9a9;
 $light-sandstone:     #f4f1ed;
+$steel-blue:          #406d9d;
+$ash-gray:            #b6b6b6;
+$off-white:           #f1f1f1;
 
 $medium-breakpoint:     800px;
+$large-breakpoint:      1000px;
 $x-large-breakpoint:    1400px;
 
 $garamond:            'Adobe Garamond W01",Garamond,"Goudy Old Style","Times New Roman",serif;';
@@ -193,12 +197,29 @@ footer {
   text-align: center;
   padding: 3rem 0rem;
   button {
+    color: $charcoal;
+    font-weight: 600;
     span {color: $cerulean};
-    border: 3px solid $accent-gray;
-    border-radius: 5px;
-    padding: 1rem 4rem;
+    border: 2.5px solid $ash-gray;
+    border-radius: 7px;
+    padding: 1.4rem 6.4rem;
     background-color: transparent;
     cursor: pointer;
+    &:hover {
+      background-color: $off-white;
+    }
+    .fa-bookmark {
+      color: #577c6e;
+    }
+    .fa-trophy {
+      color: #deb407;
+    }
+    .fa-gift {
+      color: #806cb8;
+    }
+    .fa-briefcase {
+      color: #9e6614;
+    }
   }
 }
 .section {
@@ -220,6 +241,7 @@ footer {
       padding-bottom: 0.8rem;
     }
     a {
+      color: $steel-blue;
       font-size: 2.2rem;
       text-decoration: none;
       @media (max-width: $medium-breakpoint) {
@@ -243,6 +265,7 @@ footer {
     @media (max-width: $medium-breakpoint) {
       display: block;
       text-align: center;
+      padding: 2rem 0rem 3rem 0rem;
     }
     align-items: center;
     .profile-image {
@@ -278,7 +301,7 @@ footer {
     background-color: $white;
     padding: 6rem 3rem 4rem 3rem;
     @media (max-width: $medium-breakpoint) {
-      margin: 0rem -2.5rem;
+      margin: 0rem -2.4rem;
       padding: 0rem;
       text-align: center;
     }
@@ -324,13 +347,16 @@ footer {
       }
     }
     button {
-      border: 3px solid $accent-gray;
-      border-radius: 5px;
-      padding: 1rem 4rem;
+      border: 2.5px solid $ash-gray;
+      border-radius: 7px;
+      padding: 1.4rem 6rem;
       background-color: transparent;
       cursor: pointer;
       margin-top: 2.5rem;
       color: $cerulean;
+      &:hover {
+        background-color: $off-white;
+      }
     }
   }
 }
@@ -344,9 +370,6 @@ footer {
   h2 {
     padding: 2rem 0rem;
     font-size: 2rem;
-  }
-  .fa-bookmark {
-    color: teal;
   }
 }
 
