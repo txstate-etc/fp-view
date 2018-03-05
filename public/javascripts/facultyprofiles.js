@@ -23,3 +23,24 @@ function parseParameterPairs(query) {
 function getUrlParameters() {
   return parseParameterPairs(window.location.search.substring(1));
 }
+
+function constructParameterPairs(params) {
+  var pairs = [];
+  for (var key in params) {
+    if (params.hasOwnProperty(key) && !isBlank(params[key])) {
+      pairs.push(encodeURIComponent(key)+'='+encodeURIComponent(params[key]));
+    }
+  }
+  return pairs.join('&');
+}
+
+function createUrlQuery(params) {
+  return '?'+constructParameterPairs(params);
+}
+
+function isBlank(str) {
+  if (str === undefined) return true;
+  if (str.trim === undefined) return false;
+  if (str.trim().length == 0) return true;
+  return false;
+}
