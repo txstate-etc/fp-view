@@ -4,3 +4,22 @@ jQuery( document ).ready(function($) {
     inherit_select_classes: true
   })
 });
+
+//functions from Gato to handle the URL parameters
+function parseParameterPairs(query) {
+  var ret = {};
+  if (query.length > 0) {
+    var pairs = query.split("&");
+    for(var i=0; i<pairs.length; i++){
+        var param = pairs[i].split("=");
+        var val = decodeURIComponent(param[1]);
+        if (parseInt(val, 10) == val) val = parseInt(val, 10);
+        ret[decodeURIComponent(param[0])] = val;
+    }
+  }
+  return ret;
+}
+
+function getUrlParameters() {
+  return parseParameterPairs(window.location.search.substring(1));
+}

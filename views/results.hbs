@@ -14,21 +14,21 @@
     {{#if departmentSearch}}
       <h1 class="search-results-title">Search results for: <em>{{department}}</em></h1>
     {{else}}
-    <h1 class="search-results-title">Search results for: <em>{{term}}</em> in <em>{{department}}</em></h1>
-    <ul class="search-tabs" role="tablist">
-      <li id="search-tab-name" class="search-tab-name" role='tab' tabindex='0' aria-selected="true">Faculty Name</li>
-      <li id="search-scholarly-creative" class="search-scholarly-creative" role='tab' tabindex='0' aria-selected="false">Scholarly/ Creative Work</li>
-      <li id="search-interests" class="search-interests" role='tab' tabindex='0' aria-selected="false">Interests</li>
-      <li id="search-grants" class="search-grants" role='tab' tabindex='0' aria-selected="false">Grants</li>
-      <li id="search-awards" class="search-awards" role='tab' tabindex='0' aria-selected="true">Awards</li>
-    </ul>
+    <h1 class="search-results-title">Search results for: <em>{{term}}</em> {{#if department }} in <em>{{department}}</em>{{/if}}</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#faculty-name">Faculty Name</a></li>
+        <li><a href="#scholarly-creative">Scholarly/ Creative Work</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#grants">Grants</a></li>
+        <li><a href="#awards">Awards</a></li>
+      </ul>
+      <div id="faculty-name"></div>
+      <div id="scholarly-creative"></div>
+      <div id="interests"></div>
+      <div id="grants"></div>
+      <div id="awards"></div>
+    </div>
     {{/if}}
-    <ul>
-    {{#each results}}
-      <li>{{this._source.TITLE}}</li>
-    {{else}}
-      No results found
-    {{/each}}
-    </ul>
   </div>
 </div>
