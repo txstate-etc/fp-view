@@ -225,41 +225,31 @@ footer {
 .section {
   padding-top: 2rem;
 }
-.top {
-  position: relative;
-  .link-container {
-    position: absolute;
-    top:0;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-top: 1.5rem;
+.main-content .link-container {
+  padding: 2rem 0rem;
+  @media (max-width: $medium-breakpoint) {
+    background-color: $white;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+  a {
+    color: $steel-blue;
+    font-size: 2.2rem;
+    text-decoration: none;
     @media (max-width: $medium-breakpoint) {
-      position: relative;
-      background-color: $white;
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
+      font-size: 1.8rem;
+      .fa-angle-left {
+        color: $maroon;
+      }
     }
-    a {
-      color: $steel-blue;
-      font-size: 2.2rem;
-      text-decoration: none;
-      @media (max-width: $medium-breakpoint) {
-        font-size: 1.8rem;
-      }
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
+
 .profile-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @media (max-width: $medium-breakpoint) {
-    display: block;
-  }
+  padding-bottom: 3rem;
   .basic-info {
     display: flex;
     @media (max-width: $medium-breakpoint) {
@@ -297,19 +287,38 @@ footer {
       }
     }
   }
+}
+.profile-bio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6rem;
+  @media (max-width: $medium-breakpoint) {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 0;
+  }
+  .label {
+    padding-top: 2rem;
+  }
+  .bio {
+    flex-basis: 70%;
+    @media (max-width: $medium-breakpoint) {
+      order: 2;
+    }
+  }
   .navigation-menu {
     background-color: $white;
-    padding: 6rem 3rem 4rem 3rem;
     @media (max-width: $medium-breakpoint) {
       margin: 0rem -2.4rem;
       padding: 0rem;
       text-align: center;
+      order: 1;
     }
     .anchors {
       @media (max-width: $medium-breakpoint) {
         display: flex;
         flex-wrap: wrap;
-        //border: 1px solid $darkgray;
       }
       .anchor {
         @media (max-width: $medium-breakpoint) {
@@ -349,7 +358,8 @@ footer {
     button {
       border: 2.5px solid $ash-gray;
       border-radius: 7px;
-      padding: 1.4rem 6rem;
+      //padding: 1.4rem 6rem;
+      padding: 1.4rem 2rem;
       background-color: transparent;
       cursor: pointer;
       margin-top: 2.5rem;
@@ -358,12 +368,6 @@ footer {
         background-color: $off-white;
       }
     }
-  }
-}
-.profile-bio {
-  padding-bottom: 6rem;
-  .label {
-    padding-top: 2rem;
   }
 }
 .profile-scholarly-creative {

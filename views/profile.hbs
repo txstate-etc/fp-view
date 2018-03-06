@@ -1,12 +1,14 @@
 <div class="main-content">
   <h1 class="sr-only">Faculty Profile for {{profile.display_name}}</h1>
-  <div class="has-background top">
-    <div class="link-container fp-container">
+  <div class="link-container has-background">
+    <div class="fp-container">
       <a href="#">
         <i class="fa fa-angle-left"></i>
         Back to search results
       </a>
     </div>
+  </div>
+  <div class="has-background">
     <div class="fp-container profile-top">
       <div class="basic-info">
         <div class="profile-image" style="background-image: url({{profile.photo_url}});">
@@ -29,28 +31,30 @@
           </div>
         </div>
       </div>
-      <div class="navigation-menu">
-        <div class="anchors">
-          <div class="anchor top left"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>
-          <div class="anchor top right"><a href="#awards">Awards</a></div>
-          <div class="anchor bottom left"><a href="#grants">Grants</a></div>
-          <div class="anchor bottom right"><a href="#service">Service</a></div>
-        </div>
-        <button>
-          <i class="fa fa-file"></i>
-          Download Faculty Uploaded CV
-        </button>
-      </div>
     </div>
   </div>
   <div class="fp-container profile-bio section">
-    <h2 class="sr-only">Biography Section</h2>
-    <h3 class="label">Biography and Education</h3>
-    {{profile.biography}}
-    <h3 class="label">Teaching Interests</h3>
-    {{profile.teaching_interests}}
-    <h3 class="label">Research Interests</h3>
-    {{profile.research_interests}}
+    <div class="bio">
+      <h2 class="sr-only">Biography Section</h2>
+      <h3 class="label">Biography and Education</h3>
+      {{profile.biography}}
+      <h3 class="label">Teaching Interests</h3>
+      {{profile.teaching_interests}}
+      <h3 class="label">Research Interests</h3>
+      {{profile.research_interests}}
+    </div>
+    <div class="navigation-menu">
+      <div class="anchors">
+        <div class="anchor top left"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>
+        <div class="anchor top right"><a href="#awards">Awards</a></div>
+        <div class="anchor bottom left"><a href="#grants">Grants</a></div>
+        <div class="anchor bottom right"><a href="#service">Service</a></div>
+      </div>
+      <button>
+        <i class="fa fa-file"></i>
+        Download Faculty Uploaded CV
+      </button>
+    </div>
   </div>
   <div class="has-background profile-scholarly-creative section">
     <a name="scholarly-creative"></a>
