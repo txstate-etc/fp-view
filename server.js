@@ -9,6 +9,7 @@ var exphbs = require('express-handlebars');
 
 var index = require('./routes/index');
 var search = require('./routes/search');
+var results = require('./routes/results');
 
 var app = express();
 
@@ -38,11 +39,11 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
-app.use(express.static(__dirname + '/node_modules/jquery/dist'));
 app.use(express.static(__dirname + '/node_modules/popper'));
 
 app.use('/', index);
 app.use('/search', search);
+app.use('/results', results);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

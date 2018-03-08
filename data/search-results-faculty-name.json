@@ -1,0 +1,9 @@
+[
+  {"fname" : "Liam", "lname" : "Hudson", "title" : "Professor", "department": "Anthropology"},
+  {"fname" : "Faith", "mname": "Elaine",  "lname" : "Black", "title": "Associate Professor", "department": "Anthropology"},
+  {"fname" : "Tracey", "lname" : "Johnston", "title": "Assistant Professor", "department": "Anthropology"},
+  {"fname" : "Steven", "mname": "D",  "lname" : "Wilson", "title": "Professor", "department": "Anthropology"},
+  {"fname" : "Ryanne", "mname": "Marie",  "lname" : "Short", "title": "Professor", "department": "Anthropology"},
+  {"fname" : "Fiona",  "lname" : "Bailey", "title": "Assistant Professor", "department": "Anthropology"},
+  {"fname" : "Jacob", "mname": "Ryan",  "lname" : "Taylor", "title": "Associate Professor", "department": "Anthropology"}
+]
