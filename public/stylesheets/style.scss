@@ -40,7 +40,11 @@ body {
 
 a {color: $cerulean;}
 
-h2,h3 {
+h1 {
+  font-size: 2.8rem;
+}
+
+h1,h2,h3 {
   margin: 0;
 }
 
@@ -442,6 +446,33 @@ footer {
     }
     .view-all {
       text-align: left;
+    }
+  }
+}
+
+/////////////////////////////////////////////////
+.has-background.return-to-profile {
+  background-color: $accent-gray;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+.more-contents {
+  .title {
+    font-size: 2rem;
+  }
+  font-size: 1.6rem;
+  .activity-year {
+    padding: 2rem 0rem;
+    color: $charcoal;
+    font-weight: 100;
+  }
+  .activity-list {
+    padding-left: 4rem;
+    list-style-position: outside;
+    li {
+      padding-left: 1.2rem;
     }
   }
 }

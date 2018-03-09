@@ -1,0 +1,27 @@
+<div class="main-content">
+  <div class="has-background return-to-profile">
+    <div class="fp-container">
+      <a href="#">
+        <div class="return-to-profile-contents">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+          <i class="fa fa-user-circle"></i>
+          <div>
+            <div>Back to Some Professor's Profile</div>
+            <div>Associate Professor -- Department of Science </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="fp-container more-contents">
+    <h1>Selected {{content.activity-title}}</h1>
+    {{#each content.activities}}
+      <div class="activity-year">{{this.year}}</div>
+      <ul class="activity-list">
+        {{#each this.items}}
+          <li>{{this.activity}}</li>
+        {{/each}}
+      </ul>
+    {{/each}}
+  </div>
+</div>

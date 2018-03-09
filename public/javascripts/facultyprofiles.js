@@ -3,6 +3,14 @@ jQuery( document ).ready(function($) {
     placeholder_text_single: 'College / Department',
     inherit_select_classes: true
   })
+
+  $('.btn-more').click(function(event) {
+    var target = $(event.target)
+    var person = target.data("person");
+    var type = target.data("type")
+    window.location = "/profile/" + person + "/activity/" + type
+  })
+
 });
 
 //functions from Gato to handle the URL parameters

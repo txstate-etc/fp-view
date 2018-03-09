@@ -66,7 +66,7 @@
         {{/each}}
       </ul>
       <div class="view-all">
-        <button>
+        <button class="btn-more" data-person="{{profile.faculty_id}}" data-type="scholarly-creative">
           <i class="fa fa-bookmark "></i>
           <span>View all</span> Scholarly Creative Work
         </button>
@@ -83,7 +83,7 @@
         {{/each}}
       </ul>
       <div class="view-all">
-        <button>
+        <button class="btn-more" data-person="{{profile.faculty_id}}" data-type="awards">
           <i class="fa fa-trophy"></i>
           <span>View all</span> Awards
         </button>
@@ -98,7 +98,7 @@
         {{/each}}
       </ul>
       <div class="view-all">
-        <button>
+        <button class="btn-more" data-person="{{profile.faculty_id}}" data-type="grants">
           <i class="fa fa-gift"></i>
           <span>View all</span> Grants
         </button>
@@ -131,19 +131,12 @@
           {{/eachHalf}}
         </div>
         <div class="view-all">
-          <button>
+          <button class="btn-more" data-person="{{profile.faculty_id}}" data-type="service">
             <i class="fa fa-briefcase"></i>
             <span>View all</span> Service
           </button>
         </div>
       </div>
-      <!-- {{#each profile.service_activities}}
-      <div class="service">
-        <div class="role">{{this.role}}</div>
-        <div class="activity">{{this.organization}}</div>
-        <div class="period">{{this.service_period}}</div>
-      </div>
-      {{/each}} -->
     </div>
   </div>
 </div>

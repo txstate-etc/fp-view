@@ -1,0 +1,34 @@
+{
+  "activity-title": "Scholarly Creative Works",
+  "activities": [
+    {
+      "year": "2018",
+      "items" : [
+        {"activity" : "This is the fifth publication in 2018"},
+        {"activity" : "This is the fourth publication in 2018"},
+        {"activity" : "This is the third publication in 2018"},
+        {"activity" : "This is the second publication in 2018"},
+        {"activity" : "This is the first publication in 2018"}
+      ]
+    },
+    {
+      "year" : "2017",
+      "items": [
+        {"activity" : "This is the third publication in 2017"},
+        {"activity" : "This is the second publication in 2017"},
+        {"activity" : "This is the first publication in 2017"}
+      ]
+    },
+    {
+      "year": "2015",
+      "items": [
+        {"activity" : "This is the sixth publication in 2015"},
+        {"activity" : "This is the fifth publication in 2015"},
+        {"activity" : "This is the fourth publication in 2015"},
+        {"activity" : "This is the third publication in 2015"},
+        {"activity" : "This is the second publication in 2015"},
+        {"activity" : "This is the first publication in 2015"}
+      ]
+    }
+  ]
+}
