@@ -457,6 +457,21 @@ footer {
     color: black;
     text-decoration: none;
   }
+  .return-to-profile-contents {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0rem;
+    i.fa {
+      font-size: 4rem;
+      padding-right: 1rem;
+    }
+    .faculty-info {
+      line-height: 1.2;
+      .faculty-name {
+        font-weight: 700;
+      }
+    }
+  }
 }
 .more-contents {
   .title {
