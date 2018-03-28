@@ -1,0 +1,26 @@
+version: '3'
+services:
+  facultyprofilesview:
+    build: .
+    ports:
+      - 3000:80
+    environment:
+      API_HOST: fp-api
+    links:
+      - fp-api
+    depends_on:
+      - fp-api
+  fp-api:
+    image: registry.its.txstate.edu/fp-api:qual
+    environment:
+      DB_HOST: mongodb
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - facultyprofilesdb:/data/db
+volumes:
+  facultyprofilesdb: {}
