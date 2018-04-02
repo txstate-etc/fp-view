@@ -57,9 +57,6 @@ ul {
     &:last-child {
       padding-bottom: 0rem;
     }
-    span {
-      padding-left: 1rem;
-    }
   }
 }
 .fp-container {
@@ -395,6 +392,17 @@ footer {
   }
 }
 
+ul.scholarly-creative, ul.awards, ul.grants {
+  li {
+    list-style-position: inside;
+    text-indent: -1em;
+    padding-left: 1em;
+    div {
+      display: inline;
+    }
+  }
+}
+
 .profile-service {
   padding-bottom: 8rem;
   h2 {
@@ -490,34 +498,39 @@ footer {
       padding-left: 1.2rem;
     }
   }
-  // styles for art citations
-  .venue {
-    display: flex;
-    margin-left: 2rem;
-    .venue-items {
-      ul {
-        list-style: none;
-        margin: 0;
-        li {
-          padding-bottom: 0rem;
-        }
-      }
-    }
-  }
-  .review {
-    margin-left: 2.5rem;
+}
+// styles for art citations
+.venue {
+  display: flex !important;
+  margin-left: 2rem;
+  text-indent: 0px;
+  .venue-items {
     ul {
       list-style: none;
       margin: 0;
       li {
         padding-bottom: 0rem;
+        text-indent: 0px;
+        padding-left: 1.2rem;
       }
     }
   }
-  //award/honor dates
-  .awardhonordates {
-    margin-left: 2rem;
+}
+.review {
+  margin-left: 2.5rem;
+  ul {
+    list-style: none;
+    margin: 0;
+    li {
+      padding-bottom: 0rem;
+    }
   }
+}
+//award/honor dates
+.awardhonordates {
+  margin-left: 2rem;
+  display: block !important;
+  text-indent: 0px;
 }
 @import 'forms';
 @import 'results';
