@@ -259,7 +259,6 @@ footer {
       text-align: center;
       padding: 2rem 0rem 3rem 0rem;
     }
-    align-items: center;
     .profile-image {
       background: #eee no-repeat center;
       background-size: cover;
@@ -280,6 +279,26 @@ footer {
       .name {
         font-weight: bold;
         font-size: 2rem;
+      }
+      .title-department {
+        .first-appointment {
+
+        }
+        .other-appointment {
+          display: none;
+        }
+        .show-appointments {
+          color: $cerulean;
+          text-align: center;
+          border: 1px solid $ash-gray;
+          border-radius: 5px;
+          background-color: transparent;
+          background-image: none;
+          padding: 0.2rem 0.5rem 0rem 0.5rem;
+          &:hover {
+            background-color: $off-white;
+          }
+        }
       }
       .phone {
         padding: 2rem 0 0.5rem 0;

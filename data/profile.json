@@ -1,8 +1,20 @@
 {
   "faculty_id": "jrd121",
   "display_name": "Dr. Jane Doe",
-  "faculty_rank": "Assistant Professor",
-  "department": "Department of Geology",
+  "appointments": [
+    {
+      "title" : "Assistant Professor",
+      "department" : "Department of Geology"
+    },
+    {
+      "title" : "Lecturer",
+      "department" : "Physics Department"
+    },
+    {
+      "title" : "Lecturer",
+      "department" : "Music Department"
+    }
+  ],
   "office_location": "ALK 133",
   "phone_number": "800-588-2300",
   "email": "janerocks@txstate.edu",

@@ -8,6 +8,8 @@
       </a>
     </div>
   </div>
+
+
   <div class="has-background">
     <div class="fp-container profile-top">
       <div class="basic-info">
@@ -16,10 +18,24 @@
         </div>
         <div class="basic-details">
           <div class="name">{{profile.display_name}}</div>
+          {{#if profile.appointments}}
           <div class="title-department">
-            {{profile.faculty_rank}} &mdash; {{profile.department}}
-            <!--TODO: Handle the case of multiple departments -->
+            {{#each profile.appointments}}
+              {{#if @first}}
+                <div class="first-appointment">
+                  {{this.title}} &mdash; {{this.department}}
+                  {{#if ../profile.appointments.1.title}}
+                    <button class="show-appointments"><i class="fa fa-caret-down"></i></button>
+                  {{/if}}
+                </div>
+              {{else}}
+                <div class="other-appointment">
+                  {{this.title}} &mdash; {{this.department}}
+                </div>
+              {{/if}}
+            {{/each}}
           </div>
+          {{/if}}
           <div class="office">{{profile.office_location}}</div>
           <div class="phone">
             <i class="fa fa-phone-square"></i>

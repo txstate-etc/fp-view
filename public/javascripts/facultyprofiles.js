@@ -11,6 +11,11 @@ jQuery( document ).ready(function($) {
     window.location = "/profile/" + person + "/activity/" + type
   })
 
+  $('.show-appointments').click(function(event) {
+    $('.other-appointment').slideToggle();
+    $(this).children('i').toggleClass('fa-caret-down fa-caret-up');
+  })
+
 });
 
 //functions from Gato to handle the URL parameters
