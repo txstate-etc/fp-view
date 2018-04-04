@@ -18,13 +18,13 @@
         </div>
         <div class="basic-details">
           <div class="name">{{profile.display_name}}</div>
-          {{#if profile.appointments}}
+          {{#if profile.positions}}
           <div class="title-department">
-            {{#each profile.appointments}}
+            {{#each profile.positions}}
               {{#if @first}}
                 <div class="first-appointment">
                   {{this.title}} &mdash; {{this.department}}
-                  {{#if ../profile.appointments.1.title}}
+                  {{#if ../profile.positions.1.title}}
                     <button class="show-appointments"><i class="fa fa-caret-down"></i></button>
                   {{/if}}
                 </div>
