@@ -8,6 +8,7 @@ var sassMiddleware = require('node-sass-middleware');
 var exphbs = require('express-handlebars');
 
 var index = require('./routes/index');
+var profile = require('./routes/profile');
 var search = require('./routes/search');
 var results = require('./routes/results');
 
@@ -42,6 +43,7 @@ app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/popper'));
 
 app.use('/', index);
+app.use('/profile', profile);
 app.use('/search', search);
 app.use('/results', results);
 
