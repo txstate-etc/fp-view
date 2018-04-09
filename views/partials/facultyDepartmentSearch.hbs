@@ -9,9 +9,12 @@
     <div class="input-group">
       <select class="select-department form-control" id="department" name="department">
         <option></option>
-        <option>English</option>
-        <option>Geology</option>
-        <option>Percussion</option>
+        {{#each organization}}
+          <option class="college">{{this.college}}</option>
+          {{#each this.departments}}
+            <option class="department">{{this}}</option>
+          {{/each}}
+        {{/each}}
       </select><!--
       --><button class="btn-fp btn-search form-control" type="submit">
         <i class="search-icon fa fa-search"></i>

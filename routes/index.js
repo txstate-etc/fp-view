@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var http = require('http');
+require('./departments.js')()
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  getDepartments()
+  .then(function(results) {
+    res.render('index', { organization :  results});
+  })
+  .catch(function(err) {
+    next(err)
+  })
 });
 
 module.exports = router;

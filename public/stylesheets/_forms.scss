@@ -75,8 +75,13 @@ form.faculty-department-search {
         font-size: 1.5rem;
         line-height:1.8;
         text-align: left;
+        color: #999;  //TODO: Get actual color
+        &.department {
+          padding-left: 2.2rem;
+        }
         &.highlighted {
           background: $cerulean;
+          color: $white;
         }
       }
     }
