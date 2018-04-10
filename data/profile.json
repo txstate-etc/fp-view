@@ -23,25 +23,25 @@
   "teaching_interests": "Physical Geology, Mineralogy, Planetary Geology",
   "research_interests": "planetary geological processes, planetary comparison",
   "scholarly_creative": [
-    {"citation": "Doe, J. (2017). <i>Space Rocks</i>. New York, NY: Oxford University Press."},
-    {"citation": "Doe, J., & Smith D.R. (2016). The Earth is Not Flat and Neither are the Other Planets, <i>Journal of Science Facts</i>, 31(3),15-18."},
-    {"citation": "Doe, J. (2016). Craters. In <i>A History of the Moon</i> (pp. 148-167). Chicago, IL: University of Chicago Press."},
-    {"citation": "Doe, J. (2014, June 12). Should Humans Travel to Mars. <i>The Northwest Herald</i>, p. C7."},
-    {"citation": "Doe, J. (2012). <i>Portrait of a Young Girl on the Moon</i> [Oil on canvas]. Prestigious Art Gallery, San Antonio, TX."}
+    {"full_description": "Doe, J. (2017). <i>Space Rocks</i>. New York, NY: Oxford University Press."},
+    {"full_description": "Doe, J., & Smith D.R. (2016). The Earth is Not Flat and Neither are the Other Planets, <i>Journal of Science Facts</i>, 31(3),15-18."},
+    {"full_description": "Doe, J. (2016). Craters. In <i>A History of the Moon</i> (pp. 148-167). Chicago, IL: University of Chicago Press."},
+    {"full_description": "Doe, J. (2014, June 12). Should Humans Travel to Mars. <i>The Northwest Herald</i>, p. C7."},
+    {"full_description": "Doe, J. (2012). <i>Portrait of a Young Girl on the Moon</i> [Oil on canvas]. Prestigious Art Gallery, San Antonio, TX."}
   ],
   "awards": [
-    {"award": "2016: Department of Geology Award for General Excellence, Texas State University Department of Geology"},
-    {"award": "2016: College of Science and Engineering Award for Outstanding Teaching, Texas State University College of Science and Engineering"},
-    {"award": "2014: Award for Willingness to Teach Online Courses, Texas State University"},
-    {"award": "2012: Special Award for Services to NASA, National Aeronautics and Space Administration"},
-    {"award": "1993: Presidential Physical Fitness Award, President William Clinton"}
+    {"full_description": "2016: Department of Geology Award for General Excellence, Texas State University Department of Geology"},
+    {"full_description": "2016: College of Science and Engineering Award for Outstanding Teaching, Texas State University College of Science and Engineering"},
+    {"full_description": "2014: Award for Willingness to Teach Online Courses, Texas State University"},
+    {"full_description": "2012: Special Award for Services to NASA, National Aeronautics and Space Administration"},
+    {"full_description": "1993: Presidential Physical Fitness Award, President William Clinton"}
   ],
   "grants": [
-    {"grant": "Project MoonBase: Feasibility Study, State of Texas. July 2015 - July 2016"},
-    {"grant": "Armstrong Fellowship, Armstrong Foundation. May 2016 - November 2016"},
-    {"grant": "NCWIT Undergraduate Research Mentoring Award, State of North Carolina. 2015"},
-    {"grant": "Research Enhancement Program, Texas State University. March 2013."},
-    {"grant": "Conference Travel Grant, Texas State University. November 2012."}
+    {"full_description": "Project MoonBase: Feasibility Study, State of Texas. July 2015 - July 2016"},
+    {"full_description": "Armstrong Fellowship, Armstrong Foundation. May 2016 - November 2016"},
+    {"full_description": "NCWIT Undergraduate Research Mentoring Award, State of North Carolina. 2015"},
+    {"full_description": "Research Enhancement Program, Texas State University. March 2013."},
+    {"full_description": "Conference Travel Grant, Texas State University. November 2012."}
   ],
   "service_activities": [
     {
