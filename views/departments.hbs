@@ -1,0 +1,31 @@
+<div class="main-content">
+  <div class="fp-container">
+    <h1>Colleges / Departments</h1>
+    <div class="panels">
+      {{#each organization}}
+        <div class="panel">
+          <div class="panel-header">{{this.college}}</div>
+          <div class="panel-body">
+            <ul>
+              {{#each this.departments}}
+                <li><a href="#">{{this}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      {{/each}}
+      <!-- <div class="panel">
+        <div class="panel-header">
+          College of Education
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li><a href="#">First Department</a></li>
+            <li><a href="#">Second Department</a></li>
+            <li><a href="#">Third Department</a></li>
+          </ul>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

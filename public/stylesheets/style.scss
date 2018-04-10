@@ -553,3 +553,44 @@ ul.scholarly-creative, ul.awards, ul.grants {
 }
 @import 'forms';
 @import 'results';
+
+/////////////////////////////////////////////////
+.panels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .panel {
+    border: 1px solid $accent-gray;
+    border-radius: 5px;
+    flex-basis: 30%;
+    margin-bottom: 5rem;
+    @media (max-width: $medium-breakpoint) {
+      flex-basis: 100%;
+      margin-bottom: 3rem;
+    }
+    .panel-header {
+      color: $maroon;
+      font-size: 1.8rem;
+      border-bottom: 1px solid $accent-gray;
+      background-color: $off-white;
+      padding: 1rem;
+    }
+    .panel-body {
+      padding: 3rem 1rem;
+      ul {
+        list-style: none;
+        li {
+          font-size: 1.4rem;
+          &:before {
+            content: "\2022";
+            color: $off-white;
+            padding-right: 5px;
+          }
+          a:hover {
+            background-color: $sandstone;
+          }
+        }
+      }
+    }
+  }
+}

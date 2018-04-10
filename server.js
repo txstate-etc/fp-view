@@ -11,6 +11,7 @@ var index = require('./routes/index');
 var profile = require('./routes/profile');
 var search = require('./routes/search');
 var results = require('./routes/results');
+var departments = require('./routes/departments');
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use('/', index);
 app.use('/profile', profile);
 app.use('/search', search);
 app.use('/results', results);
+app.use('/departments', departments);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
