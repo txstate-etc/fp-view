@@ -78,7 +78,7 @@
       <h2>Selected Scholarly Creative Work</h2>
       <ul class="scholarly-creative">
         {{#each profile.scholarly_creative}}
-          <li>{{{this.citation}}}</li>
+          <li>{{{this.full_description}}}</li>
         {{/each}}
       </ul>
       <div class="view-all">
@@ -95,7 +95,7 @@
       <h2>Awards</h2>
       <ul class="awards">
         {{#each profile.awards}}
-        <li>{{{this.award}}}</li>
+        <li>{{{this.full_description}}}</li>
         {{/each}}
       </ul>
       <div class="view-all">
@@ -110,7 +110,7 @@
       <h2>Grants</h2>
       <ul class="grants">
         {{#each profile.grants}}
-          <li>{{{this.grant}}}</li>
+          <li>{{{this.full_description}}}</li>
         {{/each}}
       </ul>
       <div class="view-all">
