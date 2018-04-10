@@ -175,12 +175,15 @@ footer {
   .browse-departments {
     color: $medium-light-gray;
     padding-top: 3rem;
+    text-align: right;
+    @media (max-width: $medium-breakpoint) {
+      padding: 0 1rem;
+    }
     a {
       text-decoration: none;
       font-weight: 700;
     }
   }
-
 }
 
 .info-section {
