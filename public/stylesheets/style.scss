@@ -95,7 +95,7 @@ header {
 
 footer {
   flex: none;
-  background-color: $charcoal;
+  background-color: $gold;
   color: $white;
   .footer-content {
     display: flex;
@@ -108,10 +108,10 @@ footer {
     }
     .footer-left {
       flex-basis: 70%;
-      border-right: 1px solid #0f0f0f;
+      border-right: 1px solid #5f4d32;
       @media (max-width: $medium-breakpoint) {
         border-right: 0;
-        border-bottom: 1px solid #0f0f0f;
+        border-bottom: 1px solid #5f4d32;
       }
       .footer-left-content {
         padding-top: 2rem;
@@ -132,10 +132,10 @@ footer {
     }
     .footer-right {
       flex-basis: 30%;
-      border-left: 1px solid #4a4a4a;
+      border-left: 1px solid #79674c;
       @media (max-width: $medium-breakpoint) {
         border-left: 0;
-        border-top: 1px solid #4a4a4a;
+        border-top: 1px solid #79674c;
       }
       .footer-right-content {
         padding-top: 2rem;
@@ -166,10 +166,21 @@ footer {
     font-weight: normal;
     margin: 0;
     padding-bottom: 2.5rem;
+    color: $gold;
     @media (max-width: $medium-breakpoint) {
       padding-bottom: 1.5rem;
     }
   }
+
+  .browse-departments {
+    color: $medium-light-gray;
+    padding-top: 3rem;
+    a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+  }
+
 }
 
 .info-section {
