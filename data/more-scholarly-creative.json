@@ -1,5 +1,10 @@
 {
   "activity-title": "Scholarly Creative Works",
+  "person_info": {
+    "display_name": "Dr Martha Washington",
+    "primary_title": "Assistant Professor",
+    "primary_department": "Department of Economics"
+  },
   "activities": [
     {
       "year": "2018",
