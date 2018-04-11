@@ -87,6 +87,10 @@ header {
       letter-spacing: 1px;
       font-family: $garamond;
       order: 1;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
     }
     .logo {
       order: 2;
