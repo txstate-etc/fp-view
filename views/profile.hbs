@@ -8,8 +8,6 @@
       </a>
     </div>
   </div>
-
-
   <div class="has-background">
     <div class="fp-container profile-top">
       <div class="basic-info">
@@ -36,35 +34,56 @@
             {{/each}}
           </div>
           {{/if}}
+          {{#if profile.office_location}}
           <div class="office">{{profile.office_location}}</div>
+          {{/if}}
+          {{#if profile.phone_number}}
           <div class="phone">
             <i class="fa fa-phone-square"></i>
             phone: {{profile.phone_number}}
           </div>
+          {{/if}}
+          {{#if profile.email}}
           <div class="email">
             <i class="fa fa-envelope"></i>
             <a href="mailto:{{profile.email}}">{{profile.email}}</a>
           </div>
+          {{/if}}
         </div>
       </div>
     </div>
   </div>
+  {{#any profile.biography profile.teaching_interests profile.research_interests}}
   <div class="fp-container profile-bio section">
     <div class="bio">
       <h2 class="sr-only">Biography Section</h2>
+      {{#if profile.biography}}
       <h3 class="label">Biography and Education</h3>
       {{profile.biography}}
+      {{/if}}
+      {{#if profile.teaching_interests}}
       <h3 class="label">Teaching Interests</h3>
       {{profile.teaching_interests}}
+      {{/if}}
+      {{#if profile.research_interests}}
       <h3 class="label">Research Interests</h3>
       {{profile.research_interests}}
+      {{/if}}
     </div>
     <div class="navigation-menu">
       <div class="anchors">
-        <div class="anchor top left"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>
-        <div class="anchor top right"><a href="#awards">Awards</a></div>
-        <div class="anchor bottom left"><a href="#grants">Grants</a></div>
-        <div class="anchor bottom right"><a href="#service">Service</a></div>
+        {{#if profile.scholarly_creative.length}}
+          <div class="anchor top left"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>
+        {{/if}}
+        {{#if profile.awards.length}}
+          <div class="anchor top right"><a href="#awards">Awards</a></div>
+        {{/if}}
+        {{#if profile.grants.length}}
+          <div class="anchor bottom left"><a href="#grants">Grants</a></div>
+        {{/if}}
+        {{#if profile.service_activities.length}}
+          <div class="anchor bottom right"><a href="#service">Service</a></div>
+        {{/if}}
       </div>
       <button>
         <i class="fa fa-file"></i>
@@ -72,6 +91,8 @@
       </button>
     </div>
   </div>
+  {{/any}}
+  {{#if profile.scholarly_creative.length}}
   <div class="has-background profile-scholarly-creative section">
     <a name="scholarly-creative"></a>
     <div class="fp-container">
@@ -89,7 +110,10 @@
       </div>
     </div>
   </div>
+  {{/if}}
+  {{#ifeval profile.awards.length "||" profile.grants.length}}
   <div class="fp-container profile-awards-grants section">
+    {{#if profile.awards.length}}
     <div class="profile-awards has-background">
       <a name="awards"></a>
       <h2>Awards</h2>
@@ -105,6 +129,8 @@
         </button>
       </div>
     </div>
+    {{/if}}
+    {{#if profile.grants.length}}
     <div class="profile-grants has-background">
       <a name="grants"></a>
       <h2>Grants</h2>
@@ -120,7 +146,10 @@
         </button>
       </div>
     </div>
+    {{/if}}
   </div>
+  {{/ifeval}}
+  {{#if profile.service_activities.length}}
   <div class="fp-container profile-service section">
     <a name="service"></a>
     <h2>Service</h2>
@@ -155,4 +184,5 @@
       </div>
     </div>
   </div>
+  {{/if}}
 </div>
