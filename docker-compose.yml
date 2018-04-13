@@ -11,9 +11,20 @@ services:
     depends_on:
       - fp-api
   fp-api:
-    image: registry.its.txstate.edu/fp-api:qual
+    build: ../fp-api
     environment:
       DB_HOST: mongodb
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    volumes:
+      - facultyprofilesfiles:/fp-files
+  mongo-seed:
+    build: ../fp-api/mongo-seed
+    restart: on-failure
+    volumes:
+      - facultyprofilesfiles:/fp-files
     links:
       - mongodb
     depends_on:
@@ -24,3 +35,4 @@ services:
       - facultyprofilesdb:/data/db
 volumes:
   facultyprofilesdb: {}
+  facultyprofilesfiles: {}
