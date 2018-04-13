@@ -13,5 +13,25 @@ module.exports = function() {
       console.log("Error: " + e)
       return Promise.reject(e)
     }
+  },
+  this.getProfileById = async function(id) {
+    try {
+      var res = await fetch(`${api_host}/profile/${id}`)
+      return res.json();
+    }
+    catch(e) {
+      console.log("Error: " + e)
+      return Promise.reject(e)
+    }
+  },
+  this.getActivitiesByTypeAndId = async function(facultyId, type) {
+    try {
+      var res = await fetch(`${api_host}/profile/${facultyId}/activity/${type}`)
+      return res.json();
+    }
+    catch(e) {
+      console.log("Error: " + e)
+      return Promise.reject(e)
+    }
   }
 }
