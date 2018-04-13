@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-require('./department-helper.js')()
+require('./fp-api.js')()
 
 router.get('/', function(req, res, next) {
   getDepartments()
