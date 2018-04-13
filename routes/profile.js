@@ -3,14 +3,13 @@ var router = express.Router();
 var http = require('http');
 require('./fp-api.js')()
 
-router.get('/:netId', function(req, res, next) {
+router.get('/:facultyId', function(req, res, next) {
   //for testing
   // var profile = require('../data/profile.json');
   // res.render('profile', {profile: profile})
 
-  //TODO: This will use some other ID, not netId
-  var netId = req.params.netId;
-  getProfileById(netId)
+  var facultyId = req.params.facultyId;
+  getProfileById(facultyId)
   .then(function(results) {
     res.render('profile', { profile :  results});
   })
@@ -19,13 +18,13 @@ router.get('/:netId', function(req, res, next) {
   })
 })
 
-router.get('/:netId/activity/:type', function(req, res, next) {
+router.get('/:facultyId/activity/:type', function(req, res, next) {
   //TODO: This will use some other ID, not netId
-  var netId = req.params.netId;
+  var facultyId = req.params.facultyId;
   var type = req.params.type;
-  getActivitiesByTypeAndId(netId, type)
+  getActivitiesByTypeAndId(facultyId, type)
   .then(function(results) {
-    res.render('more', {content: results, facultyId: netId})
+    res.render('more', {content: results, facultyId: facultyId})
   })
   .catch(function(err) {
     next(err)
