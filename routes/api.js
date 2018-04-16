@@ -5,10 +5,9 @@ require('./fp-api.js')();
 
 router.get('/files/*', function(req, res, next) {
   var restofpath = '/files/'+req.params[0];
-  var status = 500;
   fetch(getApiPath(restofpath))
   .then(function (result) {
-    res.status(status)
+    res.status(result.status)
     res.setHeader('Content-Disposition', result.headers.get('Content-Disposition'))
     result.body.pipe(res)
   })
