@@ -85,10 +85,12 @@
           <div class="anchor bottom right"><a href="#service">Service</a></div>
         {{/if}}
       </div>
-      <button>
-        <i class="fa fa-file"></i>
-        Download Faculty CV
-      </button>
+      {{#if upload_vita}}
+        <button onclick="window.location='{{upload_vita}}'">
+          <i class="fa fa-file"></i>
+          Download Faculty CV
+        </button>
+      {{/if}}
     </div>
   </div>
   {{/any}}

@@ -9,7 +9,8 @@ router.get('/:facultyId', function(req, res, next) {
   .then(function(results) {
     var profile_photo = '';
     if (results.portrait) profile_photo = '/api'+results.portrait.path;
-    res.render('profile', { profile : results, profile_photo: profile_photo});
+    if (results.uploadedcv) upload_vita = '/api'+results.uploadedcv.path;
+    res.render('profile', { profile : results, profile_photo: profile_photo, upload_vita: upload_vita});
   })
   .catch(function(err) {
     next(err)
