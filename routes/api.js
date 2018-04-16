@@ -27,6 +27,7 @@ router.get('/*', function(req, res, next) {
   })
   .then(function (json) {
     res.setHeader('Cache-Control', 'no-cache')
+    res.setHeader('Access-Control-Allow-Origin', '*')
     res.status(status)
     res.json(json)
   })
