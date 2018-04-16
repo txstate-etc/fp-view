@@ -34,4 +34,7 @@ module.exports = function() {
       return Promise.reject(e)
     }
   }
+  this.getApiPath = function (path) {
+    return protocol+'://'+(process.env.API_PUBLIC_HOST || process.env.API_HOST)+path;
+  }
 }
