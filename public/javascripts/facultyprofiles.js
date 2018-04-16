@@ -5,6 +5,16 @@ jQuery( document ).ready(function($) {
     width: "80%"
   })
 
+  $('#department').on('change', function(evt, params) {
+    var selectedOption = $("option:selected", this);
+    if (selectedOption.hasClass('college')) {
+      $('#college').val(params.selected)
+    }
+    else {
+      $('#college').val("")
+    }
+  })
+
   $('.btn-more').click(function(event) {
     var target = $(event.target)
     var person = target.data("person");
