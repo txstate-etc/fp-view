@@ -52,14 +52,8 @@ h1,h2,h3 {
 ul {
   padding: 0;
   margin: 0;
-  list-style-position: inside;
-  li {
-    padding-bottom: 1rem;
-    &:last-child {
-      padding-bottom: 0rem;
-    }
-  }
 }
+
 .fp-container {
   margin: 0 auto;
   padding-left: 2.4rem;
@@ -441,13 +435,16 @@ footer {
   }
 }
 
-ul.scholarly-creative, ul.awards, ul.grants {
+ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
+  padding-left: 3rem;
   li {
-    list-style-position: inside;
-    text-indent: -1em;
-    padding-left: 1em;
-    div {
-      display: inline;
+    padding-bottom: 1rem;
+    &:last-child {
+      padding-bottom: 0rem;
+    }
+    ul {
+      padding-left: 2.5rem;
+      li { padding-bottom: 0rem; }
     }
   }
 }
@@ -544,45 +541,12 @@ ul.scholarly-creative, ul.awards, ul.grants {
   }
   .activity-list {
     padding-left: 4rem;
-    list-style-position: outside;
-    li {
+    > li {
       padding-left: 1.2rem;
     }
   }
 }
-// styles for art citations
-.venue {
-  display: flex !important;
-  margin-left: 2rem;
-  text-indent: 0px;
-  .venue-items {
-    ul {
-      list-style: none;
-      margin: 0;
-      li {
-        padding-bottom: 0rem;
-        text-indent: 0px;
-        padding-left: 1.2rem;
-      }
-    }
-  }
-}
-.review {
-  margin-left: 2.5rem;
-  ul {
-    list-style: none;
-    margin: 0;
-    li {
-      padding-bottom: 0rem;
-    }
-  }
-}
-//award/honor dates
-.awardhonordates {
-  margin-left: 2rem;
-  display: block !important;
-  text-indent: 0px;
-}
+
 @import 'forms';
 @import 'results';
 
