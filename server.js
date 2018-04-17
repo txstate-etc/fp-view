@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 var exphbs = require('express-handlebars');
+var httpAgent = require('http-pooling-agent');
+global.apiagent = new httpAgent.Agent({ freeSocketsTimeout: 10000 })
 
 var index = require('./routes/index');
 var profile = require('./routes/profile');

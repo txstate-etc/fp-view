@@ -4,9 +4,13 @@ var protocol = (process.env.API_SSL == "true")? "https" : "http";
 var api_host = `${protocol}://${process.env.API_HOST}`
 
 module.exports = function() {
+  this.apifetch = function(path, options = {}) {
+    options.agent = global.apiagent
+    return fetch(getApiPath(path), options)
+  },
   this.getDepartments = async function() {
     try {
-      var res = await fetch(`${api_host}/department`)
+      var res = await apifetch('/department')
       return res.json()
     }
     catch(e) {
@@ -16,7 +20,7 @@ module.exports = function() {
   },
   this.getProfileById = async function(id) {
     try {
-      var res = await fetch(`${api_host}/profile/${id}`)
+      var res = await apifetch(`/profile/${id}`)
       return res.json();
     }
     catch(e) {
@@ -26,7 +30,7 @@ module.exports = function() {
   },
   this.getActivitiesByTypeAndId = async function(facultyId, type) {
     try {
-      var res = await fetch(`${api_host}/profile/${facultyId}/activity/${type}`)
+      var res = await apifetch(`/profile/${facultyId}/activity/${type}`)
       return res.json();
     }
     catch(e) {
@@ -35,6 +39,6 @@ module.exports = function() {
     }
   }
   this.getApiPath = function (path) {
-    return protocol+'://'+(process.env.API_PUBLIC_HOST || process.env.API_HOST)+path;
+    return api_host+path;
   }
 }
