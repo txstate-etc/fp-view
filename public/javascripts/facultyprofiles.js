@@ -15,10 +15,10 @@ jQuery( document ).ready(function($) {
     }
   })
 
-  $('.btn-more').click(function(event) {
-    var target = $(event.target)
+  $('.btn-more').click(function() {
+    var target = $(this)
     var person = target.data("person");
-    var type = target.data("type")
+    var type = target.data("type");
     window.location = "/profile/" + person + "/activity/" + type
   })
 
