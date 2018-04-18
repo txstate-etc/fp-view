@@ -1,9 +1,15 @@
-module.exports = {
+helpers = {
   any: function() {
     var options = arguments[arguments.length-1];
 		for (var i = 0; i < arguments.length-1; i++)
       if (arguments[i] && arguments[i].length > 0) return options.fn(this);
 		return options.inverse(this);
+  },
+  all: function() {
+    var options = arguments[arguments.length-1];
+		for (var i = 0; i < arguments.length-1; i++)
+			if (!arguments[i] || !arguments[i].length > 0) return options.inverse(this);
+		return options.fn(this);
   },
   eachHalf : function(list, index, options) {
     var arrayChunk= "";
@@ -36,5 +42,42 @@ module.exports = {
       default:
         return options.inverse(this);
     }
-  }
+  },
+  lastpage : function(total, perpage) {
+    return Math.ceil(total/perpage);
+  },
+  paginate : function(page, lastpage) {
+        if (lastpage < 2) return '';
+        var html = '<div class="sr-only">Pagination</div>';
+          html += '<ul role="navigation" class="pagination">';
+          html += '<li><a href="#" class="pagination-link previous' + (page > 1 ? " enabled" : "") + '" aria-label="Previous Page" data-page="'+Math.max(page-1, 1)+'" aria-disabled="'+(page == 1 ? 'true' : 'false')+'">< Previous</a></li>';
+          //first page
+          html += '<li><a href="#" class="pagination-link" aria-selected="' + (page == 1) + '" aria-label="Page 1" data-page="1">1</a></li>';
+          //first ellipsis, if needed
+          if(lastpage > 4 && page > 3){
+              html += '<li><span class="nonlink">...</span></li>';
+          }
+          if(lastpage > 2){
+              if(lastpage == 3){
+                  html += '<li><a href="#" class="pagination-link" aria-selected="'+(page == 2)+'" aria-label="Page 2" data-page="2">2</a></li>';
+              }
+              else{
+                  for (var i = Math.min(Math.max(page - 1, 2), lastpage-2); i <= Math.max(Math.min(page + 1, lastpage - 1),3); i++) {
+                    html += '<li><a href="#" class="pagination-link" aria-selected="'+(i==page)+'" aria-label="Page '+i+'" data-page="'+i+'">'+i+'</a></li>';
+                  }
+              }
+          }
+          //second ellipsis, if needed
+          if(lastpage > 4 && page < (lastpage - 2)){
+              html += '<li><span class="nonlink">...</span></li>';
+          }
+          //last page
+          html += '<li><a href="#" class="pagination-link" aria-selected="' + (page == lastpage) + '" aria-label="Page ' + lastpage + '" data-page="' + lastpage + '">' + lastpage + '</li>';
+          html += '<li><a href="#" class="pagination-link next' + (page < lastpage ? " enabled" : "") + '" aria-label="Next Page" data-page="'+Math.min(page+1, lastpage)+'" aria-disabled="'+(page == lastpage ? 'true' : 'false')+'">Next ></a></li>';
+          html += '</ul>';
+          return html;
+      }
+}
+if(typeof module != "undefined") {
+  module.exports = helpers;
 }

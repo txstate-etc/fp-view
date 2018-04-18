@@ -12,7 +12,6 @@ global.apiagent = new httpAgent.Agent({ freeSocketsTimeout: 10000 })
 var index = require('./routes/index');
 var profile = require('./routes/profile');
 var search = require('./routes/search');
-var results = require('./routes/results');
 var departments = require('./routes/departments');
 var api = require('./routes/api');
 
@@ -43,13 +42,15 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'shared')));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/popper'));
+app.use(express.static(__dirname + '/node_modules/handlebars/dist'));
+app.use(express.static(__dirname + '/helpers/'));
 
 app.use('/', index);
 app.use('/profile', profile);
 app.use('/search', search);
-app.use('/results', results);
 app.use('/departments', departments);
 app.use('/api', api);
 
