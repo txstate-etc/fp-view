@@ -45,8 +45,19 @@ module.exports = function() {
   this.searchAll = async function(query) {
     var qs = shared.createUrlQuery(query);
     try {
-      var res = await fetch(`${api_host}/search/all${qs}`)
+      var res = await apifetch(`/search/all${qs}`)
       return res.json();
+    }
+    catch(e) {
+      console.log("Error: " + e);
+      return Promise.reject(e)
+    }
+  },
+  this.searchPeople = async function(query) {
+    var qs = shared.createUrlQuery(query);
+    try {
+      var res = await apifetch(`/search/list/${qs}`)
+      return res.json()
     }
     catch(e) {
       console.log("Error: " + e);

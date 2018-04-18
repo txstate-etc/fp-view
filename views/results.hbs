@@ -14,8 +14,8 @@
     <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}"></div>
     {{#if departmentSearch}}
       <h1 class="search-results-title">Search results for: <em>{{department}}</em></h1>
-      <div id="name" class="search-results" data-total={{results.name.total}}>
-      {{> personSearchResult page=1 total=results.name.total search_results=results.name.results}}
+      <div id="name" class="search-results" data-total={{results.total}}>
+      {{> personSearchResult page=1 total=results.total search_results=results.results}}
       </div>
     {{else}}
     <h1 class="search-results-title">Search results for: <em>{{term}}</em> {{#if department }} in <em>{{department}}</em>{{/if}}</h1>
