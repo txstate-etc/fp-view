@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
+var shared = require('../shared/javascripts/shared-functions.js')
 require('./fp-api.js')();
 
 router.get('/files/*', function(req, res, next) {
@@ -18,7 +19,7 @@ router.get('/files/*', function(req, res, next) {
 })
 
 router.get('/*', function(req, res, next) {
-  var restofpath = '/'+req.params[0];
+  var restofpath = '/'+req.params[0]+shared.createUrlQuery(req.query);
   var status = 500;
   apifetch(restofpath)
   .then(function (result) {
