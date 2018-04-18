@@ -1,0 +1,16 @@
+<ul class="activities">
+  {{#each search_results}}
+    <li class="activity">
+      <div>
+        <span class="name"><a href="/profile/{{this.person.id}}">{{this.person.display_name}}</a></span>
+        <span class="title-dept"><a href="#">{{this.person.primary_title}}- {{this.person.primary_department}}</a></span>
+      </div>
+      <div>
+        {{{this.full_description}}}
+      </div>
+    </li>
+  {{else}}
+    No Results Found
+  {{/each}}
+</ul>
+{{{paginate page (lastpage total 10)}}}

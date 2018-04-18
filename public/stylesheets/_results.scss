@@ -1,5 +1,6 @@
 .search-results-title {
   font-size: 2.8rem;
+  padding: 4rem 0rem;
   em {
     padding-left: 1.5rem;
   }
@@ -52,29 +53,6 @@
   }
 }
 
-.search-results {
-  list-style: none;
-  li {
-    padding-bottom: 2.4rem;
-    &:last-child {
-      padding-bottom: 0;
-    }
-    .name {
-      a {
-        color: $maroon;
-        text-decoration: underline;
-        font-weight: 600;
-        font-size: 1.8rem;
-      }
-    }
-    .department-rank {
-      color: $charcoal;
-      font-size: 1.6rem;
-      font-weight: 400;
-    }
-  }
-}
-
 .pagination{
     margin: 4rem 0 2.8rem 0;
     list-style: none;
@@ -115,6 +93,50 @@
     .nonlink{
       &:hover{
         background: transparent;
+      }
+    }
+  }
+
+  .search-results {
+    ul.activities {
+      list-style: none;
+      li.activity {
+        padding-bottom: 2.4rem;
+        .name a{
+          font-size: 1.8rem;
+          color: $maroon;
+          font-weight: 600;
+        }
+        .title-dept a {
+          font-size: 1.6rem;
+          color: $charcoal;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  //College/Department only search results
+  .faculty-members {
+    list-style: none;
+    li {
+      padding-bottom: 2.4rem;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      .name a {
+        font-size: 1.8rem;
+        color: $maroon;
+        font-weight: 600;
+      }
+      .title-dept a {
+        font-size: 1.6rem;
+        color: $charcoal;
+        text-decoration: none;
+        font-weight: 400;
+        &:hover {
+          color: #0056b3;
+          text-decoration: underline;
+        }
       }
     }
   }

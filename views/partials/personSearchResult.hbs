@@ -1,0 +1,11 @@
+<ul class="faculty-members">
+{{#each search_results}}
+  <li>
+    <div class="name"><a href="/profile/{{this.id}}">{{this.display_name}}</a></div>
+    {{#all this.primary_title this.primary_department}}<div class="title-dept"><a href="#">{{this.primary_title}}- {{this.primary_department}}</a></div>{{/all}}
+  </li>
+{{else}}
+  No Results Found
+{{/each}}
+</ul>
+{{{paginate page (lastpage total 10)}}}

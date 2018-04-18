@@ -5,10 +5,13 @@
   </div>
   <span class="word-in">in</span>
   <div class="department-group">
-    <label class="sr-only" for="department">Search for faculty in department</label>
+    <label class="sr-only" for="coll-dept">Search for faculty in department</label>
     <input type="hidden" id="college" name="college" value=""/>
+    <input type="hidden" id="dept" name="dept" value=""/>
+    <input type="hidden" id="page" name="page" value="1"/>
+    <input type="hidden" id="perpage" name="perpage" value="10"/>
     <div class="input-group">
-      <select class="select-department form-control" id="department" name="department">
+      <select class="select-department form-control" id="coll-dept">
         <option></option>
         {{#each organization}}
           <option class="college" value="{{this.college}}">{{this.college}}</option>

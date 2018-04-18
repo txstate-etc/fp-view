@@ -1,33 +1,48 @@
 <div class="main-content">
   <div class="has-background search-again">
     <div class="fp-container">
-      {{#if departmentSearch}}
-        {{> facultyDepartmentSearch}}
-      {{else}}
-        <div class="faculty-search fp-container">
-          {{> facultySearch}}
-        </div>
-      {{/if}}
+      {{> facultyDepartmentSearch}}
     </div>
   </div>
+  <script>
+    Handlebars.registerHelper('lastpage', helpers.lastpage);
+    Handlebars.registerHelper('paginate', helpers.paginate);
+    Handlebars.registerHelper('all', helpers.all);
+    var activityResultTemplate = {{{templates.activityResultTemplate}}};
+    var personResultTemplate = {{{templates.personResultTemplate}}}
+  </script>
   <div class="fp-container indent">
+    <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}"></div>
     {{#if departmentSearch}}
       <h1 class="search-results-title">Search results for: <em>{{department}}</em></h1>
+      <div id="name" class="search-results" data-total={{results.name.total}}>
+      {{> personSearchResult page=1 total=results.name.total search_results=results.name.results}}
+      </div>
     {{else}}
     <h1 class="search-results-title">Search results for: <em>{{term}}</em> {{#if department }} in <em>{{department}}</em>{{/if}}</h1>
     <div id="tabs">
       <ul>
-        <li><a href="#faculty-name">Faculty Name</a></li>
-        <li><a href="#scholarly-creative">Scholarly/ Creative Work</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#grants">Grants</a></li>
-        <li><a href="#awards">Awards</a></li>
+        <li><a href="#name">Faculty Name</a></li>
+        <li><a href="#publication">Scholarly/ Creative Work</a></li>
+        <li><a href="#interest">Interests</a></li>
+        <li><a href="#grant">Grants</a></li>
+        <li><a href="#award">Awards</a></li>
       </ul>
-      <div id="faculty-name"></div>
-      <div id="scholarly-creative"></div>
-      <div id="interests"></div>
-      <div id="grants"></div>
-      <div id="awards"></div>
+      <div id="name" data-total="{{results.name.total}}">
+        {{> personSearchResult page=1 total=results.name.total search_results=results.name.results}}
+      </div>
+      <div id="publication" class="search-results" data-total={{results.publication.total}}>
+        {{> activitySearchResult page=1 total=results.publication.total search_results=results.publication.results}}
+      </div>
+      <div id="interest" class="search-results" data-total={{results.interest.total}}>
+        {{> activitySearchResult page=1 total=results.interest.total search_results=results.interest.results}}
+      </div>
+      <div id="grant" class="search-results" data-total={{results.grant.total}}>
+        {{> activitySearchResult page=1 total=results.grant.total search_results=results.grant.results}}
+      </div>
+      <div id="award" class="search-results" data-total={{results.award.total}}>
+        {{> activitySearchResult page=1 total=results.award.total search_results=results.award.results}}
+      </div>
     </div>
     {{/if}}
   </div>

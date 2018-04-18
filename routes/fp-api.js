@@ -1,4 +1,5 @@
 var fetch = require('node-fetch');
+var shared = require('../shared/javascripts/shared-functions.js')
 
 var protocol = (process.env.API_SSL == "true")? "https" : "http";
 var api_host = `${protocol}://${process.env.API_HOST}`
@@ -40,5 +41,16 @@ module.exports = function() {
   }
   this.getApiPath = function (path) {
     return api_host+path;
+  },
+  this.searchAll = async function(query) {
+    var qs = shared.createUrlQuery(query);
+    try {
+      var res = await fetch(`${api_host}/search/all${qs}`)
+      return res.json();
+    }
+    catch(e) {
+      console.log("Error: " + e);
+      return Promise.reject(e)
+    }
   }
 }
