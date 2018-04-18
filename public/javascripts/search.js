@@ -56,12 +56,10 @@ jQuery( document ).ready(function($) {
         var activeTab = $(`#${type}`);
         var total = activeTab.data("total")
         if (type == "name") {
-          var template = Handlebars.template(personResultTemplate);
-          var content = template({page: page, total: total, search_results: results})
+          var content = fptemplates.personSearchResult({page: page, total: total, search_results: results})
         }
         else {
-          var template = Handlebars.template(activityResultTemplate)
-          var content = template({page: page, total:total, search_results: results})
+          var content = fptemplates.activitySearchResult({page: page, total:total, search_results: results})
         }
         activeTab.html(content);
         $('.pagination-link').click(paginationClick);

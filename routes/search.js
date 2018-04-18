@@ -1,14 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var fs = require('fs')
-var Handlebars = require('handlebars');
 require('./fp-api.js')()
 var shared = require('../shared/javascripts/shared-functions.js')
-
-var activityResultTemplateString = fs.readFileSync(__dirname + "/../views/partials/activitySearchResult.hbs", "utf-8");
-var compiledActivityResult = Handlebars.precompile(activityResultTemplateString);
-var personResultTemplateString = fs.readFileSync(__dirname + "/../views/partials/personSearchResult.hbs", "utf-8");
-var compiledPersonResult = Handlebars.precompile(personResultTemplateString);
 
 router.get('/', function(req, res, next) {
   var departmentSearch = false;
@@ -27,17 +20,13 @@ router.get('/', function(req, res, next) {
   .then(function(results) {
     var departments, searchResults;
     [departments, searchResults] = results;
-    console.log(JSON.stringify(searchResults))
     res.render('results', {term: query,
                            department: department,
                            college: college,
                            departmentSearch: departmentSearch,
                            organization: departments,
-                           results: searchResults,
-                           templates: {
-                             activityResultTemplate: compiledActivityResult,
-                             personResultTemplate: compiledPersonResult
-                           }})
+                           results: searchResults
+                         })
   })
   .catch(function(err) {
     next(err);

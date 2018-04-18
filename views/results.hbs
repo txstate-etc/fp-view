@@ -4,12 +4,11 @@
       {{> facultyDepartmentSearch}}
     </div>
   </div>
+  <script language="javascript" src='/javascripts/templates/templates.js'></script>
   <script>
     Handlebars.registerHelper('lastpage', helpers.lastpage);
     Handlebars.registerHelper('paginate', helpers.paginate);
     Handlebars.registerHelper('all', helpers.all);
-    var activityResultTemplate = {{{templates.activityResultTemplate}}};
-    var personResultTemplate = {{{templates.personResultTemplate}}}
   </script>
   <div class="fp-container indent">
     <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}"></div>
