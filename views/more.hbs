@@ -4,7 +4,9 @@
       <a href="/profile/{{facultyId}}">
         <div class="return-to-profile-contents">
           <i class="fa fa-angle-left" aria-hidden="true"></i>
-          <i class="fa fa-user-circle"></i>
+          <div class="profile-image" style="background-image: url({{profile_photo}});">
+            <span class="sr-only">{{content.person.display_name}}</span>
+          </div>
           <div class="faculty-info">
             <div class="faculty-name">Back to {{content.person.display_name}}'s Profile</div>
             <div class="faculty-position">{{content.person.primary_title}} &mdash; {{content.person.primary_department}} </div>

@@ -23,7 +23,9 @@ router.get('/:facultyId/activity/:type', function(req, res, next) {
   var type = req.params.type;
   getActivitiesByTypeAndId(facultyId, type)
   .then(function(results) {
-    res.render('more', {content: results, facultyId: facultyId})
+    var profile_photo = '';
+    if (results.person.portrait) profile_photo = '/api'+results.person.portrait.path;
+    res.render('more', {content: results, facultyId: facultyId, profile_photo: profile_photo})
   })
   .catch(function(err) {
     next(err)

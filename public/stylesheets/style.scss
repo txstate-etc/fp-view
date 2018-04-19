@@ -519,8 +519,16 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
       font-size: 4rem;
       padding-right: 1rem;
     }
+    .profile-image {
+      background: #eee no-repeat center;
+      background-size: cover;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+    }
     .faculty-info {
       line-height: 1.2;
+      padding-left: 1rem;
       .faculty-name {
         font-weight: 700;
       }
