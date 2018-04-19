@@ -76,7 +76,10 @@ helpers = {
           html += '<li><a href="#" class="pagination-link next' + (page < lastpage ? " enabled" : "") + '" aria-label="Next Page" data-page="'+Math.min(page+1, lastpage)+'" aria-disabled="'+(page == lastpage ? 'true' : 'false')+'">Next ></a></li>';
           html += '</ul>';
           return html;
-      }
+      },
+  encodeURIComponent : function(component) {
+    return encodeURIComponent(component);
+  }
 }
 if(typeof module != "undefined") {
   module.exports = helpers;
