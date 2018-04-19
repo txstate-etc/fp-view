@@ -18,7 +18,10 @@
       {{> personSearchResult page=1 total=results.total search_results=results.results}}
       </div>
     {{else}}
-    <h1 class="search-results-title">Search results for: <em>{{term}}</em> {{#if department }} in <em>{{department}}</em>{{/if}}</h1>
+    <h1 class="search-results-title">Search results for: <em>{{term}}</em>
+      {{#if department }} in <em>{{department}}</em>
+      {{else if college }} in <em>{{college}}</em>{{/if}}
+    </h1>
     <div id="tabs">
       <ul>
         <li><a href="#name">Faculty Name</a></li>
