@@ -6,10 +6,11 @@ require('./fp-api.js')();
 
 router.get('/files/*', function(req, res, next) {
   var restofpath = '/files/'+req.params[0];
-  apifetch(restofpath)
+  apifetch(restofpath, {headers: {'If-Modified-Since': req.headers['if-modified-since']}})
   .then(function (result) {
     res.status(result.status)
     res.setHeader('Content-Disposition', result.headers.get('Content-Disposition'))
+    if (result.headers.get('Last-Modified')) res.setHeader('Last-Modified', result.headers.get('Last-Modified'));
     result.body.pipe(res)
   })
   .catch(function (err) {
