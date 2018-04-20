@@ -133,7 +133,13 @@ footer {
         .footer-title {
           font-size: 2.7rem;
           font-family: $garamond;
-          text-decoration: underline;
+          a {
+            color: $white;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
         .contact-email {
           color: $white;
