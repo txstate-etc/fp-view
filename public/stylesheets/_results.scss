@@ -108,11 +108,19 @@
           font-size: 1.8rem;
           color: $maroon;
           font-weight: 600;
+          &:hover {
+            background-color: $sandstone;
+          }
         }
         .title-dept a {
           font-size: 1.6rem;
           color: $charcoal;
           font-weight: 400;
+          text-decoration: none;
+          &:hover {
+            background-color: $sandstone;
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -129,6 +137,9 @@
         font-size: 1.8rem;
         color: $maroon;
         font-weight: 600;
+        &:hover {
+          background-color: $sandstone;
+        }
       }
       .title-dept a {
         font-size: 1.6rem;
@@ -138,6 +149,9 @@
         &:hover {
           color: #0056b3;
           text-decoration: underline;
+          &:hover {
+            background-color: $sandstone;
+          }
         }
       }
     }
