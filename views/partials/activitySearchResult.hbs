@@ -3,7 +3,7 @@
     <li class="activity">
       <div>
         <span class="name"><a href="/profile/{{this.person.id}}">{{this.person.display_name}}</a></span>
-        <span class="title-dept"><a href="#">{{this.person.primary_title}}- {{this.person.primary_department}}</a></span>
+        <span class="title-dept">{{this.person.primary_title}}- <a href="/search?dept={{encodeURIComponent this.person.primary_department}}&page=1&perpage=10">{{this.person.primary_department}}</a></span>
       </div>
       <div>
         {{{this.full_description}}}
