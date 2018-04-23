@@ -14,6 +14,7 @@ $steel-blue:          #406d9d;
 $ash-gray:            #b6b6b6;
 $off-white:           #f1f1f1;
 $medium-light-gray:   #767676;
+$selection-bg:        #d0dfd9;
 
 $medium-breakpoint:     800px;
 $large-breakpoint:      1000px;
@@ -55,10 +56,16 @@ h3 {
 h1,h2,h3 {
   margin: 0;
 }
-
 ul {
   padding: 0;
   margin: 0;
+}
+
+*::-moz-selection {
+  background-color: $selection-bg;
+}
+*::selection {
+  background-color: $selection-bg;
 }
 
 .fp-container {
