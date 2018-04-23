@@ -13,7 +13,7 @@
   <div class="fp-container indent">
     <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}"></div>
     {{#if departmentSearch}}
-      <h1 class="search-results-title">Search results for: <em>{{#if college}}{{college}}{{else}}{{department}}{{/if}}</em></h1>
+      <h1 class="search-results-title">Faculty Profiles for: <em>{{#if college}}{{college}}{{else}}{{department}}{{/if}}</em></h1>
       <div id="name" class="search-results" data-total={{results.total}}>
       {{> personSearchResult page=1 total=results.total search_results=results.results}}
       </div>
