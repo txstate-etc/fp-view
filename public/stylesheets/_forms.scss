@@ -15,6 +15,12 @@ input[type="text"] {
   background-color: $cerulean;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+  padding: 0rem 1rem;
+  cursor: pointer;
+  font-weight: 100;
+  &:hover {
+    background-color: $bright-blue;
+  }
 }
 
 ::placeholder {
