@@ -1,14 +1,13 @@
 //common elements
 
 input[type="text"] {
-  padding: 1rem;
+  padding: 1.4rem 1.5rem;
 }
 
 .form-control {
   border: 0;
-  box-shadow: 0px 0 10px $darkgray;
+  box-shadow: 0px 0 10px $lightgray;
   border-radius: 3px;
-  height: 4rem;
 }
 
 .btn-fp {
@@ -18,10 +17,17 @@ input[type="text"] {
   border-bottom-left-radius: 0px;
 }
 
+::placeholder {
+  color: $ash-gray;
+  opacity: 1;
+}
+
 form.faculty-department-search {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: $garamond;
+  font-size: 1.92rem;
   .term-group {
     flex-basis: 48%;
     #q {
@@ -49,18 +55,25 @@ form.faculty-department-search {
     flex: 1;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    padding: 1.4rem 1.5rem;
     .chosen-single {
       background: $white;
       border: 0;
       box-shadow: none;
-      font-size: 1.5rem;
+      font-size: 1.92rem;
+      height: 22px;
+      padding-left: 0;
       span {
         height: 100%;
         text-align: left;
       }
+      &.chosen-default {
+        color: $ash-gray;
+      }
     }
     .chosen-drop {
       border-top: 1px solid #aaa;
+      left: 0;
       .chosen-search-input {
         border-radius: 3px;
       }
@@ -68,7 +81,7 @@ form.faculty-department-search {
         font-size: 1.5rem;
         line-height:1.8;
         text-align: left;
-        color: #999;  //TODO: Get actual color
+        color: #595959;
         &.department {
           padding-left: 2.2rem;
         }
@@ -87,7 +100,7 @@ form.faculty-department-search {
     left: 0;
     top: 0;
     border-radius: inherit;
-    box-shadow: 0px 0 10px $darkgray;
+    box-shadow: 0px 0 10px $lightgray;
     z-index: -1;
   }
   @media (max-width: $medium-breakpoint) {
