@@ -18,6 +18,7 @@ $large-breakpoint:      1000px;
 $x-large-breakpoint:    1400px;
 
 $garamond:            'Adobe Garamond W01",Garamond,"Goudy Old Style","Times New Roman",serif;';
+$univers:             'Univers W01', Helvetica, Calibri, Arial, sans-serif;
 
 html {
   height: 100%;
@@ -29,7 +30,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100%;
-  font-family: 'Univers LT Std';
+  font-family: $univers;
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -271,6 +272,9 @@ footer {
 }
 .section {
   padding-top: 2rem;
+  h2, h3 {
+    color: $gold;
+  }
 }
 
 .profile-top {
@@ -555,6 +559,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
   }
 }
 
+@import 'fonts';
 @import 'forms';
 @import 'results';
 
