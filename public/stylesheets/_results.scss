@@ -42,7 +42,7 @@
         float: none;
         padding: 0;
       }
-      &.ui-state-active {
+      &.ui-state-active, &:hover {
         background-color: $sandstone;
         a {
           color: $maroon;
