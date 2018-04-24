@@ -15,6 +15,10 @@ jQuery( document ).ready(function($) {
       $('#college').val("")
       $('#dept').val(params.selected)
     }
+    if (params.selected.length > 30) {
+      var truncated = params.selected.substring(0,30) + "...";
+      $('.chosen-single span').text(truncated)
+    }
   })
 
   $('.btn-more').click(function() {
