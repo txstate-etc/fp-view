@@ -13,6 +13,7 @@
     "express": "~4",
     "express-favicon": "~2",
     "express-handlebars": "~3",
+    "font-awesome": "~4.7",
     "http-pooling-agent": "~1",
     "morgan": "~1",
     "node-fetch": "^2.1.2",

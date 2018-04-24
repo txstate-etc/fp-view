@@ -47,6 +47,7 @@ app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/popper'));
 app.use(express.static(__dirname + '/node_modules/handlebars/dist'));
 app.use(express.static(__dirname + '/helpers/'));
+app.use(express.static(__dirname + '/node_modules/font-awesome'));
 
 app.use('/', index);
 app.use('/profile', profile);
