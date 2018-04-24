@@ -90,7 +90,7 @@
   <div class="has-background profile-scholarly-creative section">
     <a name="scholarly-creative"></a>
     <div class="fp-container">
-      <h2>Selected Scholarly Creative Work</h2>
+      <h2>Selected Scholarly/Creative Work</h2>
       <ul class="scholarly-creative">
         {{#each profile.scholarly_creative}}
           <li>{{{this.full_description}}}</li>
@@ -99,7 +99,7 @@
       <div class="view-all">
         <button class="btn-more" data-person="{{profile.id}}" data-type="scholarly-creative">
           <i class="fa fa-bookmark "></i>
-          <span>View all</span> Scholarly Creative Work
+          <span>View all</span> Scholarly/Creative Work
         </button>
       </div>
     </div>
@@ -110,7 +110,7 @@
     {{#if profile.awards.length}}
     <div class="profile-awards has-background">
       <a name="awards"></a>
-      <h2>Awards</h2>
+      <h2>Selected Awards</h2>
       <ul class="awards">
         {{#each profile.awards}}
         <li>{{{this.full_description}}}</li>
@@ -127,7 +127,7 @@
     {{#if profile.grants.length}}
     <div class="profile-grants has-background">
       <a name="grants"></a>
-      <h2>Grants</h2>
+      <h2>Selected Grants</h2>
       <ul class="grants">
         {{#each profile.grants}}
           <li>{{{this.full_description}}}</li>
@@ -146,7 +146,7 @@
   {{#if profile.service_activities.length}}
   <div class="fp-container profile-service section">
     <a name="service"></a>
-    <h2>Service</h2>
+    <h2>Selected Service Activities</h2>
     <div class="services">
       <div class="column1">
         <div class="service-list">
@@ -172,7 +172,7 @@
         <div class="view-all">
           <button class="btn-more" data-person="{{profile.id}}" data-type="service">
             <i class="fa fa-briefcase"></i>
-            <span>View all</span> Service
+            <span>View all</span> Service Activities
           </button>
         </div>
       </div>
