@@ -13,6 +13,7 @@
   border-bottom-left-radius: 0px;
   padding: 0rem 1rem;
   font-family: $univers;
+  white-space: nowrap;
   cursor: pointer;
   font-weight: 100;
   &:hover {
@@ -60,6 +61,7 @@ form.faculty-department-search {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     padding: 1.4rem 1.5rem;
+
     .chosen-single {
       background: $white;
       border: 0;

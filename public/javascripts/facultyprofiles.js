@@ -15,8 +15,15 @@ jQuery( document ).ready(function($) {
       $('#college').val("")
       $('#dept').val(params.selected)
     }
+    //TODO: Find a better way to do this.
     if (params.selected.length > 30) {
       var truncated = params.selected.substring(0,30) + "...";
+      $('.chosen-single span').text(truncated)
+    }
+    //It needs to be even smaller on mobile
+    var width = $('.chosen-container').width() + $('.btn-search').width()
+    if ( width > $('.department-group .input-group').width() ) {
+      var truncated = params.selected.substring(0,20) + "...";
       $('.chosen-single span').text(truncated)
     }
   })
