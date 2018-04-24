@@ -109,13 +109,15 @@
   <div class="fp-container profile-awards-grants section">
     {{#if profile.awards.length}}
     <div class="profile-awards has-background">
-      <a name="awards"></a>
-      <h2>Selected Awards</h2>
-      <ul class="awards">
-        {{#each profile.awards}}
-        <li>{{{this.full_description}}}</li>
-        {{/each}}
-      </ul>
+      <div class="award-grant-block">
+        <a name="awards"></a>
+        <h2>Selected Awards</h2>
+        <ul class="awards">
+          {{#each profile.awards}}
+          <li>{{{this.full_description}}}</li>
+          {{/each}}
+        </ul>
+      </div>
       <div class="view-all">
         <button class="btn-more" data-person="{{profile.id}}" data-type="awards">
           <i class="fa fa-trophy"></i>
@@ -126,13 +128,15 @@
     {{/if}}
     {{#if profile.grants.length}}
     <div class="profile-grants has-background">
-      <a name="grants"></a>
-      <h2>Selected Grants</h2>
-      <ul class="grants">
-        {{#each profile.grants}}
-          <li>{{{this.full_description}}}</li>
-        {{/each}}
-      </ul>
+      <div class="award-grant-block">
+        <a name="grants"></a>
+        <h2>Selected Grants</h2>
+        <ul class="grants">
+          {{#each profile.grants}}
+            <li>{{{this.full_description}}}</li>
+          {{/each}}
+        </ul>
+      </div>
       <div class="view-all">
         <button class="btn-more" data-person="{{profile.id}}" data-type="grants">
           <i class="fa fa-gift"></i>

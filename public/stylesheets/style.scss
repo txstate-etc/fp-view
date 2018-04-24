@@ -49,6 +49,10 @@ h1 {
   font-weight: 500;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 h3 {
   font-size: 1.9rem;
 }
@@ -151,6 +155,7 @@ footer {
       }
       .footer-left-content {
         padding-top: 2rem;
+        padding-bottom: 2rem;
         .footer-title {
           font-size: 2.7rem;
           font-family: $garamond;
@@ -187,6 +192,9 @@ footer {
         align-items: center;
         .footer-logo {
           width: 60%;
+          @media (max-width: $medium-breakpoint) {
+            width: 35%
+          }
         }
         .membership {
           max-width: 80%;
@@ -208,7 +216,7 @@ footer {
   }
   .search-title {
     font-size: 3rem;
-    font-weight: normal;
+    font-weight: 500;
     margin: 0;
     padding-bottom: 2.5rem;
     color: $gold;
@@ -458,6 +466,9 @@ footer {
   .profile-awards, .profile-grants {
     flex-basis: 45%;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
