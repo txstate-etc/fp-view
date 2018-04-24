@@ -1,9 +1,5 @@
-//common elements
-
-input[type="text"] {
-  padding: 1.4rem 1.5rem;
-}
-
+// //common elements
+//
 .form-control {
   border: 0;
   box-shadow: 0px 0 10px $lightgray;
@@ -38,6 +34,7 @@ form.faculty-department-search {
     flex-basis: 48%;
     #q {
       width: 100%;
+      padding: 1.6rem 1.5rem;
     }
   }
   .word-in {
@@ -67,7 +64,6 @@ form.faculty-department-search {
       border: 0;
       box-shadow: none;
       font-size: 1.92rem;
-      height: 22px;
       padding-left: 0;
       span {
         height: 100%;
