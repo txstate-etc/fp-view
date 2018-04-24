@@ -11,12 +11,12 @@
     "cookie-parser": ">=1.4.3",
     "debug": "~2",
     "express": "~4",
+    "express-favicon": "~2",
     "express-handlebars": "~3",
     "http-pooling-agent": "~1",
     "morgan": "~1",
     "node-fetch": "^2.1.2",
-    "node-sass-middleware": ">=0.11.0",
-    "serve-favicon": "~2"
+    "node-sass-middleware": ">=0.11.0"
   },
   "devDependencies": {
     "grunt": "~1",
