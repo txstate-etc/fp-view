@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="fp-container more-contents">
-    <h1>Selected {{content.activity_title}}</h1>
+    <h1>{{content.activity_title}}</h1>
     {{#each content.activities}}
       <div class="activity-year">{{#ifeval this.year "==" "current"}}{{else}}{{this.year}}{{/ifeval}}</div>
       <ul class="activity-list">
