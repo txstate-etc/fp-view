@@ -40,6 +40,13 @@ jQuery( document ).ready(function($) {
     $(this).children('i').toggleClass('fa-caret-down fa-caret-up');
   })
 
+  $('.faculty-department-search').submit(function(e){
+    var search = $('#q').val() + $('#college').val() + $('#dept').val();
+    if (search.length == 0) {
+      e.preventDefault();
+    }
+  })
+
 });
 
 function getUrlParameters() {
