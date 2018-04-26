@@ -9,6 +9,10 @@ module.exports = function() {
     options.agent = global.apiagent
     return fetch(getApiPath(path), options)
   },
+  this.externalfetch = function(path, options = {}) {
+    options.agent = global.apiagent
+    return fetch(path, options)
+  },
   this.getDepartments = async function() {
     try {
       var res = await apifetch('/department')
