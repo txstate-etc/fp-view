@@ -43,6 +43,20 @@
           {{/if}}
         </div>
       </div>
+      <div class="navigation-menu">
+        <div class="anchors">
+          {{#if profile.scholarly_creative.length}}<div class="anchor"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>{{/if}}
+          {{#if profile.awards.length}}<div class="anchor"><a href="#awards">Awards</a></div>{{/if}}
+          {{#if profile.grants.length}}<div class="anchor"><a href="#grants">Grants</a></div>{{/if}}
+          {{#if profile.service_activities.length}}<div class="anchor"><a href="#service">Service</a></div>{{/if}}
+        </div>
+           {{#if upload_vita}}
+          <button onclick="window.location='{{upload_vita}}'">
+            <i class="fa fa-file"></i>
+            Download Faculty CV
+          </button>
+          {{/if}}
+      </div>
     </div>
   </div>
   {{#any profile.biography profile.teaching_interests profile.research_interests}}
@@ -60,28 +74,6 @@
       {{#if profile.research_interests}}
       <h3 class="label">Research Interests</h3>
       {{profile.research_interests}}
-      {{/if}}
-    </div>
-    <div class="navigation-menu">
-      <div class="anchors">
-        {{#if profile.scholarly_creative.length}}
-          <div class="anchor top left"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>
-        {{/if}}
-        {{#if profile.awards.length}}
-          <div class="anchor top right"><a href="#awards">Awards</a></div>
-        {{/if}}
-        {{#if profile.grants.length}}
-          <div class="anchor bottom left"><a href="#grants">Grants</a></div>
-        {{/if}}
-        {{#if profile.service_activities.length}}
-          <div class="anchor bottom right"><a href="#service">Service</a></div>
-        {{/if}}
-      </div>
-      {{#if upload_vita}}
-        <button onclick="window.location='{{upload_vita}}'">
-          <i class="fa fa-file"></i>
-          Download Faculty CV
-        </button>
       {{/if}}
     </div>
   </div>
