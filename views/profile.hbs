@@ -3,7 +3,7 @@
   <div class="has-background">
     <div class="fp-container profile-top">
       <div class="basic-info">
-        <div class="profile-image">
+        <div class="profile-image" data-default="{{#if profile_photo}}false{{else}}true{{/if}}">
           <img src="{{#if profile_photo}}{{profile_photo}}{{else}}/images/userprofile-defaultimage.png{{/if}}" alt="profile photo for {{profile.display_name}}">
         </div>
         <div class="basic-details">

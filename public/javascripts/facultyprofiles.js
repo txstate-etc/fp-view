@@ -48,51 +48,55 @@ jQuery( document ).ready(function($) {
   })
 
   if (tracking) {
-    var face = new tracking.ObjectTracker(['face']);
     var container = $('.profile-image');
     var img = $('.profile-image img');
-    face.on('track', function(e) {
-      if (e.data.length === 0) {
-        // face detection failed, just show image
-        img.show();
-        return;
-      }
-      var face = e.data[0];
+    if (container.length > 0 && !container.data('default')) {
+      var face = new tracking.ObjectTracker(['face']);
+      face.on('track', function(e) {
+        if (e.data.length === 0) {
+          // face detection failed, just show image
+          img.css('opacity', 1);
+          return;
+        }
+        var face = e.data[0];
 
-      var w = img.prop('naturalWidth');
-      var h = img.prop('naturalHeight');
-      var fw = face.width;
-      var fh = face.height;
-      var left = face.x;
-      var right = w-fw-face.x;
-      var top = face.y;
-      var bottom = h-fh-face.y;
+        var w = img.width();
+        var h = img.height();
+        var fw = face.width;
+        var fh = face.height;
+        var left = face.x;
+        var right = w-fw-face.x;
+        var top = face.y;
+        var bottom = h-fh-face.y;
 
-      var distance = Math.min(left, right, top, bottom);
-      var box = {
-        x: left - distance,
-        y: top - distance,
-        w: fw+2*distance,
-        h: fh+2*distance
-      }
+        var distance = Math.min(left, right, top, bottom);
+        var box = {
+          x: left - distance,
+          y: top - distance,
+          w: fw+2*distance,
+          h: fh+2*distance
+        }
 
-      var timer;
-      var adjust_cropping = function () {
-        cancelAnimationFrame(timer);
-        var timer = requestAnimationFrame(function () {
-          var cw = container.width();
-          var zoom = cw/box.w;
-          img.css({position: 'absolute', left: (-1*box.x*zoom)+'px', top: (-1*box.y*zoom)+'px', width: (w*zoom)+'px'});
-        });
-      }
+        var timer;
+        var adjust_cropping = function () {
+          cancelAnimationFrame(timer);
+          var timer = requestAnimationFrame(function () {
+            var cw = container.width();
+            var zoom = cw/box.w;
+            img.css({position: 'absolute', left: (-1*box.x*zoom)+'px', top: (-1*box.y*zoom)+'px', width: (w*zoom)+'px'});
+          });
+        }
 
-      $(window).resize(adjust_cropping);
-      adjust_cropping();
-      img.show();
-    });
-    $(window).on('load', function () {
-      tracking.track(img.get(0), face);
-    });
+        $(window).resize(adjust_cropping);
+        adjust_cropping();
+        img.css('opacity', 1);
+      });
+      $(window).on('load', function () {
+        tracking.track(img.get(0), face);
+      });
+    } else {
+      img.css('opacity', 1);
+    }
   }
 
 });
