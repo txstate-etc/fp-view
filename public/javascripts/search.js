@@ -35,9 +35,10 @@ jQuery( document ).ready(function($) {
       var query = $('#search-data').data('q');
       var college = $('#search-data').data('college');
       var department = $('#search-data').data('dept');
+      var perpage = $('#search-data').data('perpage');
       var page = $(this).data("page");
 
-      var filters = {q:query, page: page, perpage: 10};
+      var filters = {q:query, page: page, perpage: perpage};
       if (college) {
         filters.college = college;
       }
@@ -56,10 +57,10 @@ jQuery( document ).ready(function($) {
         var activeTab = $(`#${type}`);
         var total = activeTab.data("total")
         if (type == "name") {
-          var content = fptemplates.personSearchResult({page: page, total: total, search_results: results})
+          var content = fptemplates.personSearchResult({page: page, total: total, search_results: results, perpage: perpage})
         }
         else {
-          var content = fptemplates.activitySearchResult({page: page, total:total, search_results: results})
+          var content = fptemplates.activitySearchResult({page: page, total:total, search_results: results, perpage: perpage})
         }
         activeTab.html(content);
         $('.pagination-link').click(paginationClick);

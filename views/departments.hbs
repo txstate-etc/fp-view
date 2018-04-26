@@ -4,11 +4,11 @@
     <div class="panels">
       {{#each organization}}
         <div class="panel">
-          <div class="panel-header"><a href="/search?college={{encodeURIComponent this.college}}&page=1&perpage=10">{{this.college}}</a></div>
+          <div class="panel-header"><a href="/search?college={{encodeURIComponent this.college}}&page=1&perpage={{../perpage}}">{{this.college}}</a></div>
           <div class="panel-body">
             <ul>
               {{#each this.departments}}
-                <li><a href="/search?dept={{encodeURIComponent this}}&page=1&perpage=10">{{this}}</a></li>
+                <li><a href="/search?dept={{encodeURIComponent this}}&page=1&perpage={{../../perpage}}">{{this}}</a></li>
               {{/each}}
             </ul>
           </div>

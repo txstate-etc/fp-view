@@ -49,6 +49,9 @@ app.use(express.static(__dirname + '/node_modules/handlebars/dist'));
 app.use(express.static(__dirname + '/helpers/'));
 app.use(express.static(__dirname + '/node_modules/font-awesome'));
 
+//number of search results per page
+app.locals.perpage = 10;
+
 app.use('/', index);
 app.use('/profile', profile);
 app.use('/search', search);

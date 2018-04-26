@@ -9,13 +9,14 @@
     Handlebars.registerHelper('lastpage', helpers.lastpage);
     Handlebars.registerHelper('paginate', helpers.paginate);
     Handlebars.registerHelper('all', helpers.all);
+    Handlebars.registerHelper('encodeURIComponent', helpers.encodeURIComponent);
   </script>
   <div class="fp-container indent">
-    <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}"></div>
+    <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}" data-perpage={{perpage}}></div>
     {{#if departmentSearch}}
       <h1 class="search-results-title">Faculty Profiles for: <em>{{#if college}}{{college}}{{else}}{{department}}{{/if}}</em></h1>
       <div id="name" class="search-results" data-total={{results.total}}>
-      {{> personSearchResult page=1 total=results.total search_results=results.results}}
+      {{> personSearchResult page=1 total=results.total search_results=results.results perpage=perpage}}
       </div>
     {{else}}
     <h1 class="search-results-title">Search results for: <em>{{term}}</em>
@@ -31,19 +32,19 @@
         <li><a href="#award">Awards</a></li>
       </ul>
       <div id="name" data-total="{{results.name.total}}">
-        {{> personSearchResult page=1 total=results.name.total search_results=results.name.results}}
+        {{> personSearchResult page=1 total=results.name.total search_results=results.name.results perpage=perpage}}
       </div>
       <div id="publication" class="search-results" data-total={{results.publication.total}}>
-        {{> activitySearchResult page=1 total=results.publication.total search_results=results.publication.results}}
+        {{> activitySearchResult page=1 total=results.publication.total search_results=results.publication.results perpage=perpage}}
       </div>
       <div id="interest" class="search-results" data-total={{results.interest.total}}>
-        {{> activitySearchResult page=1 total=results.interest.total search_results=results.interest.results}}
+        {{> activitySearchResult page=1 total=results.interest.total search_results=results.interest.results perpage=perpage}}
       </div>
       <div id="grant" class="search-results" data-total={{results.grant.total}}>
-        {{> activitySearchResult page=1 total=results.grant.total search_results=results.grant.results}}
+        {{> activitySearchResult page=1 total=results.grant.total search_results=results.grant.results perpage=perpage}}
       </div>
       <div id="award" class="search-results" data-total={{results.award.total}}>
-        {{> activitySearchResult page=1 total=results.award.total search_results=results.award.results}}
+        {{> activitySearchResult page=1 total=results.award.total search_results=results.award.results perpage=perpage}}
       </div>
     </div>
     {{/if}}
