@@ -33,7 +33,7 @@
       border: 0px;
       padding: 0.5rem;
       background: none;
-      color: #484848;
+      color: $charcoal;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -66,7 +66,7 @@
     .pagination-link, .nonlink{
       padding: .5rem 1rem .5rem 1rem;
       margin: 0 1rem 1rem 0;
-      color: $medium-light-gray;
+      color: $davys-gray;
       text-decoration: none;
       float: left;
       &.active,&[aria-selected="true"]{
@@ -80,12 +80,12 @@
         background: $sandstone;
       }
       &.previous, &.next{
-        color: #aaa;
+        color: $darkgray;
         &:hover {
           background: transparent;
         }
         &.enabled{
-          color: $medium-light-gray;
+          color: $davys-gray;
           &:hover {
             background: $sandstone;
           }
@@ -147,7 +147,7 @@
         text-decoration: none;
         font-weight: 400;
         &:hover {
-          color: #0056b3;
+          color: $deep-blue;
           text-decoration: underline;
           &:hover {
             background-color: $sandstone;

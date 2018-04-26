@@ -2,7 +2,7 @@
 //
 .form-control {
   border: 0;
-  box-shadow: 0px 0 10px $lightgray;
+  box-shadow: 0px 0 10px $accent-gray;
   border-radius: 3px;
 }
 
@@ -22,7 +22,7 @@
 }
 
 ::placeholder {
-  color: $ash-gray;
+  color: $darkgray;
   opacity: 1;
 }
 
@@ -73,7 +73,7 @@ form.faculty-department-search {
         text-align: left;
       }
       &.chosen-default {
-        color: $ash-gray;
+        color: $darkgray;
       }
     }
     .chosen-drop {
@@ -86,7 +86,7 @@ form.faculty-department-search {
         font-size: 1.5rem;
         line-height:1.8;
         text-align: left;
-        color: #595959;
+        color: $davys-gray;
         &.department {
           padding-left: 2.2rem;
         }
@@ -105,7 +105,7 @@ form.faculty-department-search {
     left: 0;
     top: 0;
     border-radius: inherit;
-    box-shadow: 0px 0 10px $lightgray;
+    box-shadow: 0px 0 10px $accent-gray;
     z-index: -1;
   }
   @media (max-width: $medium-breakpoint) {

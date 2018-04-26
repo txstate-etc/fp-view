@@ -1,20 +1,24 @@
 $maroon:              #501214;
 $gold:                #6a5638;
 $charcoal:            #363534;
+$oldgold:             #deb407;
+$sandstone:           #e8e3db;
 $white:               #ffffff;
+
 $light-background:    #f6f6f6;
+$off-white:           #f1f1f1;
 $accent-gray:         #d9d9d9;
+$darkgray:            #a9a9a9;
+$davys-gray:          #595959;
+
 $cerulean:            #005481;
 $bright-blue:         #0075b4;
-$sandstone:           #e8e3db;
-$darkgray:            #a9a9a9;
-$lightgray:           #ced4da;
-$light-sandstone:     #f4f1ed;
-$steel-blue:          #406d9d;
-$ash-gray:            #b6b6b6;
-$off-white:           #f1f1f1;
-$medium-light-gray:   #767676;
+$deep-blue:           #0056b3;
+
 $selection-bg:        #d0dfd9;
+$fern:                #577c6e;
+$lavender:            #806cb8;
+$golden-brown:        #9e6614;
 
 $medium-breakpoint:     800px;
 $large-breakpoint:      1000px;
@@ -226,7 +230,7 @@ footer {
   }
 
   .browse-departments {
-    color: $medium-light-gray;
+    color: $davys-gray;
     padding-top: 3rem;
     text-align: right;
     @media (max-width: $medium-breakpoint) {
@@ -278,7 +282,7 @@ footer {
     color: $charcoal;
     font-weight: 600;
     span {color: $cerulean};
-    border: 2.5px solid $ash-gray;
+    border: 2.5px solid $darkgray;
     border-radius: 7px;
     padding: 1.4rem 6.4rem;
     background-color: transparent;
@@ -287,16 +291,16 @@ footer {
       background-color: $off-white;
     }
     .fa-bookmark {
-      color: #577c6e;
+      color: $fern;
     }
     .fa-trophy {
-      color: #deb407;
+      color: $oldgold;
     }
     .fa-gift {
-      color: #806cb8;
+      color: $lavender;
     }
     .fa-briefcase {
-      color: #9e6614;
+      color: $golden-brown;
     }
   }
 }
@@ -357,7 +361,7 @@ footer {
         .show-appointments {
           color: $cerulean;
           text-align: center;
-          border: 1px solid $ash-gray;
+          border: 1px solid $darkgray;
           border-radius: 5px;
           background-color: transparent;
           background-image: none;
@@ -408,7 +412,7 @@ footer {
           }
         }
         &:hover {
-          background-color: #cecece;
+          background-color: $sandstone;
         }
         a {
           text-decoration: none;
@@ -522,7 +526,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
         content: "";
         height: 12px;
         width: 12px;
-        background-color: lightgray;
+        background-color: $accent-gray;
         border: 1px solid gray;
         border-radius: 10px;
         position: absolute;
@@ -534,7 +538,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
         line-height: 1; //to line up with the circle things
       }
       .period {
-        color: #767676;
+        color: $davys-gray;
       }
     }
     .view-all {
