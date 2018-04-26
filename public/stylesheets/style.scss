@@ -464,6 +464,11 @@ footer {
     flex-direction: column;
     justify-content: space-between;
   }
+  .profile-awards {
+    @media (max-width: $medium-breakpoint) {
+      margin-bottom: 3rem;
+    }
+  }
 }
 
 ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
