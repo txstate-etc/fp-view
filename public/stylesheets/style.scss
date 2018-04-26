@@ -324,16 +324,19 @@ footer {
       padding: 2rem 0rem 3rem 0rem;
     }
     .profile-image {
+      position: relative;
       background: #eee no-repeat center;
       background-size: cover;
       width: 200px;
       height: 200px;
       border-radius: 100%;
+      overflow: hidden;
       @media (max-width: $medium-breakpoint) {
         width: 125px;
         height: 125px;
         margin: 0 auto;
       }
+      img { display: none; width: 100%; }
     }
     .basic-details {
       padding-left: 2rem;
@@ -556,11 +559,14 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
       padding-right: 1rem;
     }
     .profile-image {
+      position: relative;
       background: #eee no-repeat center;
       background-size: cover;
       width: 45px;
       height: 45px;
       border-radius: 100%;
+      overflow: hidden;
+      img { display: none; width: 100%; }
     }
     .faculty-info {
       line-height: 1.2;

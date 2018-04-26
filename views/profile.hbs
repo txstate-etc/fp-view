@@ -3,8 +3,8 @@
   <div class="has-background">
     <div class="fp-container profile-top">
       <div class="basic-info">
-        <div class="profile-image" style="background-image: url({{#if profile_photo}}{{profile_photo}}{{else}}/images/userprofile-defaultimage.png{{/if}});">
-          <span class="sr-only">{{profile.display_name}}</span>
+        <div class="profile-image">
+          <img src="{{#if profile_photo}}{{profile_photo}}{{else}}/images/userprofile-defaultimage.png{{/if}}" alt="profile photo for {{profile.display_name}}">
         </div>
         <div class="basic-details">
           <div class="name">{{profile.display_name}}</div>

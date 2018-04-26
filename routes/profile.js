@@ -11,7 +11,7 @@ router.get('/:facultyId', function(req, res, next) {
     var upload_vita = '';
     if (results.portrait) profile_photo = image_handler(req, '/api'+results.portrait.path);
     if (results.uploadedcv) upload_vita = '/api'+results.uploadedcv.path;
-    res.render('profile', { profile : results, profile_photo: profile_photo, upload_vita: upload_vita});
+    res.render('profile', { profile : results, profile_photo: profile_photo, upload_vita: upload_vita, facetracking: true});
   })
   .catch(function(err) {
     next(err)
