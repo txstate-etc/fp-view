@@ -7,23 +7,24 @@ jQuery( document ).ready(function($) {
 
   $('#coll-dept').on('change', function(evt, params) {
     var selectedOption = $("option:selected", this);
+    var selectedValue = selectedOption.val();
     if (selectedOption.hasClass('college')) {
-      $('#college').val(params.selected)
+      $('#college').val(selectedValue)
       $('#dept').val("")
     }
     else {
       $('#college').val("")
-      $('#dept').val(params.selected)
+      $('#dept').val(selectedValue)
     }
     //TODO: Find a better way to do this.
-    if (params.selected.length > 30) {
-      var truncated = params.selected.substring(0,30) + "...";
+    if (selectedValue.length > 30) {
+      var truncated = selectedValue.substring(0,30) + "...";
       $('.chosen-single span').text(truncated)
     }
     //It needs to be even smaller on mobile
     var width = $('.chosen-container').width() + $('.btn-search').width()
     if ( width > $('.department-group .input-group').width() ) {
-      var truncated = params.selected.substring(0,20) + "...";
+      var truncated = selectedValue.substring(0,20) + "...";
       $('.chosen-single span').text(truncated)
     }
   })

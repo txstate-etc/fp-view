@@ -50,6 +50,12 @@ form.faculty-department-search {
       opacity: 0.99;
     }
   }
+  .select-department {
+    max-width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
   //customize chosen box
   .chosen-container {
     background: $white;
