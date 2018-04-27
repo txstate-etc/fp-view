@@ -52,6 +52,8 @@ app.use(express.static(__dirname + '/node_modules/font-awesome'));
 //number of search results per page
 app.locals.perpage = 10;
 
+app.locals.facetracking = true;
+
 app.use('/', index);
 app.use('/profile', profile);
 app.use('/search', search);
