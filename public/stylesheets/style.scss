@@ -470,6 +470,9 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    h2 {
+      padding-bottom: 2rem;
+    }
   }
   .profile-awards {
     @media (max-width: $medium-breakpoint) {
