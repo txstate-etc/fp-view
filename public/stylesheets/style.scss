@@ -613,6 +613,9 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
 @import 'results';
 
 /////////////////////////////////////////////////
+.page-title {
+  padding: 4rem 0rem;
+}
 .panels {
   display: flex;
   flex-wrap: wrap;
@@ -639,14 +642,10 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
     .panel-body {
       padding: 3rem 1rem;
       ul {
-        list-style: none;
+        color: $off-white;
+        padding-left: 2rem;
         li {
-          font-size: 1.4rem;
-          &:before {
-            content: "\2022";
-            color: $off-white;
-            padding-right: 5px;
-          }
+          font-size: 1.6rem;
           a:hover {
             background-color: $sandstone;
           }
