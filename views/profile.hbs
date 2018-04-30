@@ -79,7 +79,7 @@
   </div>
   {{/any}}
   {{#if profile.scholarly_creative.length}}
-  <div class="has-background profile-scholarly-creative section">
+  <div class="{{#any profile.biography profile.teaching_interests profile.research_interests}}has-background{{/any}} profile-scholarly-creative section">
     <a name="scholarly-creative"></a>
     <div class="fp-container">
       <h2>Selected Scholarly/Creative Work</h2>
