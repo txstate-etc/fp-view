@@ -16,16 +16,15 @@ jQuery( document ).ready(function($) {
       $('#college').val("")
       $('#dept').val(selectedValue)
     }
-    //TODO: Find a better way to do this.
-    if (selectedValue.length > 30) {
-      var truncated = selectedValue.substring(0,30) + "...";
-      $('.chosen-single span').text(truncated)
-    }
-    //It needs to be even smaller on mobile
-    var width = $('.chosen-container').width() + $('.btn-search').width()
-    if ( width > $('.department-group .input-group').width() ) {
-      var truncated = selectedValue.substring(0,20) + "...";
-      $('.chosen-single span').text(truncated)
+
+    var termWidth = $('.term-group').width();
+    var deptWidth = $('.department-group').width();
+
+    while (deptWidth > termWidth) {
+      var text = $('.chosen-single span').text();
+      $('.chosen-single span').text(text.substring(0, text.length-1));
+      termWidth = $('.term-group').width();
+      deptWidth = $('.department-group').width();
     }
   })
 
