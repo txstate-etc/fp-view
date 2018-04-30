@@ -20,6 +20,7 @@ $fern:                #577c6e;
 $lavender:            #806cb8;
 $golden-brown:        #9e6614;
 
+$small-breakpoint:      500px;
 $medium-breakpoint:     800px;
 $large-breakpoint:      1000px;
 $x-large-breakpoint:    1400px;
@@ -96,14 +97,13 @@ header {
     align-items: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    @media (max-width: $medium-breakpoint) {
-      display: block;
-    }
     .fp-title {
       font-size: 3.5rem;
+      @media (max-width: $small-breakpoint) {
+        font-size: 2.2rem;
+      }
       letter-spacing: 1px;
       font-family: $garamond;
-      order: 1;
       a {
         text-decoration: none;
         color: $white;
@@ -113,11 +113,11 @@ header {
       }
     }
     .logo {
-      order: 2;
       width: 20%;
       height: auto;
       @media (max-width: $medium-breakpoint) {
         width: 35%;
+        text-align: right;
       }
       img {
         width: 80%;
