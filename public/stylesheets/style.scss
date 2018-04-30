@@ -141,6 +141,7 @@ footer {
   flex: none;
   background-color: $gold;
   color: $white;
+  margin-top: 8rem;
   .footer-content {
     display: flex;
     justify-content: space-between;
@@ -305,7 +306,7 @@ footer {
   }
 }
 .section {
-  padding-top: 2rem;
+  margin-top: 2rem;
   h2, h3 {
     color: $gold;
   }
@@ -382,7 +383,6 @@ footer {
   .navigation-menu {
     @media (max-width: $medium-breakpoint) {
       margin: 0rem -2.4rem;
-      padding-bottom: 3rem;
       text-align: center;
       background-color: $white;
     }
@@ -496,7 +496,6 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
 }
 
 .profile-service {
-  padding-bottom: 8rem;
   h2 {
     padding: 2rem 0rem;
   }
