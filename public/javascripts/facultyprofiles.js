@@ -52,17 +52,20 @@ jQuery( document ).ready(function($) {
     var container = $('.profile-image');
     var img = $('.profile-image img');
     if (container.length > 0 && !container.data('default')) {
+      var dummy = $('<img>');
+      dummy.css({position: 'absolute', top: 0, right: '100%', opacity: 0, width: 'auto'});
+      dummy.attr('src', img.attr('src'));
       var face = new tracking.ObjectTracker(['face']);
       face.on('track', function(e) {
-        if (e.data.length === 0) {
+        if (e.data.length != 1) {
           // face detection failed, just show image
           img.css('opacity', 1);
           return;
         }
         var face = e.data[0];
 
-        var w = img.width();
-        var h = img.height();
+        var w = dummy.width();
+        var h = dummy.height();
         var fw = face.width;
         var fh = face.height;
         var left = face.x;
@@ -91,10 +94,12 @@ jQuery( document ).ready(function($) {
         $(window).resize(adjust_cropping);
         adjust_cropping();
         img.css('opacity', 1);
+        dummy.remove();
       });
-      $(window).on('load', function () {
-        tracking.track(img.get(0), face);
-      });
+      dummy.on('load', function () {
+        tracking.track(dummy.get(0), face);
+      })
+      dummy.appendTo($('body'));
     } else {
       img.css('opacity', 1);
     }

@@ -25,7 +25,7 @@ router.get('/:facultyId/activity/:type', function(req, res, next) {
   .then(function(results) {
     var profile_photo = '';
     if (results.person.portrait) profile_photo = '/api/crop'+results.person.portrait.path;
-    res.render('more', {content: results, facultyId: facultyId, profile_photo: profile_photo})
+    res.render('more', {content: results, facultyId: facultyId, profile_photo: profile_photo, facetracking: true})
   })
   .catch(function(err) {
     next(err)
