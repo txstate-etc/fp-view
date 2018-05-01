@@ -341,7 +341,7 @@ footer {
         height: 125px;
         margin: 0 auto;
       }
-      img { opacity: 0; width: 100%; }
+      img { position: absolute; left: 0; top: 0; width: 100%; }
     }
     .basic-details {
       padding-left: 2rem;
@@ -572,7 +572,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
       height: 45px;
       border-radius: 100%;
       overflow: hidden;
-      img { opacity: 0; width: 100%; }
+      img { position: absolute; left: 0; top: 0; width: 100%; }
     }
     .faculty-info {
       line-height: 1.2;

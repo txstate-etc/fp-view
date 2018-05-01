@@ -46,64 +46,6 @@ jQuery( document ).ready(function($) {
       e.preventDefault();
     }
   })
-
-  if (tracking) {
-    var container = $('.profile-image');
-    var img = $('.profile-image img');
-    if (container.length > 0 && !container.data('default')) {
-      var dummy = $('<img>');
-      dummy.css({position: 'absolute', top: 0, right: '100%', opacity: 0, width: 'auto'});
-      dummy.attr('src', img.attr('src'));
-      var face = new tracking.ObjectTracker(['face']);
-      face.on('track', function(e) {
-        if (e.data.length != 1) {
-          // face detection failed, just show image
-          img.css('opacity', 1);
-          return;
-        }
-        var face = e.data[0];
-
-        var w = dummy.width();
-        var h = dummy.height();
-        var fw = face.width;
-        var fh = face.height;
-        var left = face.x;
-        var right = w-fw-face.x;
-        var top = face.y;
-        var bottom = h-fh-face.y;
-
-        var distance = Math.min(left, right, top, bottom);
-        var box = {
-          x: left - distance,
-          y: top - distance,
-          w: fw+2*distance,
-          h: fh+2*distance
-        }
-
-        var timer;
-        var adjust_cropping = function () {
-          cancelAnimationFrame(timer);
-          var timer = requestAnimationFrame(function () {
-            var cw = container.width();
-            var zoom = cw/box.w;
-            img.css({position: 'absolute', left: (-1*box.x*zoom)+'px', top: (-1*box.y*zoom)+'px', width: (w*zoom)+'px'});
-          });
-        }
-
-        $(window).resize(adjust_cropping);
-        adjust_cropping();
-        img.css('opacity', 1);
-        dummy.remove();
-      });
-      dummy.on('load', function () {
-        tracking.track(dummy.get(0), face);
-      })
-      dummy.appendTo($('body'));
-    } else {
-      img.css('opacity', 1);
-    }
-  }
-
 });
 
 function getUrlParameters() {

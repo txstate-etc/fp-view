@@ -11,7 +11,7 @@ router.get('/:facultyId', function(req, res, next) {
     var upload_vita = '';
     if (results.portrait) profile_photo = '/api/crop'+results.portrait.path;
     if (results.uploadedcv) upload_vita = '/api'+results.uploadedcv.path;
-    res.render('profile', { profile : results, profile_photo: profile_photo, upload_vita: upload_vita, facetracking: true});
+    res.render('profile', { profile : results, profile_photo: profile_photo, upload_vita: upload_vita});
   })
   .catch(function(err) {
     next(err)
@@ -25,7 +25,7 @@ router.get('/:facultyId/activity/:type', function(req, res, next) {
   .then(function(results) {
     var profile_photo = '';
     if (results.person.portrait) profile_photo = '/api/crop'+results.person.portrait.path;
-    res.render('more', {content: results, facultyId: facultyId, profile_photo: profile_photo, facetracking: true})
+    res.render('more', {content: results, facultyId: facultyId, profile_photo: profile_photo})
   })
   .catch(function(err) {
     next(err)
