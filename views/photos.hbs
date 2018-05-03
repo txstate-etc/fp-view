@@ -7,6 +7,9 @@
       <div class="name">
         <a href="/profile/{{this.id}}">{{this.display_name}}</a>
       </div>
+      <div class="detection">
+        {{#if this.portrait.face.detected}}has face{{else}}no face{{/if}}
+      </div>
     </div>
   {{/each}}
 </div>

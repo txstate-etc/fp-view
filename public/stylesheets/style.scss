@@ -620,6 +620,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
 
 .photo-bank {
   display: flex;
+  flex-wrap: wrap;
   .profile {
     width: 170px;
     padding: 10px;
