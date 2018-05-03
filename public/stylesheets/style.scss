@@ -618,6 +618,18 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
   }
 }
 
+.photo-bank {
+  display: flex;
+  .profile {
+    width: 170px;
+    padding: 10px;
+  }
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 @import 'fonts';
 @import 'forms';
 @import 'results';

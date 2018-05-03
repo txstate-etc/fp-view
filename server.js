@@ -14,6 +14,7 @@ var profile = require('./routes/profile');
 var search = require('./routes/search');
 var departments = require('./routes/departments');
 var api = require('./routes/api');
+var photos = require('./routes/photos');
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use('/profile', profile);
 app.use('/search', search);
 app.use('/departments', departments);
 app.use('/api', api);
+app.use('/photos', photos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

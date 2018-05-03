@@ -1,178 +1,176 @@
-<div class="main-content">
-  <h1 class="sr-only">Faculty Profile for {{profile.display_name}}</h1>
-  <div class="has-background">
-    <div class="fp-container profile-top">
-      <div class="basic-info">
-        <div class="profile-image" data-default="{{#if profile_photo}}false{{else}}true{{/if}}">
-          {{> facecropimage defaultimage='/images/userprofile-defaultimage.png' profile=profile}}
-        </div>
-        <div class="basic-details">
-          <div class="name">{{profile.display_name}}</div>
-          {{#if profile.positions}}
-          <div class="title-department">
-            {{#each profile.positions}}
-              {{#if @first}}
-                <div class="first-appointment">
-                  {{this.title}} &mdash; {{this.department}}
-                  {{#if ../profile.positions.1.title}}
-                    <button class="show-appointments"><i class="fa fa-caret-down"></i></button>
-                  {{/if}}
-                </div>
-              {{else}}
-                <div class="other-appointment">
-                  {{this.title}} &mdash; {{this.department}}
-                </div>
-              {{/if}}
-            {{/each}}
-          </div>
-          {{/if}}
-          {{#if profile.office_location}}
-          <div class="office">{{profile.office_location}}</div>
-          {{/if}}
-          {{#if profile.phone_number}}
-          <div class="phone">
-            <i class="fa fa-phone-square"></i>
-            phone: {{profile.phone_number}}
-          </div>
-          {{/if}}
-          {{#if profile.email}}
-          <div class="email">
-            <i class="fa fa-envelope"></i>
-            <a href="mailto:{{profile.email}}">{{profile.email}}</a>
-          </div>
-          {{/if}}
-        </div>
+<h1 class="sr-only">Faculty Profile for {{profile.display_name}}</h1>
+<div class="has-background">
+  <div class="fp-container profile-top">
+    <div class="basic-info">
+      <div class="profile-image" data-default="{{#if profile_photo}}false{{else}}true{{/if}}">
+        {{> facecropimage defaultimage='/images/userprofile-defaultimage.png' profile=profile}}
       </div>
-      <div class="navigation-menu">
-        <div class="anchors">
-          {{#if profile.scholarly_creative.length}}<div class="anchor"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>{{/if}}
-          {{#if profile.awards.length}}<div class="anchor"><a href="#awards">Awards</a></div>{{/if}}
-          {{#if profile.grants.length}}<div class="anchor"><a href="#grants">Grants</a></div>{{/if}}
-          {{#if profile.service_activities.length}}<div class="anchor"><a href="#service">Service</a></div>{{/if}}
+      <div class="basic-details">
+        <div class="name">{{profile.display_name}}</div>
+        {{#if profile.positions}}
+        <div class="title-department">
+          {{#each profile.positions}}
+            {{#if @first}}
+              <div class="first-appointment">
+                {{this.title}} &mdash; {{this.department}}
+                {{#if ../profile.positions.1.title}}
+                  <button class="show-appointments"><i class="fa fa-caret-down"></i></button>
+                {{/if}}
+              </div>
+            {{else}}
+              <div class="other-appointment">
+                {{this.title}} &mdash; {{this.department}}
+              </div>
+            {{/if}}
+          {{/each}}
         </div>
-           {{#if upload_vita}}
-          <button onclick="window.location='{{upload_vita}}'">
-            <i class="fa fa-file"></i>
-            Download Faculty CV
-          </button>
-          {{/if}}
+        {{/if}}
+        {{#if profile.office_location}}
+        <div class="office">{{profile.office_location}}</div>
+        {{/if}}
+        {{#if profile.phone_number}}
+        <div class="phone">
+          <i class="fa fa-phone-square"></i>
+          phone: {{profile.phone_number}}
+        </div>
+        {{/if}}
+        {{#if profile.email}}
+        <div class="email">
+          <i class="fa fa-envelope"></i>
+          <a href="mailto:{{profile.email}}">{{profile.email}}</a>
+        </div>
+        {{/if}}
       </div>
     </div>
-  </div>
-  {{#any profile.biography profile.teaching_interests profile.research_interests}}
-  <div class="fp-container profile-bio section">
-    <div class="bio">
-      <h2 class="sr-only">Biography Section</h2>
-      {{#if profile.biography}}
-      <h3 class="label">Biography and Education</h3>
-      {{profile.biography}}
-      {{/if}}
-      {{#if profile.teaching_interests}}
-      <h3 class="label">Teaching Interests</h3>
-      {{profile.teaching_interests}}
-      {{/if}}
-      {{#if profile.research_interests}}
-      <h3 class="label">Research Interests</h3>
-      {{profile.research_interests}}
-      {{/if}}
+    <div class="navigation-menu">
+      <div class="anchors">
+        {{#if profile.scholarly_creative.length}}<div class="anchor"><a href="#scholarly-creative">Scholarly/Creative Work</a></div>{{/if}}
+        {{#if profile.awards.length}}<div class="anchor"><a href="#awards">Awards</a></div>{{/if}}
+        {{#if profile.grants.length}}<div class="anchor"><a href="#grants">Grants</a></div>{{/if}}
+        {{#if profile.service_activities.length}}<div class="anchor"><a href="#service">Service</a></div>{{/if}}
+      </div>
+         {{#if upload_vita}}
+        <button onclick="window.location='{{upload_vita}}'">
+          <i class="fa fa-file"></i>
+          Download Faculty CV
+        </button>
+        {{/if}}
     </div>
   </div>
-  {{/any}}
-  {{#if profile.scholarly_creative.length}}
-  <div class="{{#any profile.biography profile.teaching_interests profile.research_interests}}has-background{{/any}} profile-scholarly-creative section">
-    <a name="scholarly-creative"></a>
-    <div class="fp-container">
-      <h2>Selected Scholarly/Creative Work</h2>
-      <ul class="scholarly-creative">
-        {{#each profile.scholarly_creative}}
-          <li>{{{this.full_description}}}</li>
+</div>
+{{#any profile.biography profile.teaching_interests profile.research_interests}}
+<div class="fp-container profile-bio section">
+  <div class="bio">
+    <h2 class="sr-only">Biography Section</h2>
+    {{#if profile.biography}}
+    <h3 class="label">Biography and Education</h3>
+    {{profile.biography}}
+    {{/if}}
+    {{#if profile.teaching_interests}}
+    <h3 class="label">Teaching Interests</h3>
+    {{profile.teaching_interests}}
+    {{/if}}
+    {{#if profile.research_interests}}
+    <h3 class="label">Research Interests</h3>
+    {{profile.research_interests}}
+    {{/if}}
+  </div>
+</div>
+{{/any}}
+{{#if profile.scholarly_creative.length}}
+<div class="{{#any profile.biography profile.teaching_interests profile.research_interests}}has-background{{/any}} profile-scholarly-creative section">
+  <a name="scholarly-creative"></a>
+  <div class="fp-container">
+    <h2>Selected Scholarly/Creative Work</h2>
+    <ul class="scholarly-creative">
+      {{#each profile.scholarly_creative}}
+        <li>{{{this.full_description}}}</li>
+      {{/each}}
+    </ul>
+    <div class="view-all">
+      <button class="btn-more" data-person="{{profile.id}}" data-type="scholarly-creative">
+        <i class="fa fa-bookmark "></i>
+        <span>View all</span> Scholarly/Creative Work
+      </button>
+    </div>
+  </div>
+</div>
+{{/if}}
+{{#ifeval profile.awards.length "||" profile.grants.length}}
+<div class="fp-container profile-awards-grants section">
+  {{#if profile.awards.length}}
+  <div class="profile-awards has-background">
+    <div class="award-grant-block">
+      <a name="awards"></a>
+      <h2>Selected Awards</h2>
+      <ul class="awards">
+        {{#each profile.awards}}
+        <li>{{{this.full_description}}}</li>
         {{/each}}
       </ul>
-      <div class="view-all">
-        <button class="btn-more" data-person="{{profile.id}}" data-type="scholarly-creative">
-          <i class="fa fa-bookmark "></i>
-          <span>View all</span> Scholarly/Creative Work
-        </button>
-      </div>
+    </div>
+    <div class="view-all">
+      <button class="btn-more" data-person="{{profile.id}}" data-type="awards">
+        <i class="fa fa-trophy"></i>
+        <span>View all</span> Awards
+      </button>
     </div>
   </div>
   {{/if}}
-  {{#ifeval profile.awards.length "||" profile.grants.length}}
-  <div class="fp-container profile-awards-grants section">
-    {{#if profile.awards.length}}
-    <div class="profile-awards has-background">
-      <div class="award-grant-block">
-        <a name="awards"></a>
-        <h2>Selected Awards</h2>
-        <ul class="awards">
-          {{#each profile.awards}}
+  {{#if profile.grants.length}}
+  <div class="profile-grants has-background">
+    <div class="award-grant-block">
+      <a name="grants"></a>
+      <h2>Selected Grants</h2>
+      <ul class="grants">
+        {{#each profile.grants}}
           <li>{{{this.full_description}}}</li>
-          {{/each}}
-        </ul>
-      </div>
-      <div class="view-all">
-        <button class="btn-more" data-person="{{profile.id}}" data-type="awards">
-          <i class="fa fa-trophy"></i>
-          <span>View all</span> Awards
-        </button>
-      </div>
+        {{/each}}
+      </ul>
     </div>
-    {{/if}}
-    {{#if profile.grants.length}}
-    <div class="profile-grants has-background">
-      <div class="award-grant-block">
-        <a name="grants"></a>
-        <h2>Selected Grants</h2>
-        <ul class="grants">
-          {{#each profile.grants}}
-            <li>{{{this.full_description}}}</li>
-          {{/each}}
-        </ul>
-      </div>
-      <div class="view-all">
-        <button class="btn-more" data-person="{{profile.id}}" data-type="grants">
-          <i class="fa fa-gift"></i>
-          <span>View all</span> Grants
-        </button>
-      </div>
-    </div>
-    {{/if}}
-  </div>
-  {{/ifeval}}
-  {{#if profile.service_activities.length}}
-  <div class="fp-container profile-service section">
-    <a name="service"></a>
-    <h2>Selected Service Activities</h2>
-    <div class="services">
-      <div class="column1">
-        <div class="service-list">
-          {{#eachHalf profile.service_activities 0}}
-          <div class="service">
-            <div class="role">{{this.role}}</div>
-            <div class="activity">{{this.organization}}</div>
-            <div class="period">{{this.service_period}}</div>
-          </div>
-          {{/eachHalf}}
-        </div>
-      </div>
-      <div class="column2">
-        <div class="service-list">
-          {{#eachHalf profile.service_activities 1}}
-          <div class="service">
-            <div class="role">{{this.role}}</div>
-            <div class="activity">{{this.organization}}</div>
-            <div class="period">{{this.service_period}}</div>
-          </div>
-          {{/eachHalf}}
-        </div>
-        <div class="view-all">
-          <button class="btn-more" data-person="{{profile.id}}" data-type="service">
-            <i class="fa fa-briefcase"></i>
-            <span>View all</span> Service Activities
-          </button>
-        </div>
-      </div>
+    <div class="view-all">
+      <button class="btn-more" data-person="{{profile.id}}" data-type="grants">
+        <i class="fa fa-gift"></i>
+        <span>View all</span> Grants
+      </button>
     </div>
   </div>
   {{/if}}
 </div>
+{{/ifeval}}
+{{#if profile.service_activities.length}}
+<div class="fp-container profile-service section">
+  <a name="service"></a>
+  <h2>Selected Service Activities</h2>
+  <div class="services">
+    <div class="column1">
+      <div class="service-list">
+        {{#eachHalf profile.service_activities 0}}
+        <div class="service">
+          <div class="role">{{this.role}}</div>
+          <div class="activity">{{this.organization}}</div>
+          <div class="period">{{this.service_period}}</div>
+        </div>
+        {{/eachHalf}}
+      </div>
+    </div>
+    <div class="column2">
+      <div class="service-list">
+        {{#eachHalf profile.service_activities 1}}
+        <div class="service">
+          <div class="role">{{this.role}}</div>
+          <div class="activity">{{this.organization}}</div>
+          <div class="period">{{this.service_period}}</div>
+        </div>
+        {{/eachHalf}}
+      </div>
+      <div class="view-all">
+        <button class="btn-more" data-person="{{profile.id}}" data-type="service">
+          <i class="fa fa-briefcase"></i>
+          <span>View all</span> Service Activities
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}

@@ -13,59 +13,31 @@ module.exports = function() {
     options.agent = global.apiagent
     return fetch(path, options)
   },
-  this.getDepartments = async function() {
-    try {
-      var res = await apifetch('/department')
-      return res.json()
-    }
-    catch(e) {
-      console.log("Error: " + e)
-      return Promise.reject(e)
-    }
+  this.grab = async function(path) {
+    var res = await apifetch(path)
+    return res.json()
+  },
+  this.getDepartments = function() {
+    return grab('/department')
+  },
+  this.getPhotos = function() {
+    return grab('/search/photo')
   },
   this.getProfileById = async function(id) {
-    try {
-      var res = await apifetch(`/profile/${id}`)
-      return res.json();
-    }
-    catch(e) {
-      console.log("Error: " + e)
-      return Promise.reject(e)
-    }
+    return grab(`/profile/${id}`)
   },
   this.getActivitiesByTypeAndId = async function(facultyId, type) {
-    try {
-      var res = await apifetch(`/profile/${facultyId}/activity/${type}`)
-      return res.json();
-    }
-    catch(e) {
-      console.log("Error: " + e)
-      return Promise.reject(e)
-    }
+    return grab(`/profile/${facultyId}/activity/${type}`)
   }
   this.getApiPath = function (path) {
     return api_host+path;
   },
   this.searchAll = async function(query) {
     var qs = shared.createUrlQuery(query);
-    try {
-      var res = await apifetch(`/search/all${qs}`)
-      return res.json();
-    }
-    catch(e) {
-      console.log("Error: " + e);
-      return Promise.reject(e)
-    }
+    return grab(`/search/all${qs}`)
   },
   this.searchPeople = async function(query) {
     var qs = shared.createUrlQuery(query);
-    try {
-      var res = await apifetch(`/search/list/${qs}`)
-      return res.json()
-    }
-    catch(e) {
-      console.log("Error: " + e);
-      return Promise.reject(e)
-    }
+    return grab(`/search/list${qs}`)
   }
 }

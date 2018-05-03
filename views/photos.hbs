@@ -1,0 +1,12 @@
+<div class="photo-bank">
+  {{#each people}}
+    <div class="profile">
+      <div class="profile-image">
+        {{> facecropimage defaultimage='/images/userprofile-defaultimage.png' profile=this}}
+      </div>
+      <div class="name">
+        <a href="/profile/{{this.id}}">{{this.display_name}}</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

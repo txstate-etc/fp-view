@@ -1,52 +1,50 @@
-<div class="main-content">
-  <div class="has-background search-again">
-    <div class="fp-container">
-      {{> facultyDepartmentSearch}}
+<div class="has-background search-again">
+  <div class="fp-container">
+    {{> facultyDepartmentSearch}}
+  </div>
+</div>
+<script language="javascript" src='/javascripts/templates/templates.js'></script>
+<script>
+  Handlebars.registerHelper('lastpage', helpers.lastpage);
+  Handlebars.registerHelper('paginate', helpers.paginate);
+  Handlebars.registerHelper('all', helpers.all);
+  Handlebars.registerHelper('encodeURIComponent', helpers.encodeURIComponent);
+</script>
+<div class="fp-container indent">
+  <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}" data-perpage={{perpage}}></div>
+  {{#if departmentSearch}}
+    <h1 class="search-results-title">Faculty Profiles for: <em>{{#if college}}{{college}}{{else}}{{department}}{{/if}}</em></h1>
+    <div id="name" class="search-results" data-total={{results.total}}>
+    {{> personSearchResult page=1 total=results.total search_results=results.results perpage=perpage}}
+    </div>
+  {{else}}
+  <h1 class="search-results-title">Search results for: <em>{{term}}</em>
+    {{#if department }} in <em>{{department}}</em>
+    {{else if college }} in <em>{{college}}</em>{{/if}}
+  </h1>
+  <div id="tabs">
+    <ul>
+      <li><a href="#name">Faculty Name</a></li>
+      <li><a href="#publication">Scholarly/ Creative Work</a></li>
+      <li><a href="#interest">Interests</a></li>
+      <li><a href="#grant">Grants</a></li>
+      <li><a href="#award">Awards</a></li>
+    </ul>
+    <div id="name" data-total="{{results.name.total}}">
+      {{> personSearchResult page=1 total=results.name.total search_results=results.name.results perpage=perpage}}
+    </div>
+    <div id="publication" class="search-results" data-total={{results.publication.total}}>
+      {{> activitySearchResult page=1 total=results.publication.total search_results=results.publication.results perpage=perpage}}
+    </div>
+    <div id="interest" class="search-results" data-total={{results.interest.total}}>
+      {{> activitySearchResult page=1 total=results.interest.total search_results=results.interest.results perpage=perpage}}
+    </div>
+    <div id="grant" class="search-results" data-total={{results.grant.total}}>
+      {{> activitySearchResult page=1 total=results.grant.total search_results=results.grant.results perpage=perpage}}
+    </div>
+    <div id="award" class="search-results" data-total={{results.award.total}}>
+      {{> activitySearchResult page=1 total=results.award.total search_results=results.award.results perpage=perpage}}
     </div>
   </div>
-  <script language="javascript" src='/javascripts/templates/templates.js'></script>
-  <script>
-    Handlebars.registerHelper('lastpage', helpers.lastpage);
-    Handlebars.registerHelper('paginate', helpers.paginate);
-    Handlebars.registerHelper('all', helpers.all);
-    Handlebars.registerHelper('encodeURIComponent', helpers.encodeURIComponent);
-  </script>
-  <div class="fp-container indent">
-    <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}" data-perpage={{perpage}}></div>
-    {{#if departmentSearch}}
-      <h1 class="search-results-title">Faculty Profiles for: <em>{{#if college}}{{college}}{{else}}{{department}}{{/if}}</em></h1>
-      <div id="name" class="search-results" data-total={{results.total}}>
-      {{> personSearchResult page=1 total=results.total search_results=results.results perpage=perpage}}
-      </div>
-    {{else}}
-    <h1 class="search-results-title">Search results for: <em>{{term}}</em>
-      {{#if department }} in <em>{{department}}</em>
-      {{else if college }} in <em>{{college}}</em>{{/if}}
-    </h1>
-    <div id="tabs">
-      <ul>
-        <li><a href="#name">Faculty Name</a></li>
-        <li><a href="#publication">Scholarly/ Creative Work</a></li>
-        <li><a href="#interest">Interests</a></li>
-        <li><a href="#grant">Grants</a></li>
-        <li><a href="#award">Awards</a></li>
-      </ul>
-      <div id="name" data-total="{{results.name.total}}">
-        {{> personSearchResult page=1 total=results.name.total search_results=results.name.results perpage=perpage}}
-      </div>
-      <div id="publication" class="search-results" data-total={{results.publication.total}}>
-        {{> activitySearchResult page=1 total=results.publication.total search_results=results.publication.results perpage=perpage}}
-      </div>
-      <div id="interest" class="search-results" data-total={{results.interest.total}}>
-        {{> activitySearchResult page=1 total=results.interest.total search_results=results.interest.results perpage=perpage}}
-      </div>
-      <div id="grant" class="search-results" data-total={{results.grant.total}}>
-        {{> activitySearchResult page=1 total=results.grant.total search_results=results.grant.results perpage=perpage}}
-      </div>
-      <div id="award" class="search-results" data-total={{results.award.total}}>
-        {{> activitySearchResult page=1 total=results.award.total search_results=results.award.results perpage=perpage}}
-      </div>
-    </div>
-    {{/if}}
-  </div>
+  {{/if}}
 </div>
