@@ -4,7 +4,7 @@
     <div class="fp-container profile-top">
       <div class="basic-info">
         <div class="profile-image" data-default="{{#if profile_photo}}false{{else}}true{{/if}}">
-          <img src="{{#if profile_photo}}{{profile_photo}}{{else}}/images/userprofile-defaultimage.png{{/if}}" alt="profile photo for {{profile.display_name}}" {{#if profile.portrait.face.left}}style="left: -{{profile.portrait.face.left}}%; top: -{{profile.portrait.face.top}}%; width: {{profile.portrait.face.width}}%"{{/if}}>
+          {{> facecropimage defaultimage='/images/userprofile-defaultimage.png' profile=profile}}
         </div>
         <div class="basic-details">
           <div class="name">{{profile.display_name}}</div>

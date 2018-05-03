@@ -1,0 +1,7 @@
+<img src="{{fallback profile_photo defaultimage}}" alt="profile photo for {{profile.display_name}}"
+  {{#if profile.portrait.face.detected}}
+    class="cropped" style="left: -{{profile.portrait.face.left}}%; top: -{{profile.portrait.face.top}}%; width: {{profile.portrait.face.width}}%;"
+  {{else}}
+    {{#ifeval profile.portrait.face.aspect '>' 1.0}}class="wide"{{/ifeval}}
+  {{/if}}
+>

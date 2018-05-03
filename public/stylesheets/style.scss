@@ -329,19 +329,13 @@ footer {
       padding: 2rem 0rem 3rem 0rem;
     }
     .profile-image {
-      position: relative;
-      background: #eee no-repeat center;
-      background-size: cover;
       width: 200px;
       height: 200px;
-      border-radius: 100%;
-      overflow: hidden;
       @media (max-width: $medium-breakpoint) {
         width: 125px;
         height: 125px;
         margin: 0 auto;
       }
-      img { position: absolute; left: 0; top: 0; width: 100%; }
     }
     .basic-details {
       padding-left: 2rem;
@@ -444,6 +438,28 @@ footer {
     }
   }
 }
+
+.profile-image {
+  background: #eee no-repeat center;
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    &.wide {
+      height: 100%;
+      width: auto;
+    }
+    &.cropped {
+      transform: none;
+    }
+  }
+}
+
 .profile-bio {
   padding-bottom: 6rem;
   .label {
@@ -565,14 +581,8 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
       padding-right: 1rem;
     }
     .profile-image {
-      position: relative;
-      background: #eee no-repeat center;
-      background-size: cover;
       width: 45px;
       height: 45px;
-      border-radius: 100%;
-      overflow: hidden;
-      img { position: absolute; left: 0; top: 0; width: 100%; }
     }
     .faculty-info {
       line-height: 1.2;
@@ -583,6 +593,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
     }
   }
 }
+
 .more-contents {
   padding-top: 5rem;
   padding-bottom: 5rem;

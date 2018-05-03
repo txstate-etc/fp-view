@@ -5,7 +5,7 @@
         <div class="return-to-profile-contents">
           <i class="fa fa-angle-left" aria-hidden="true"></i>
           <div class="profile-image" data-default="{{#if profile_photo}}false{{else}}true{{/if}}">
-            <img src="{{#if profile_photo}}{{profile_photo}}{{else}}/images/userprofile-defaultimage-dark.png{{/if}}" alt="profile photo for {{content.person.display_name}}" {{#if content.person.portrait.face.left}}style="left: -{{content.person.portrait.face.left}}%; top: -{{content.person.portrait.face.top}}%; width: {{content.person.portrait.face.width}}%"{{/if}}>
+            {{> facecropimage defaultimage='/images/userprofile-defaultimage-dark.png' profile=content.person}}
           </div>
           <div class="faculty-info">
             <div class="faculty-name">Back to {{content.person.display_name}}'s Profile</div>

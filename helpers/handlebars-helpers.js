@@ -79,6 +79,9 @@ helpers = {
       },
   encodeURIComponent : function(component) {
     return encodeURIComponent(component);
+  },
+  fallback: function (value, alternate) {
+    return value || alternate;
   }
 }
 if(typeof module != "undefined") {
