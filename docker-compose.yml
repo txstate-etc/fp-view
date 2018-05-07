@@ -1,6 +1,6 @@
 version: '3'
 services:
-  facultyprofilesview:
+  fp-view:
     build: .
     ports:
       - 3000:80
@@ -8,15 +8,11 @@ services:
       API_HOST: fp-api
     links:
       - fp-api
-    depends_on:
-      - fp-api
   fp-api:
     build: ../fp-api
     environment:
       DB_HOST: mongodb
     links:
-      - mongodb
-    depends_on:
       - mongodb
     volumes:
       - facultyprofilesfiles:/fp-files
@@ -28,7 +24,7 @@ services:
     links:
       - mongodb
     depends_on:
-      - mongodb
+      - fp-view
   mongodb:
     image: mongo:latest
     volumes:
