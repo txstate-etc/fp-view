@@ -40,7 +40,7 @@ var image_handler = function (req, path) {
   var imghurl = process.env.IMAGE_HANDLER_URL
   if (!imghurl) return '';
   if (imghurl.startsWith('//')) imghurl = 'http:'+imghurl;
-  return imghurl+'/imagehandler/scaler/'+req.hostname+path+'?mode=fit&width=600&height=600&quality=80&2'
+  return imghurl+'/imagehandler/scaler/'+req.hostname+path+'?mode=fit&width=600&height=600&quality=80&3'
 }
 
 var serve_remote_file = function (req, res, next, urltofetch) {
