@@ -24,11 +24,11 @@
   </h1>
   <div id="tabs">
     <ul>
-      <li><a href="#name">Faculty Name</a></li>
-      <li><a href="#publication">Scholarly/ Creative Work</a></li>
-      <li><a href="#interest">Interests</a></li>
-      <li><a href="#grant">Grants</a></li>
-      <li><a href="#award">Awards</a></li>
+      <li class="row1"><a href="#name">Faculty Name</a></li>
+      <li class="row1"><a href="#publication">Scholarly/ Creative Work</a></li>
+      <li class="row2"><a href="#interest">Interests</a></li>
+      <li class="row2"><a href="#grant">Grants</a></li>
+      <li class="row2"><a href="#award">Awards</a></li>
     </ul>
     <div id="name" data-total="{{results.name.total}}">
       {{> personSearchResult page=1 total=results.name.total search_results=results.name.results perpage=perpage}}

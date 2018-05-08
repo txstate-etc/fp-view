@@ -16,8 +16,6 @@
     border: 0;
     display: flex;
     justify-content: space-between;
-    align-items: bottom;
-    margin: 0 0 1rem 0;
     width: 100%;
     border-bottom: 1px solid $accent-gray;
     padding: 1rem 0 0 0;
@@ -27,20 +25,19 @@
       float: none;
       white-space: normal;
       text-transform: uppercase;
-      width: 15rem;
       text-align: center;
       font-weight: 700;
       border: 0px;
-      padding: 0.5rem;
       background: none;
       color: $charcoal;
       display: flex;
       flex-direction: column;
       justify-content: center;
       position: static;
+      min-height: 4.5rem;
       a {
-        float: none;
-        padding: 0;
+        width: 15rem;
+        padding: 0.5rem;
       }
       &.ui-state-active, &:hover {
         background-color: $sandstone;
@@ -51,6 +48,23 @@
     }
     &:before, &:after {
       content: none;
+    }
+    @media (max-width: $medium-breakpoint) {
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+      li {
+        white-space: nowrap;
+        margin: 0.5rem 0rem;
+        &.row1 {
+          flex-basis: 40%;
+        }
+        &.row2 {
+          flex-basis: 25%;
+        }
+        a {
+          width: inherit;
+        }
+      }
     }
   }
 }
