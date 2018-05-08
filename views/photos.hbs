@@ -13,3 +13,8 @@
     </div>
   {{/each}}
 </div>
+<div class="pagination">
+  {{#if hasnextpage}}
+    <a href="/photos?page={{nextpage}}">next page</a>
+  {{/if}}
+</div>

@@ -20,8 +20,9 @@ module.exports = function() {
   this.getDepartments = function() {
     return grab('/department')
   },
-  this.getPhotos = function() {
-    return grab('/search/photo')
+  this.getPhotos = function(query) {
+    var qs = shared.createUrlQuery(query);
+    return grab(`/search/photo${qs}`)
   },
   this.getProfileById = async function(id) {
     return grab(`/profile/${id}`)
