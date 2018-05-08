@@ -12,7 +12,6 @@ router.get('/files/*', function(req, res, next) {
 router.get('/crop/files/photo/:userid/:filename', function(req, res, next) {
   var apipath = '/files/photo/'+req.params.userid+'/'+req.params.filename;
   var urltofetch = image_handler(req, '/api'+apipath) || getApiPath(apipath);
-  console.log(urltofetch);
   serve_remote_file(req, res, next, urltofetch)
 })
 
