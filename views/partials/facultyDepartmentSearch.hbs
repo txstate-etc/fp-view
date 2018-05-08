@@ -1,22 +1,22 @@
 <form action="/search" method="GET" class="faculty-department-search">
   <div class="term-group">
     <label class="sr-only" for="q">Search Keyword</label>
-    <input class="form-control" type="text" placeholder="Search Name or Keyword" id="q" name="q"/>
+    <input class="form-control" type="text" placeholder="Search Name or Keyword" id="q" name="q" value="{{term}}"/>
   </div>
   <span class="word-in">in</span>
   <div class="department-group">
     <label class="sr-only" for="coll-dept">Search for faculty in department</label>
-    <input type="hidden" id="college" name="college" value=""/>
-    <input type="hidden" id="dept" name="dept" value=""/>
+    <input type="hidden" id="college" name="college" value="{{preloadcollege}}"/>
+    <input type="hidden" id="dept" name="dept" value="{{preloaddepartment}}"/>
     <input type="hidden" id="page" name="page" value="1"/>
     <input type="hidden" id="perpage" name="perpage" value="10"/>
     <div class="input-group">
       <select class="select-department form-control" id="coll-dept">
         <option></option>
         {{#each organization}}
-          <option class="college" value="{{this.college}}">{{this.college}}</option>
+          <option class="college" value="{{this.college}}"{{#ifeval ../preloadcollege '==' this.college}} selected="selected"{{/ifeval}}>{{this.college}}</option>
           {{#each this.departments}}
-            <option class="department" value="{{this}}">{{this}}</option>
+            <option class="department" value="{{this}}"{{#ifeval ../../preloaddepartment '==' this}} selected="selected"{{/ifeval}}>{{this}}</option>
           {{/each}}
         {{/each}}
       </select><!--
