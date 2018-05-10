@@ -1,4 +1,10 @@
 jQuery( document ).ready(function($) {
+  $('#coll-dept').on('chosen:ready', function(){
+    var searchbox = $('.chosen-search-input')
+    searchbox.attr('id', 'department-search-input')
+    searchbox.parent().prepend('<label for="department-search-input" class="sr-only">Search for college or department</label>')
+  })
+
   $('#coll-dept').chosen({
     placeholder_text_single: 'College / Department',
     inherit_select_classes: true,
