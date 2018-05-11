@@ -3,6 +3,7 @@ jQuery( document ).ready(function($) {
     var searchbox = $('.chosen-search-input')
     searchbox.attr('id', 'department-search-input')
     searchbox.parent().prepend('<label for="department-search-input" class="sr-only">Search for college or department</label>')
+    adjustDepartmentWidth()
   })
 
   $('#coll-dept').chosen({
@@ -23,15 +24,7 @@ jQuery( document ).ready(function($) {
       $('#dept').val(selectedValue)
     }
 
-    var termWidth = $('.term-group').width();
-    var deptWidth = $('.department-group').width();
-
-    while (deptWidth > termWidth) {
-      var text = $('.chosen-single span').text();
-      $('.chosen-single span').text(text.substring(0, text.length-1));
-      termWidth = $('.term-group').width();
-      deptWidth = $('.department-group').width();
-    }
+    adjustDepartmentWidth();
   })
 
   $('.btn-more').click(function() {
@@ -56,4 +49,18 @@ jQuery( document ).ready(function($) {
 
 function getUrlParameters() {
   return shared.parseParameterPairs(window.location.search.substring(1));
+}
+
+function adjustDepartmentWidth() {
+  var termWidth = $('.term-group').outerWidth();
+  var deptWidth = $('.chosen-container').outerWidth() + $('.btn-search').outerWidth();
+  console.log("test")
+
+  while (Math.floor(deptWidth) > Math.floor(termWidth)) {
+    var text = $('.chosen-single span').text();
+    $('.chosen-single span').text(text.substring(0, text.length-1));
+    var termWidth = $('.term-group').outerWidth();
+    var deptWidth = $('.chosen-container').outerWidth() + $('.btn-search').outerWidth();
+    console.log(deptWidth + " " + termWidth)
+  }
 }
