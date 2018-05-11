@@ -54,13 +54,11 @@ function getUrlParameters() {
 function adjustDepartmentWidth() {
   var termWidth = $('.term-group').outerWidth();
   var deptWidth = $('.chosen-container').outerWidth() + $('.btn-search').outerWidth();
-  console.log("test")
 
   while (Math.floor(deptWidth) > Math.floor(termWidth)) {
     var text = $('.chosen-single span').text();
     $('.chosen-single span').text(text.substring(0, text.length-1));
     var termWidth = $('.term-group').outerWidth();
     var deptWidth = $('.chosen-container').outerWidth() + $('.btn-search').outerWidth();
-    console.log(deptWidth + " " + termWidth)
   }
 }
