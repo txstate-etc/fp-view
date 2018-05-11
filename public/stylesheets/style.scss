@@ -693,5 +693,11 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
     right: 0;
     top: 8rem;
     max-width: 70%;
+    @media (max-width: $medium-breakpoint) {
+      position: relative;
+      width: 100%;
+      top: 0;
+      max-width: unset;
+    }
   }
 }

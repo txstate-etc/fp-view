@@ -73,7 +73,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   var image_handler = require('./routes/image-handler')
-  var img_url = image_handler(req, '/images/404-graphic.png')
+  var img_url = image_handler(req, '/images/404-graphic.png', 702, 468)
   // render the error page
   res.status(err.status || 500);
   res.render('error', {img_url: img_url});
