@@ -22,7 +22,7 @@
 }
 
 ::placeholder {
-  color: $darkgray;
+  color: $davys-gray;
   opacity: 1;
 }
 
@@ -79,7 +79,7 @@ form.faculty-department-search {
         text-align: left;
       }
       &.chosen-default {
-        color: $darkgray;
+        color: $davys-gray;
       }
     }
     .chosen-drop {
