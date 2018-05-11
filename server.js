@@ -72,10 +72,11 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  var image_handler = require('./routes/image-handler')
+  var img_url = image_handler(req, '/images/404-graphic.png')
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {img_url: img_url});
 });
 
 module.exports = app;

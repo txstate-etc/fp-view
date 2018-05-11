@@ -3,6 +3,7 @@ var router = express.Router();
 var fetch = require('node-fetch');
 var shared = require('../shared/javascripts/shared-functions.js')
 require('./fp-api.js')();
+var image_handler = require('./image-handler')
 
 router.get('/files/*', function(req, res, next) {
   var urltofetch = getApiPath('/files/'+req.params[0]);
@@ -11,7 +12,7 @@ router.get('/files/*', function(req, res, next) {
 
 router.get('/crop/files/photo/:userid/:filename', function(req, res, next) {
   var apipath = '/files/photo/'+req.params.userid+'/'+req.params.filename;
-  var urltofetch = image_handler(req, '/api'+apipath) || getApiPath(apipath);
+  var urltofetch = image_handler(req, '/api'+apipath, 600, 600) || getApiPath(apipath);
   serve_remote_file(req, res, next, urltofetch)
 })
 
@@ -34,13 +35,6 @@ router.get('/*', function(req, res, next) {
     next(err)
   });
 })
-
-var image_handler = function (req, path) {
-  var imghurl = process.env.IMAGE_HANDLER_URL
-  if (!imghurl) return '';
-  if (imghurl.startsWith('//')) imghurl = 'http:'+imghurl;
-  return imghurl+'/imagehandler/scaler/'+req.hostname+path+'?mode=fit&width=600&height=600&quality=80&3'
-}
 
 var serve_remote_file = function (req, res, next, urltofetch) {
   externalfetch(urltofetch, {headers: {'If-Modified-Since': req.headers['if-modified-since']}})

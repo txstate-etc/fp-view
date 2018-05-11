@@ -678,3 +678,20 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
     }
   }
 }
+
+/////////////////////////////////////////////////
+.error-page {
+  position: relative;
+  min-height: 45rem;
+  .error-title {
+    font-size: 4rem;
+    font-weight: 700;
+    padding-top: 4rem;
+  }
+  img {
+    position: absolute;
+    right: 0;
+    top: 8rem;
+    max-width: 70%;
+  }
+}
