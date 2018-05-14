@@ -321,6 +321,7 @@ footer {
   align-content: center;
   @media (max-width: $medium-breakpoint) {
     display: block;
+    padding-bottom: 0;
   }
   .basic-info {
     display: flex;
