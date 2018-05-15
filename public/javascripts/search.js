@@ -2,25 +2,25 @@ jQuery( document ).ready(function($) {
 
     const tabList = ['name', 'publication', 'interest', 'grant', 'award'];
 
+    var activetab = $('#tabs > div').filter(function () { return $(this).data('total') > 0; }).first().index('#tabs > div');
+    if (window.location.hash) {
+      activetab = $('#tabs a[href="'+window.location.hash+'"]').parent().index();
+    }
+    if (activetab == -1) activetab = 0;
     $( "#tabs" ).tabs({
       classes : {
         "ui-tabs" : "fp-tabs"
       },
-      create: createTabs
+      activate: function (event, ui) {
+        var newhash = ui.newTab.find('a').prop('hash');
+        window.location.hash = newhash;
+      },
+      active: activetab
     });
 
-    function createTabs(event, ui) {
-      var urlParams = getUrlParameters();
-      var type="name";
-      if (urlParams.type && urlParams.type.length > 0 && tabList.includes(urlParams.type)) {
-        type= urlParams.type;
-      }
-      var selector = `#tabs a[href="#${type}"]`;
-      var index = $(selector).parent().index();
-      if (index > 0) {
-        $( "#tabs" ).tabs("option", "active", index);
-      }
-    }
+    $('.faculty-department-search').submit(function () {
+      $(this).attr('action', '/search'+window.location.hash);
+    })
 
     $('.pagination-link').click(paginationClick);
 
