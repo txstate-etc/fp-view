@@ -685,20 +685,24 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
   position: relative;
   min-height: 45rem;
   .error-title {
-    font-size: 4rem;
+    color: $charcoal;
+    font-size: 6rem;
     font-weight: 700;
     padding-top: 4rem;
+    padding-bottom: 2rem;
   }
   img {
     position: absolute;
     right: 0;
-    top: 8rem;
+    top: 15rem;
     max-width: 70%;
+    padding-right: 9rem;
     @media (max-width: $medium-breakpoint) {
       position: relative;
       width: 100%;
       top: 0;
       max-width: unset;
+      padding-right: 0;
     }
   }
 }
