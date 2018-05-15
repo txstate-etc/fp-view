@@ -3,8 +3,8 @@ var router = express.Router();
 require('./fp-api.js')()
 
 router.get('/', function(req, res, next) {
-  var perpage = req.query.perpage || 100
-  var page = req.query.page || 1
+  var perpage = parseInt(req.query.perpage, 10) || 100
+  var page = parseInt(req.query.page, 10) || 1
   getPhotos({page: page, perpage: perpage})
   .then(function(results) {
     results = results.map(function (person) { if (person.portrait) person.profile_photo = '/api/crop'+person.portrait.path; return person; })
