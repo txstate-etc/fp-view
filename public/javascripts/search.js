@@ -13,9 +13,14 @@ jQuery( document ).ready(function($) {
       },
       activate: function (event, ui) {
         var newhash = ui.newTab.find('a').prop('hash');
-        window.location.hash = newhash;
+        if (history.pushState) {
+          history.pushState(null, null, newhash);
+        } else {
+          window.location.hash = newhash;
+        }
       },
-      active: activetab
+      active: activetab,
+      heightStyle: 'auto'
     });
 
     $('.faculty-department-search').submit(function () {
