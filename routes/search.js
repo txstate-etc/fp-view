@@ -37,7 +37,7 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 
 var search = async function(filters) {
-    if ((filters.college || filters.dept) && !filters.q) {
+    if (!filters.q) {
       return await searchPeople(filters)
     }
     else {

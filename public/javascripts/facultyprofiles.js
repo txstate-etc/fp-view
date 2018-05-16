@@ -7,7 +7,6 @@ jQuery( document ).ready(function($) {
   })
 
   $('#coll-dept').chosen({
-    placeholder_text_single: 'College / Department',
     inherit_select_classes: true,
     width: "80%"
   })
@@ -19,9 +18,13 @@ jQuery( document ).ready(function($) {
       $('#college').val(selectedValue)
       $('#dept').val("")
     }
-    else {
+    else if (selectedOption.hasClass('department')) {
       $('#college').val("")
       $('#dept').val(selectedValue)
+    }
+    else {
+      $('#college').val("")
+      $('#dept').val("")
     }
 
     adjustDepartmentWidth();
@@ -39,12 +42,6 @@ jQuery( document ).ready(function($) {
     $(this).children('i').toggleClass('fa-caret-down fa-caret-up');
   })
 
-  $('.faculty-department-search').submit(function(e){
-    var search = $('#q').val() + $('#college').val() + $('#dept').val();
-    if (search.length == 0) {
-      e.preventDefault();
-    }
-  })
 });
 
 function getUrlParameters() {

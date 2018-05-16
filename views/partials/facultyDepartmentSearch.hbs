@@ -12,7 +12,7 @@
     <input type="hidden" id="perpage" name="perpage" value="10"/>
     <div class="input-group">
       <select class="select-department form-control" id="coll-dept">
-        <option></option>
+        <option value="all">All Colleges/Departments</option>
         {{#each organization}}
           <option class="college" value="{{this.college}}"{{#ifeval ../preloadcollege '==' this.college}} selected="selected"{{/ifeval}}>{{this.college}}</option>
           {{#each this.departments}}
