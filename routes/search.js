@@ -4,25 +4,23 @@ require('./fp-api.js')()
 var shared = require('../shared/javascripts/shared-functions.js')
 
 router.get('/', function(req, res, next) {
-  var departmentSearch = false;
-  var query = req.query.q
-  var department = req.query.dept;
-  var college = req.query.college;
-  var type = req.query.type
-  if (!query) {
-    departmentSearch = true
+  var params = {
+    q: req.query.q || '',
+    dept: req.query.dept || '',
+    college: req.query.college || '',
+    page: parseInt(req.query.page, 10) || 1,
+    perpage: parseInt(req.query.perpage, 10) || 10
   }
-
+  var departmentSearch = !params.q;
+  if (!departmentSearch) params.page = 1
   Promise.all([
     getDepartments(),
-    search(req.query)
+    search(params)
   ])
   .then(function(results) {
     var departments, searchResults;
     [departments, searchResults] = results;
-    res.render('results', {term: query,
-                           department: department,
-                           college: college,
+    res.render('results', {params: params,
                            departmentSearch: departmentSearch,
                            organization: departments,
                            results: searchResults

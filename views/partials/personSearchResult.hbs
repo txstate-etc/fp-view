@@ -2,10 +2,10 @@
 {{#each search_results}}
   <li>
     <div class="name"><a href="/profile/{{this.id}}">{{this.display_name}}</a></div>
-    {{#all this.primary_title this.primary_department}}<div class="title-dept">{{this.primary_title}} - <a href="/search?dept={{encodeURIComponent this.primary_department}}&page=1&perpage={{../perpage}}">{{this.primary_department}}</a></div>{{/all}}
+    {{#all this.primary_title this.primary_department}}<div class="title-dept">{{this.primary_title}} - <a href="/search?dept={{encodeURIComponent this.primary_department}}&page=1&perpage={{../params.perpage}}">{{this.primary_department}}</a></div>{{/all}}
   </li>
 {{else}}
   No Results Found
 {{/each}}
 </ul>
-{{{paginate page (lastpage total perpage)}}}
+{{{paginate (lastpage total params.perpage) params}}}

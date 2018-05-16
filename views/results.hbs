@@ -1,6 +1,6 @@
 <div class="has-background search-again">
   <div class="fp-container">
-    {{> facultyDepartmentSearch preloadcollege=college preloaddepartment=department}}
+    {{> facultyDepartmentSearch params=params}}
   </div>
 </div>
 <script language="javascript" src='/javascripts/templates/templates.js'></script>
@@ -11,16 +11,16 @@
   Handlebars.registerHelper('encodeURIComponent', helpers.encodeURIComponent);
 </script>
 <div class="fp-container indent">
-  <div id="search-data" data-q="{{term}}" data-college="{{college}}" data-dept="{{department}}" data-perpage={{perpage}}></div>
+  <div id="search-data" data-q="{{params.q}}" data-college="{{params.college}}" data-dept="{{params.dept}}" data-perpage={{params.perpage}}></div>
   {{#if departmentSearch}}
-    <h1 class="search-results-title">Faculty Profiles for: <em>{{#if college}}{{college}}{{else if department}}{{department}}{{else}}All Colleges/Departments{{/if}}</em></h1>
+    <h1 class="search-results-title">Faculty Profiles for: <em>{{#if params.college}}{{params.college}}{{else if params.dept}}{{params.dept}}{{else}}All Colleges/Departments{{/if}}</em></h1>
     <div id="name" class="search-results" data-total={{results.total}}>
-    {{> personSearchResult page=1 total=results.total search_results=results.results perpage=perpage}}
+    {{> personSearchResult params=params total=results.total search_results=results.results}}
     </div>
   {{else}}
-  <h1 class="search-results-title">Search results for: <em>{{term}}</em>
-    {{#if department }} in <em>{{department}}</em>
-    {{else if college }} in <em>{{college}}</em>{{/if}}
+  <h1 class="search-results-title">Search results for: <em>{{params.q}}</em>
+    {{#if params.dept }} in <em>{{params.dept}}</em>
+    {{else if params.college }} in <em>{{params.college}}</em>{{/if}}
   </h1>
   <div id="tabs">
     <ul>
@@ -31,19 +31,19 @@
       <li class="row2"><a href="#award">Awards</a></li>
     </ul>
     <div id="name" class="search-results" data-total="{{results.name.total}}">
-      {{> personSearchResult page=1 total=results.name.total search_results=results.name.results perpage=perpage}}
+      {{> personSearchResult params=params total=results.name.total search_results=results.name.results}}
     </div>
     <div id="publication" class="search-results" data-total={{results.publication.total}}>
-      {{> activitySearchResult page=1 total=results.publication.total search_results=results.publication.results perpage=perpage}}
+      {{> activitySearchResult params=params total=results.publication.total search_results=results.publication.results}}
     </div>
     <div id="interest" class="search-results" data-total={{results.interest.total}}>
-      {{> activitySearchResult page=1 total=results.interest.total search_results=results.interest.results perpage=perpage}}
+      {{> activitySearchResult params=params total=results.interest.total search_results=results.interest.results}}
     </div>
     <div id="grant" class="search-results" data-total={{results.grant.total}}>
-      {{> activitySearchResult page=1 total=results.grant.total search_results=results.grant.results perpage=perpage}}
+      {{> activitySearchResult params=params total=results.grant.total search_results=results.grant.results}}
     </div>
     <div id="award" class="search-results" data-total={{results.award.total}}>
-      {{> activitySearchResult page=1 total=results.award.total search_results=results.award.results perpage=perpage}}
+      {{> activitySearchResult params=params total=results.award.total search_results=results.award.results}}
     </div>
   </div>
   {{/if}}

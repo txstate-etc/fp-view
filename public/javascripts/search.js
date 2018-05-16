@@ -30,6 +30,7 @@ jQuery( document ).ready(function($) {
     $('.pagination-link').click(paginationClick);
 
     function paginationClick(evt) {
+      evt.preventDefault();
       if ($('#tabs').length) {
         var activeTabIndex = $('#tabs').tabs("option", "active");
         var type = tabList[activeTabIndex];
@@ -52,6 +53,7 @@ jQuery( document ).ready(function($) {
       }
 
       var url = `/api/search/${type}${shared.createUrlQuery(filters)}`;
+      history.pushState(null, null, shared.createUrlQuery(filters)+window.location.hash);
 
       $.ajax({
         method: 'GET',
@@ -60,12 +62,12 @@ jQuery( document ).ready(function($) {
       })
       .done(function(results) {
         var activeTab = $(`#${type}`);
-        var total = activeTab.data("total")
+        var total = activeTab.data("total");
         if (type == "name") {
-          var content = fptemplates.personSearchResult({page: page, total: total, search_results: results, perpage: perpage})
+          var content = fptemplates.personSearchResult({params: filters, total: total, search_results: results})
         }
         else {
-          var content = fptemplates.activitySearchResult({page: page, total:total, search_results: results, perpage: perpage})
+          var content = fptemplates.activitySearchResult({params: filters, total:total, search_results: results})
         }
         activeTab.html(content);
         $('.pagination-link').click(paginationClick);

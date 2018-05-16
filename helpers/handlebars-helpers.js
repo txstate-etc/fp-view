@@ -1,3 +1,17 @@
+var constructParameterPairs = function(params) {
+  var pairs = [];
+  for (var key in params) {
+    if (params.hasOwnProperty(key) && params[key]) {
+      pairs.push(encodeURIComponent(key)+'='+encodeURIComponent(params[key]));
+    }
+  }
+  return pairs.join('&');
+}
+
+var createUrlQuery = function(params) {
+  return '?'+ constructParameterPairs(params);
+}
+
 helpers = {
   any: function() {
     var options = arguments[arguments.length-1];
@@ -46,24 +60,29 @@ helpers = {
   lastpage : function(total, perpage) {
     return Math.ceil(total/perpage);
   },
-  paginate : function(page, lastpage) {
+  paginate : function(lastpage, params) {
         if (lastpage < 2) return '';
+        var page = params.page;
         var html = '<div class="sr-only">Pagination</div>';
           html += '<ul role="navigation" class="pagination">';
-          html += '<li><a href="#" class="pagination-link previous' + (page > 1 ? " enabled" : "") + '" aria-label="Previous Page" data-page="'+Math.max(page-1, 1)+'" aria-disabled="'+(page == 1 ? 'true' : 'false')+'">< Previous</a></li>';
+          params.page = Math.max(page-1, 1);
+          html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link previous' + (page > 1 ? " enabled" : "") + '" aria-label="Previous Page" data-page="'+params.page+'" aria-disabled="'+(page == 1 ? 'true' : 'false')+'">< Previous</a></li>';
           //first page
-          html += '<li><a href="#" class="pagination-link" aria-selected="' + (page == 1) + '" aria-label="Page 1" data-page="1">1</a></li>';
+          params.page = 1;
+          html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link" aria-selected="' + (page == 1) + '" aria-label="Page 1" data-page="1">1</a></li>';
           //first ellipsis, if needed
           if(lastpage > 4 && page > 3){
               html += '<li><span class="nonlink">...</span></li>';
           }
           if(lastpage > 2){
               if(lastpage == 3){
-                  html += '<li><a href="#" class="pagination-link" aria-selected="'+(page == 2)+'" aria-label="Page 2" data-page="2">2</a></li>';
+                  params.page = 2;
+                  html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link" aria-selected="'+(page == 2)+'" aria-label="Page 2" data-page="2">2</a></li>';
               }
               else{
                   for (var i = Math.min(Math.max(page - 1, 2), lastpage-2); i <= Math.max(Math.min(page + 1, lastpage - 1),3); i++) {
-                    html += '<li><a href="#" class="pagination-link" aria-selected="'+(i==page)+'" aria-label="Page '+i+'" data-page="'+i+'">'+i+'</a></li>';
+                    params.page = i;
+                    html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link" aria-selected="'+(i==page)+'" aria-label="Page '+i+'" data-page="'+i+'">'+i+'</a></li>';
                   }
               }
           }
@@ -72,8 +91,10 @@ helpers = {
               html += '<li><span class="nonlink">...</span></li>';
           }
           //last page
-          html += '<li><a href="#" class="pagination-link" aria-selected="' + (page == lastpage) + '" aria-label="Page ' + lastpage + '" data-page="' + lastpage + '">' + lastpage + '</li>';
-          html += '<li><a href="#" class="pagination-link next' + (page < lastpage ? " enabled" : "") + '" aria-label="Next Page" data-page="'+Math.min(page+1, lastpage)+'" aria-disabled="'+(page == lastpage ? 'true' : 'false')+'">Next ></a></li>';
+          params.page = lastpage;
+          html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link" aria-selected="' + (page == lastpage) + '" aria-label="Page ' + lastpage + '" data-page="' + lastpage + '">' + lastpage + '</li>';
+          params.page = Math.min(page+1, lastpage);
+          html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link next' + (page < lastpage ? " enabled" : "") + '" aria-label="Next Page" data-page="'+params.page+'" aria-disabled="'+(page == lastpage ? 'true' : 'false')+'">Next ></a></li>';
           html += '</ul>';
           return html;
       },
