@@ -15,8 +15,7 @@ jQuery( document ).ready(function($) {
         var newhash = ui.newTab.find('a').prop('hash')+'_x';
         window.location.hash = newhash;
       },
-      active: activetab,
-      heightStyle: 'auto'
+      active: activetab
     });
 
     $('.faculty-department-search').submit(function () {
