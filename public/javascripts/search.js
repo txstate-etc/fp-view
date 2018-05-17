@@ -1,10 +1,10 @@
 jQuery( document ).ready(function($) {
-
     const tabList = ['name', 'publication', 'interest', 'grant', 'award'];
 
     var activetab = $('#tabs > div').filter(function () { return $(this).data('total') > 0; }).first().index('#tabs > div');
     if (window.location.hash) {
-      activetab = $('#tabs a[href="'+window.location.hash+'"]').parent().index();
+      var tabname = window.location.hash.replace(/_x$/, '');
+      activetab = $('#tabs a[href="'+tabname+'"]').parent().index();
     }
     if (activetab == -1) activetab = 0;
     $( "#tabs" ).tabs({
@@ -12,12 +12,8 @@ jQuery( document ).ready(function($) {
         "ui-tabs" : "fp-tabs"
       },
       activate: function (event, ui) {
-        var newhash = ui.newTab.find('a').prop('hash');
-        if (history.pushState) {
-          history.pushState(null, null, newhash);
-        } else {
-          window.location.hash = newhash;
-        }
+        var newhash = ui.newTab.find('a').prop('hash')+'_x';
+        window.location.hash = newhash;
       },
       active: activetab,
       heightStyle: 'auto'
