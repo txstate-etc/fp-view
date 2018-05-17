@@ -84,6 +84,8 @@ ul {
   max-width: 1200px;
   @media (max-width: $x-large-breakpoint) {
     max-width: 1000px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
@@ -378,7 +380,7 @@ footer {
   }
   .navigation-menu {
     @media (max-width: $medium-breakpoint) {
-      margin: 0rem -2.4rem;
+      margin: 0rem -1.5rem;
       text-align: center;
       background-color: $white;
     }
@@ -584,6 +586,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
     }
     .profile-image {
       width: 45px;
+      min-width: 45px;
       height: 45px;
     }
     .faculty-info {
