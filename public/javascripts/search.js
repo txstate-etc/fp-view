@@ -47,7 +47,7 @@ jQuery( document ).ready(function($) {
         filters.dept = department;
       }
 
-      var url = `/api/search/${type}${shared.createUrlQuery(filters)}`;
+      var url = "/api/search/" + type + shared.createUrlQuery(filters);
       history.pushState(null, null, shared.createUrlQuery(filters)+window.location.hash);
 
       $.ajax({
@@ -56,7 +56,7 @@ jQuery( document ).ready(function($) {
         dataType: "json"
       })
       .done(function(results) {
-        var activeTab = $(`#${type}`);
+        var activeTab = "#" + type;
         var total = activeTab.data("total");
         if (type == "name") {
           var content = fptemplates.personSearchResult({params: filters, total: total, search_results: results})
