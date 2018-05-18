@@ -56,7 +56,8 @@ jQuery( document ).ready(function($) {
         dataType: "json"
       })
       .done(function(results) {
-        var activeTab = "#" + type;
+        //var activeTab = $(`#${type}`);
+        var activeTab = $("#" + type);
         var total = activeTab.data("total");
         if (type == "name") {
           var content = fptemplates.personSearchResult({params: filters, total: total, search_results: results})

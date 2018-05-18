@@ -66,7 +66,7 @@ helpers = {
         var html = '<div class="sr-only">Pagination</div>';
           html += '<ul role="navigation" class="pagination">';
           params.page = Math.max(page-1, 1);
-          html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link previous' + (page > 1 ? " enabled" : "") + '" aria-label="Previous Page" data-page="'+params.page+'" aria-disabled="'+(page == 1 ? 'true' : 'false')+'">< Previous</a></li>';
+          html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link previous' + (page > 1 ? " enabled" : "") + '" aria-label="Previous Page" data-page="'+params.page+'" aria-disabled="'+(page == 1 ? 'true' : 'false')+'"> Previous</a></li>';
           //first page
           params.page = 1;
           html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link" aria-selected="' + (page == 1) + '" aria-label="Page 1" data-page="1">1</a></li>';
@@ -92,7 +92,7 @@ helpers = {
           }
           //last page
           params.page = lastpage;
-          html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link" aria-selected="' + (page == lastpage) + '" aria-label="Page ' + lastpage + '" data-page="' + lastpage + '">' + lastpage + '</li>';
+          html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link" aria-selected="' + (page == lastpage) + '" aria-label="Page ' + lastpage + '" data-page="' + lastpage + '">' + lastpage + '</a></li>';
           params.page = Math.min(page+1, lastpage);
           html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link next' + (page < lastpage ? " enabled" : "") + '" aria-label="Next Page" data-page="'+params.page+'" aria-disabled="'+(page == lastpage ? 'true' : 'false')+'">Next ></a></li>';
           html += '</ul>';
