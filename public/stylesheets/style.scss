@@ -623,6 +623,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
     padding-left: 4.8rem;
     > li {
       padding-left: 1.2rem;
+      word-wrap: break-word;
       .dates {
         display: none;
       }
