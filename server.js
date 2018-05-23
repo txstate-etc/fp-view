@@ -61,7 +61,9 @@ app.use('/api', api);
 app.use('/photos', photos);
 
 app.use('/404(.html)?', express.Router().get('/', function(req, res, next) {
-  res.render('error')
+  var image_handler = require('./routes/image-handler')
+  var img_url = image_handler(req, '/images/404-graphic.png', 702, 468)
+  res.render('error', {img_url: img_url})
 }))
 
 // catch 404 and forward to error handler
