@@ -60,6 +60,10 @@ app.use('/departments', departments);
 app.use('/api', api);
 app.use('/photos', photos);
 
+app.use('/404(.html)?', express.Router().get('/', function(req, res, next) {
+  res.render('error')
+}))
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
