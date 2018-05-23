@@ -512,6 +512,7 @@ ul.scholarly-creative, ul.awards, ul.grants, ul.activity-list {
   padding-left: 3rem;
   li {
     padding-bottom: 1rem;
+    word-wrap: break-word;
     &:last-child {
       padding-bottom: 0rem;
     }
