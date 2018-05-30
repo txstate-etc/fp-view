@@ -18,33 +18,35 @@
     {{> personSearchResult params=params total=results.total search_results=results.results}}
     </div>
   {{else}}
-  <h1 class="search-results-title">Search results for: <em>{{params.q}}</em>
+  <h1 class="search-results-title">{{#ifeval all_count ">" 0 }}Search{{else}}No{{/ifeval}} results for: <em>{{params.q}}</em>
     {{#if params.dept }} in <em>{{params.dept}}</em>
     {{else if params.college }} in <em>{{params.college}}</em>{{/if}}
   </h1>
-  <div id="tabs">
-    <ul>
-      <li class="row1"><a href="#name">Faculty Name</a></li>
-      <li class="row1"><a href="#publication">Scholarly/ Creative Work</a></li>
-      <li class="row2"><a href="#interest">Interests</a></li>
-      <li class="row2"><a href="#grant">Grants</a></li>
-      <li class="row2"><a href="#award">Awards</a></li>
-    </ul>
-    <div id="name" class="search-results" data-total="{{results.name.total}}">
-      {{> personSearchResult params=params total=results.name.total search_results=results.name.results}}
+    {{#ifeval all_count ">" 0 }}
+    <div id="tabs">
+      <ul>
+        <li class="row1"><a href="#name">Faculty Name</a></li>
+        <li class="row1"><a href="#publication">Scholarly/ Creative Work</a></li>
+        <li class="row2"><a href="#interest">Interests</a></li>
+        <li class="row2"><a href="#grant">Grants</a></li>
+        <li class="row2"><a href="#award">Awards</a></li>
+      </ul>
+      <div id="name" class="search-results" data-total="{{results.name.total}}">
+        {{> personSearchResult params=params total=results.name.total search_results=results.name.results}}
+      </div>
+      <div id="publication" class="search-results" data-total={{results.publication.total}}>
+        {{> activitySearchResult params=params total=results.publication.total search_results=results.publication.results}}
+      </div>
+      <div id="interest" class="search-results" data-total={{results.interest.total}}>
+        {{> activitySearchResult params=params total=results.interest.total search_results=results.interest.results}}
+      </div>
+      <div id="grant" class="search-results" data-total={{results.grant.total}}>
+        {{> activitySearchResult params=params total=results.grant.total search_results=results.grant.results}}
+      </div>
+      <div id="award" class="search-results" data-total={{results.award.total}}>
+        {{> activitySearchResult params=params total=results.award.total search_results=results.award.results}}
+      </div>
     </div>
-    <div id="publication" class="search-results" data-total={{results.publication.total}}>
-      {{> activitySearchResult params=params total=results.publication.total search_results=results.publication.results}}
-    </div>
-    <div id="interest" class="search-results" data-total={{results.interest.total}}>
-      {{> activitySearchResult params=params total=results.interest.total search_results=results.interest.results}}
-    </div>
-    <div id="grant" class="search-results" data-total={{results.grant.total}}>
-      {{> activitySearchResult params=params total=results.grant.total search_results=results.grant.results}}
-    </div>
-    <div id="award" class="search-results" data-total={{results.award.total}}>
-      {{> activitySearchResult params=params total=results.award.total search_results=results.award.results}}
-    </div>
-  </div>
+    {{/ifeval}}
   {{/if}}
 </div>
