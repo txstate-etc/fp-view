@@ -18,6 +18,14 @@ jQuery( document ).ready(function($) {
       active: activetab
     });
 
+    $(window).on('popstate', function () {
+      var tabname = window.location.hash.replace(/_x$/, '');
+      if (tabname.length > 0) {
+        var activetab = $('#tabs a[href="'+tabname+'"]').parent().index();
+        $('#tabs').tabs('option', 'active', activetab);
+      })
+    });
+
     $('.faculty-department-search').submit(function () {
       $(this).attr('action', '/search'+window.location.hash);
     })
