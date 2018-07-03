@@ -20,13 +20,10 @@ router.get('/', function(req, res, next) {
   .then(function(results) {
     var departments, searchResults;
     [departments, searchResults] = results;
-    var all_count = searchResults.name.total + searchResults.publication.total +
-                   searchResults.interest.total + searchResults.grant.total + searchResults.award.total
     res.render('results', {params: params,
                            departmentSearch: departmentSearch,
                            organization: departments,
-                           results: searchResults,
-                           all_count: all_count
+                           results: searchResults
                          })
   })
   .catch(function(err) {
