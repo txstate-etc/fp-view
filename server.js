@@ -18,6 +18,8 @@ var photos = require('./routes/photos');
 
 var app = express();
 
+app.locals.analytics = process.env.ANALYTICS;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 var hbs = exphbs.create({
