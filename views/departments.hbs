@@ -18,5 +18,10 @@
         </div>
       </div>
     {{/each}}
+    <div class="panels-header-only">
+      {{#each orgNoDepts}}
+        <div class="college"><a href="/search?college={{encodeURIComponent this.college}}&page=1&perpage={{../../perpage}}">{{this.college}}</a></div>
+      {{/each}}
+    </div>
   </div>
 </div>
