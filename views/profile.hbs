@@ -63,15 +63,15 @@
   <div class="bio">
     <h2 class="sr-only">Biography Section</h2>
     {{#if profile.biography}}
-    <h3 class="label">Biography and Education</h3>
+    <a name="biography"><h3 class="label">Biography and Education</h3></a>
     {{{profile.biography}}}
     {{/if}}
     {{#if profile.teaching_interests}}
-    <h3 class="label">Teaching Interests</h3>
+    <a name="teaching"><h3 class="label">Teaching Interests</h3></a>
     {{{profile.teaching_interests}}}
     {{/if}}
     {{#if profile.research_interests}}
-    <h3 class="label">Research Interests</h3>
+    <a name="research"><h3 class="label">Research Interests</h3></a>
     {{{profile.research_interests}}}
     {{/if}}
   </div>
