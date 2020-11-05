@@ -20,6 +20,12 @@ router.get('/', function(req, res, next) {
   .then(function(results) {
     var departments, searchResults;
     [departments, searchResults] = results;
+    if (!departments) {
+      throw new Error('Failed to retrieve departments from API')
+    }
+    if (!searchResults) {
+      throw new Error('Failed to retrieve search results from API')
+    }
     res.render('results', {params: params,
                            departmentSearch: departmentSearch,
                            organization: departments,

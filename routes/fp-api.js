@@ -15,7 +15,11 @@ module.exports = function() {
   },
   this.grab = async function(path) {
     var res = await apifetch(path)
-    return res.json()
+    if (!res.ok) {
+      if (res.status >= 500) throw new Error(`API call failed (${res.status}): ${res.statusText}`)
+      else return undefined
+     }
+     return res.json()
   },
   this.getDepartments = function() {
     return grab('/department')
