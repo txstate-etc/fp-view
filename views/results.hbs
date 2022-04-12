@@ -29,6 +29,7 @@
       <li class="row2"><a href="#interest">Interests</a></li>
       <li class="row2"><a href="#grant">Grants</a></li>
       <li class="row2"><a href="#award">Awards</a></li>
+      <li class="row2"><a href="#service">Services</a></li>
     </ul>
     <div id="name" class="search-results" data-total="{{results.name.total}}">
       {{> personSearchResult params=params total=results.name.total search_results=results.name.results}}
@@ -44,6 +45,9 @@
     </div>
     <div id="award" class="search-results" data-total={{results.award.total}}>
       {{> activitySearchResult params=params total=results.award.total search_results=results.award.results}}
+    </div>
+    <div id="service" class="search-results" data-total={{results.service.total}}>
+      {{> activitySearchResult params=params total=results.service.total search_results=results.service.results}}
     </div>
   </div>
   {{/if}}

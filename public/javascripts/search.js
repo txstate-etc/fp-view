@@ -1,5 +1,5 @@
 jQuery( document ).ready(function($) {
-    const tabList = ['name', 'publication', 'interest', 'grant', 'award'];
+    const tabList = ['name', 'publication', 'interest', 'grant', 'award', 'service'];
 
     var activetab = $('#tabs > div').filter(function () { return $(this).data('total') > 0; }).first().index('#tabs > div');
     if (window.location.hash) {
