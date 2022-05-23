@@ -62,7 +62,7 @@ helpers = {
   },
   paginate : function(lastpage, params) {
         if (lastpage < 2) return '';
-        var page = params.page;
+        var page = 0+params.page;
         var html = '<div class="sr-only">Pagination</div>';
           html += '<ul role="navigation" class="pagination">';
           params.page = Math.max(page-1, 1);
@@ -96,6 +96,10 @@ helpers = {
           params.page = Math.min(page+1, lastpage);
           html += '<li><a href="'+createUrlQuery(params)+'" class="pagination-link next' + (page < lastpage ? " enabled" : "") + '" aria-label="Next Page" data-page="'+params.page+'" aria-disabled="'+(page == lastpage ? 'true' : 'false')+'">Next &gt;</a></li>';
           html += '</ul>';
+          // Set the page field in params object back so that future tabs will be correct.
+          // Really we shouldn't be altering the params object if it is intended to be used
+          // for other tabs.
+          params.page = page;
           return html;
       },
   encodeURIComponent : function(component) {
