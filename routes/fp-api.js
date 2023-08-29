@@ -6,11 +6,11 @@ var api_host = `${protocol}://${process.env.API_HOST}`
 
 module.exports = function() {
   this.apifetch = function(path, options = {}) {
-    options.agent = global.apiagent
+    // options.agent = global.apiagent
     return fetch(getApiPath(path), options)
   },
   this.externalfetch = function(path, options = {}) {
-    options.agent = global.apiagent
+    // options.agent = global.apiagent
     return fetch(path, options)
   },
   this.grab = async function(path) {
