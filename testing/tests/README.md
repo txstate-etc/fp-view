@@ -1,0 +1,77 @@
+Make sure the app has tests for the following routes:
+
+- API (Skipping API tests for now as they're a lot to map and test and they're not critical for the current update)
+  - [ ] `/api/files/*` $\leftarrow$ Where `*` translates params to `<fp-api>/files` routes.
+  - [ ] `/api/crop/files/photo/:userid/:filename`
+  - [ ] `/api/*` $\leftarrow$ Where `*` translates first param to path in `<fp-api>/<path>` and the rest of the params are passed as query parameters.
+- Pages - Loading without errors and doing what parameters should.
+  - [ ] `/` $\leftarrow$ Home Page
+  - [ ] `/departments` $\leftarrow$ Needs seed/demo data.
+  - [ ] `/photos`
+  - [ ] `/profile` should be an error page.
+  - [ ] `/profile/:userid` $\leftarrow$ Seed data's [Dr. John Jacob Smith](http://localhost:3000/profile/4523685) has good test data for profile related sub-sections.
+  - [ ] `/profile/:userid/activity/scholarly-creative`
+  - [ ] `/profile/:userid/activity/awards`
+  - [ ] `/profile/:userid/activity/grants`
+  - [ ] `/profile/:userid/activity/service`
+  - [ ] `/search` $\leftarrow$ Including different search types on `college`, `department`, `name/keyword`, and Pagination handling which we'll need to add more seed data for.
+
+Make sure the app's interface is tested for the following:
+
+- `<list of page interactions available: tabs, links, drop-downs, searchbars, inputs, pdf-download...>`
+- `/` Home Page
+  - `Search Bar`
+    - [ ] Accepts input and will search based on that input.
+    - [ ] Pressing enter will search based on input but also in context of College/Department selected.
+  - `College/Department Dropdown` -
+    - [ ] Lists available departments from API.
+    - [ ] Value can be selected.
+    - [ ] Value selected contextualizes the search bar search.
+  - `Search Button`
+    - [ ] Doesn't use a state independent of Search Bar input and College/Department Dropdown
+  - `Search Results`
+    - `Person's Name Link`
+      - [ ] Navigates to expected destination as expected (new-tab vs same tab).
+    - `Person's Department Link`
+      - [ ] Behaves as expected (currently runs search in context of filtering for just that department's persons).
+  - `Pagination` $\leftarrow$ Needs more seed data to trigger pagination.
+    - [ ] Default page size???
+    - [ ] Paginging Navigation???
+- `/departments` $\leftarrow$ Needs seed/demo data.
+  - [ ] Clicking tiles goes to search for all profiles in associated College.
+  - [ ] Clicking department links in tiles goes to search for all profiles in associated Department.
+- `/photos` $\leftarrow$ Needs more seed/demo data.
+  - [ ] Clicking name links goes to associated profile.
+  - [ ] If more than pagesize photos are present a `next page` link is displayed going to the next page of results
+- `/profile`
+  - [ ] Error page is displayed
+- `/profile/:userid`
+  - [ ] `Profile image` is shown if available.
+  - [ ] If `multiple titles` are associated with the profile a conditional list reveal button is displayed.
+    - [ ] The button toggles the display of additional titles.
+    - [ ] The button changes pointer direction on click.
+  - [ ] `Nav menu & links` are conditionally rendered.
+  - [ ] `Download Faculty CV` button works.
+  - [ ] `Biography`, `Education`, and `Interests` are conditionally rendered.
+  - [ ] `Selected Scholarly/Creative Work summary` is conditionally rendered.
+    - [ ] Has button to full list if rendered.
+  - [ ] `Selected Awards and Grants summary tiles` are conditionally rendered.
+    - [ ] Have button to full list if rendered.
+  - [ ] `Selected Service Activities summary` is conditionally rendered.
+    - [ ] Has button to full list if rendered.
+- `/profile/:userid/activity/scholarly-creative`
+  - [ ] Has return to profile div at top of page that navs to profile's main page.
+  - [ ] Has lists of works grouped and sorted by year.
+- `/profile/:userid/activity/awards`
+  - [ ] Has return to profile div at top of page that navs to profile's main page.
+  - [ ] Has lists of awards grouped and sorted by year.
+- `/profile/:userid/activity/grants`
+  - [ ] Has return to profile div at top of page that navs to profile's main page.
+  - [ ] Has lists of grants grouped and sorted by year.
+- `/profile/:userid/activity/service`
+  - [ ] Has return to profile div at top of page that navs to profile's main page.
+  - [ ] Has lists of service activities grouped and sorted by year.
+- `/search`
+  - [ ] When there's no search term - Behaves as a paginated listing of all, or college/department contextualized all, profiles.
+  - [ ] When there is a search term a tabbed set of match results.
+    - [ ] Selected tab is the most signficant precedence tab/type with existing matches found.

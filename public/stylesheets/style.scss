@@ -25,8 +25,13 @@ $medium-breakpoint:     800px;
 $large-breakpoint:      1000px;
 $x-large-breakpoint:    1400px;
 
-$garamond:            'Adobe Garamond W01",Garamond,"Goudy Old Style","Times New Roman",serif;';
-$univers:             'Univers W01', Helvetica, Calibri, Arial, sans-serif;
+// Should probably create style purpose variable names and reference those elsewhere we need to reference
+// these and then update all references to those and point those style names to these.
+// The only trend I'm noticing is serif vs not serif - so maybe that's the two purposes?
+$ebgaramond:          'EB Garamond', 'Goudy Old Style','Times New Roman', serif;
+$nunitosans:          'Nunito Sans', Helvetica, Calibri, Arial, sans-serif;
+// $font-purpose-1: $ebgaramond;
+// $font-purpose-2: $nunitosans;
 
 html {
   height: 100%;
@@ -38,7 +43,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100%;
-  font-family: $univers;
+  font-family: $nunitosans;
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -105,7 +110,7 @@ header {
         font-size: 2.2rem;
       }
       letter-spacing: 1px;
-      font-family: $garamond;
+      font-family: $ebgaramond;
       a {
         text-decoration: none;
         color: $white;
@@ -165,7 +170,7 @@ footer {
         padding-bottom: 2rem;
         .footer-title {
           font-size: 2.7rem;
-          font-family: $garamond;
+          font-family: $ebgaramond;
           a {
             color: $white;
             text-decoration: none;

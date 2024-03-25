@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var fetch = require('node-fetch');
+// var fetch = require('node-fetch');
 var shared = require('../shared/javascripts/shared-functions.js')
 require('./fp-api.js')();
 var image_handler = require('./image-handler')

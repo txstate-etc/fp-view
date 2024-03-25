@@ -1,4 +1,4 @@
-var fetch = require('node-fetch');
+// var fetch = require('node-fetch');
 var shared = require('../shared/javascripts/shared-functions.js')
 
 var protocol = (process.env.API_SSL == "true")? "https" : "http";

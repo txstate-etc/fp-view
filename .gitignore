@@ -34,7 +34,12 @@ npm-debug.log
 public/stylesheets/style.css*
 
 # We use docker so we do not require a package-lock in the repo
-package-lock.json
+# package-lock.json
 
 # We don't need to check in the precompiled handlebars templates
 public/javascripts/templates
+#/test-results/
+#/playwright-report/
+/blob-report/
+#/playwright/.cache/
+testing/.*
