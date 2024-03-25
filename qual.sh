@@ -34,10 +34,15 @@ else
   fi
 fi
 # Ensure our package version is in sync with the tags.
-if `npm version $VER --allow-same-version`; then
-  echo "Updated package.json version to $VER."
+NPMVER=`npm pkg get version`
+if [ "$VER" = "$NPMVER" ]; then
+  echo "Package.json version is already $NPMVER."
 else
-  integrityExit "Failed to update package.json version to $VER."
+  if `npm version $VER --allow-same-version`; then
+    echo "Updated package.json version to $VER."
+  else
+    integrityExit "Failed to update package.json version to $VER."
+  fi
 fi
 echo "Proceeding with versioned builds..."
 docker build -t registry.its.txstate.edu/search-featured-results .
