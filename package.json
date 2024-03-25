@@ -9,20 +9,20 @@
   },
   "dependencies": {
     "body-parser": ">=1.20.2",
-    "cookie-parser": ">=1.4.3",
-    "debug": "~2",
+    "cookie-parser": ">=1.4.6",
+    "debug": "~4",
     "express": "~4",
     "express-favicon": "~2",
-    "express-handlebars": "~3",
+    "express-handlebars": "~7",
     "font-awesome": "~4.7",
     "http-pooling-agent": "~1",
     "morgan": "~1",
-    "node-sass-middleware": ">=0.11.0"
+    "node-sass-middleware": ">=1.1.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.42.1",
     "@types/node": "^20.11.30",
     "grunt": "~1",
-    "grunt-contrib-handlebars": "~1"
+    "grunt-contrib-handlebars": "~3"
   }
 }
