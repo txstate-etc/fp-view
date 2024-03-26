@@ -78,7 +78,17 @@ Rather than using a bundler or compiler to produce chunked js scripts to load fo
 - [`jquery`](https://jquery.com/) minified code is downloaded to the `./public/javascripts` directory and hosted from there rather than referencing/trusting latest versions from the web.
 - [`jquery-ui.tabs`](http://jqueryui.com/tabs/) minified code is used with our search results tabs.
   - `jquery-ui.tabs.min.css` file is seperately hosted under `./public/stylesheets` and you may need to reference the link at the top of the existing file to figure out what rolled theme to download for this project.
+  - When downloading latest versions of the `jquery-ui` library from their download page you can follow what's been done in the past:
+    - Select corresponding version radial.
+    - Uncheck the `Toggle All` checkbox.
+    - Scroll down to `Widgets` section and check the `Tabs` checkbox. That will check all dependencies for you.
+    - The Base theme is fine - I believe there's custom css overrides in place that works with those tab elements.
+    - Click the `Download` button to start the download (takes a few moments before it starts).
+    - From the zip file extract the folder and copy out the corresponding minified files renaming them to...
+      - `jquery-ui.min.js` &rarr; `jquery-ui.tabs.min.js` copied to the `./public/javascripts` directory.
+      - `jquery-ui.min.css` &rarr; `jquery-ui.tabs.min.js` copied to the `./public/stylesheets` directory.
+    - The rest of the downloaded contents isn't needed and can be thrown away as those two files have everything needed for this project.
 
 ## Automated Testing
 
-This repo uses Playwright Test to help write and execute automated test routines. The existing tests that have been defined for this repo can be found under the `./tests` directory with a `.spec.ts` file extention.
+This repo uses Playwright Test to help write and execute automated test routines. The existing tests that have been defined for this repo can be found under the `./testing/tests` directory with a `.spec.ts` file extention.
