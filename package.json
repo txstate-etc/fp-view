@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.42.1",
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.12.3",
     "grunt": "~1",
     "grunt-contrib-handlebars": "~3"
   }

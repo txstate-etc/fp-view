@@ -57,7 +57,105 @@ form.faculty-department-search {
     appearance: none;
   }
   //customize chosen box
-  .chosen-container {
+  // .chosen-container {
+  //   background: $white;
+  //   box-shadow: none;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   flex: 1;
+  //   border-top-right-radius: 0px;
+  //   border-bottom-right-radius: 0px;
+  //   padding: 1.4rem 1.5rem;
+  //
+  //   .chosen-single {
+  //     background: $white;
+  //     border: 0;
+  //     box-shadow: none;
+  //     font-size: 1.92rem;
+  //     padding-left: 0;
+  //     span {
+  //       height: 100%;
+  //       text-align: left;
+  //     }
+  //     &.chosen-default {
+  //       color: $davys-gray;
+  //     }
+  //   }
+  //   .chosen-drop {
+  //     border-top: 1px solid #aaa;
+  //     left: 0;
+  //     .chosen-search-input {
+  //       border-radius: 3px;
+  //     }
+  //     .active-result {
+  //       font-size: 1.5rem;
+  //       line-height:1.8;
+  //       text-align: left;
+  //       color: $davys-gray;
+  //       &.department {
+  //         padding-left: 2.2rem;
+  //       }
+  //       &.highlighted {
+  //         background: $cerulean;
+  //         color: $white;
+  //       }
+  //     }
+  //   }
+  // }
+  // .chosen-container::before {
+  //   content: '';
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   left: 0;
+  //   top: 0;
+  //   border-radius: inherit;
+  //   box-shadow: 0px 0 10px $accent-gray;
+  //   z-index: -1;
+  // }
+  // @media (max-width: $medium-breakpoint) {
+  //   display: block;
+  //   padding: 0rem 1rem 3rem 1rem;
+  //   .word-in {
+  //     padding: 0.5rem;
+  //     display: block;
+  //   }
+  //   .department-group {
+  //     .input-group {
+  //       justify-content: center;
+  //       .select-department:not(.chosen-container) {
+  //         width: 100% !important;
+  //         padding-left: 1.5rem;
+  //         padding-top: 1.6rem;
+  //         padding-bottom: 1.6rem;
+  //         overflow: hidden;
+  //       }
+  //       button {
+  //         padding: 1rem 1.8rem;
+  //         .button-label {
+  //           display: none;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .chosen-container {
+  //     width: 100% !important;
+  //     padding: 1.4rem 0rem;
+  //     .chosen-single {
+  //       span {
+  //         padding-left: 1.5rem;
+  //         margin-right: 20px;
+  //         text-overflow: unset;
+  //       }
+  //       div {
+  //         width: 15px;
+  //       }
+  //     }
+  //   }
+  // }
+  //customize select2 box
+  .select2-container {
     background: $white;
     box-shadow: none;
     display: flex;
@@ -68,7 +166,7 @@ form.faculty-department-search {
     border-bottom-right-radius: 0px;
     padding: 1.4rem 1.5rem;
 
-    .chosen-single {
+    .select2-selection--single {
       background: $white;
       border: 0;
       box-shadow: none;
@@ -78,17 +176,17 @@ form.faculty-department-search {
         height: 100%;
         text-align: left;
       }
-      &.chosen-default {
+      &.select2-container--default {
         color: $davys-gray;
       }
     }
-    .chosen-drop {
+    .select2-dropdown {
       border-top: 1px solid #aaa;
       left: 0;
-      .chosen-search-input {
+      .select2-search__field {
         border-radius: 3px;
       }
-      .active-result {
+      .select2-results__option {
         font-size: 1.5rem;
         line-height:1.8;
         text-align: left;
@@ -96,14 +194,14 @@ form.faculty-department-search {
         &.department {
           padding-left: 2.2rem;
         }
-        &.highlighted {
+        &.select2-results__option[aria-selected=true] {
           background: $cerulean;
           color: $white;
         }
       }
     }
   }
-  .chosen-container::before {
+  .select2-container::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -124,7 +222,7 @@ form.faculty-department-search {
     .department-group {
       .input-group {
         justify-content: center;
-        .select-department:not(.chosen-container) {
+        .select-department:not(.select2-container) {
           width: 100% !important;
           padding-left: 1.5rem;
           padding-top: 1.6rem;
@@ -139,10 +237,10 @@ form.faculty-department-search {
         }
       }
     }
-    .chosen-container {
+    .select2-container {
       width: 100% !important;
       padding: 1.4rem 0rem;
-      .chosen-single {
+      .select2-selection--single {
         span {
           padding-left: 1.5rem;
           margin-right: 20px;

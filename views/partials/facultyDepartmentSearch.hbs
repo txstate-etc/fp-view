@@ -1,28 +1,28 @@
-<form action="/search" method="GET" class="faculty-department-search">
-  <div class="term-group">
-    <label class="sr-only" for="q">Search Keyword</label>
-    <input class="form-control" type="text" placeholder="Search Name or Keyword" id="q" name="q" value="{{params.q}}"/>
+<form action='/search' method='GET' class='faculty-department-search'>
+  <div class='term-group'>
+    <label class='sr-only' for='q'>Search Keyword</label>
+    <input class='form-control' type='text' placeholder='Search Name or Keyword' id='q' name='q' value='{{params.q}}'/>
   </div>
-  <span class="word-in">in</span>
-  <div class="department-group">
-    <label class="sr-only" for="coll-dept">Search for faculty in department</label>
-    <input type="hidden" id="college" name="college" value="{{params.college}}"/>
-    <input type="hidden" id="dept" name="dept" value="{{params.dept}}"/>
-    <input type="hidden" id="page" name="page" value="1"/>
-    <input type="hidden" id="perpage" name="perpage" value="{{params.perpage}}"/>
-    <div class="input-group">
-      <select class="select-department form-control" id="coll-dept">
-        <option value="all">All Colleges/Departments</option>
+  <span class='word-in'>in</span>
+  <div class='department-group'>
+    <label class='sr-only' for='coll-dept'>Search for faculty in department</label>
+    <input type='hidden' id='college' name='college' value='{{params.college}}'/>
+    <input type='hidden' id='dept' name='dept' value='{{params.dept}}'/>
+    <input type='hidden' id='page' name='page' value='1'/>
+    <input type='hidden' id='perpage' name='perpage' value='{{params.perpage}}'/>
+    <div class='input-group'>
+      <select class='select-department form-control' id='coll-dept'>
+        <option data-search-context='all' value='all' aria-label='All Colleges/Departments'>All Colleges/Departments</option>
         {{#each organization}}
-          <option class="college" value="{{this.college}}"{{#ifeval ../params.college '==' this.college}} selected="selected"{{/ifeval}}>{{this.college}}</option>
+          <option class='college' data-search-context='college' value='{{this.college}}' aria-label='{{this.college}}'{{#ifeval ../params.college '==' this.college}} selected='selected' aria-selected=true {{/ifeval}}>{{this.college}}</option>
           {{#each this.departments}}
-            <option class="department" value="{{this}}"{{#ifeval ../../params.dept '==' this}} selected="selected"{{/ifeval}}>{{this}}</option>
+            <option class='department' data-search-context='department' value='{{this}}' aria-label='{{this}}'{{#ifeval ../../params.dept '==' this}} selected='selected' aria-selected=true{{/ifeval}}>{{this}}</option>
           {{/each}}
         {{/each}}
       </select><!--
-      --><button class="btn-fp btn-search form-control" type="submit">
-        <i class="search-icon fa fa-search"></i>
-        <span class="button-label">Search</span>
+      --><button class='btn-fp btn-search form-control' type='submit'>
+        <i class='search-icon fa fa-search'></i>
+        <span class='button-label'>Search</span>
       </button>
     </div>
   </div>

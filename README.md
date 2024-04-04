@@ -75,6 +75,9 @@ Once you have both repos cloned to your development environment as sibling direc
 Rather than using a bundler or compiler to produce chunked js scripts to load for pages this project makes use of downloaded minified code files which it hosts in support of its pages. All the following items are downloaded to the `./public/javascripts/` directory. Some, like chosen, are an entire directory structure of supporting files and scripts.
 
 - [`chosen`](https://harvesthq.github.io/chosen/) is used for our Colleges/Departments single select drop-down and depends on `jquery` so may break when we update `jquery`. You may need to verify the dependencies between the two before updating them though it appears `chosen` contains its own dependencies needed set of minified jquery code (needs verrification).
+- [`select2`](https://select2.org/) is used for our Colleges/Departments single select drop-down and depends on `jQuery` so may break when we update `jQuery`. We were previously using [`chosen`](https://harvesthq.github.io/chosen/) but that widget stopped being maintained before they implemented ARIA support which is required for our publicly facing services.
+  - The `select2.min.js` file is copied from their download `dist/js` directory to `./public/javascripts`.
+  - The `select2.min.css` file is copied from their download `dist/css` directory to `./public/stylesheets`.
 - [`jquery`](https://jquery.com/) minified code is downloaded to the `./public/javascripts` directory and hosted from there rather than referencing/trusting latest versions from the web.
 - [`jquery-ui.tabs`](http://jqueryui.com/tabs/) minified code is used with our search results tabs.
   - `jquery-ui.tabs.min.css` file is seperately hosted under `./public/stylesheets` and you may need to reference the link at the top of the existing file to figure out what rolled theme to download for this project.
@@ -87,6 +90,7 @@ Rather than using a bundler or compiler to produce chunked js scripts to load fo
     - From the zip file extract the folder and copy out the corresponding minified files renaming them to...
       - `jquery-ui.min.js` &rarr; `jquery-ui.tabs.min.js` copied to the `./public/javascripts` directory.
       - `jquery-ui.min.css` &rarr; `jquery-ui.tabs.min.js` copied to the `./public/stylesheets` directory.
+    - Also copy the `images` directory out of the folder and into the `./public/stylesheets` as an `images` subdirectory in it.
     - The rest of the downloaded contents isn't needed and can be thrown away as those two files have everything needed for this project.
 
 ## Automated Testing
