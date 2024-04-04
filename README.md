@@ -87,6 +87,7 @@ Rather than using a bundler or compiler to produce chunked js scripts to load fo
     - From the zip file extract the folder and copy out the corresponding minified files renaming them to...
       - `jquery-ui.min.js` &rarr; `jquery-ui.tabs.min.js` copied to the `./public/javascripts` directory.
       - `jquery-ui.min.css` &rarr; `jquery-ui.tabs.min.js` copied to the `./public/stylesheets` directory.
+      - Also copy the `images` directory out of the folder and into the `./public/stylesheets` as an `images` subdirectory in it.
     - The rest of the downloaded contents isn't needed and can be thrown away as those two files have everything needed for this project.
 
 ## Automated Testing
