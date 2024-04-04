@@ -4,6 +4,7 @@ var router = express.Router();
 var shared = require('../shared/javascripts/shared-functions.js')
 require('./fp-api.js')();
 var image_handler = require('./image-handler')
+const { Readable } = require('stream')
 
 router.get('/files/*', function(req, res, next) {
   var urltofetch = getApiPath('/files/'+req.params[0]);
@@ -36,15 +37,15 @@ router.get('/*', function(req, res, next) {
   });
 })
 
-var serve_remote_file = function (req, res, next, urltofetch) {
+var serve_remote_file = function (req, outResponse, next, urltofetch) {
   externalfetch(urltofetch, {headers: {'If-Modified-Since': req.headers['if-modified-since']}})
-  .then(function (result) {
-    res.status(result.status)
-    res.setHeader('Content-Disposition', result.headers.get('Content-Disposition'))
-    res.setHeader('Content-Type', result.headers.get('Content-Type'))
-    res.setHeader('Content-Length', result.headers.get('Content-Length'))
-    if (result.headers.get('Last-Modified')) res.setHeader('Last-Modified', result.headers.get('Last-Modified'));
-    result.body.pipe(res)
+  .then(function (inResponse) {
+    outResponse.status(inResponse.status)
+    outResponse.setHeader('Content-Disposition', inResponse.headers.get('Content-Disposition'))
+    outResponse.setHeader('Content-Type', inResponse.headers.get('Content-Type'))
+    outResponse.setHeader('Content-Length', inResponse.headers.get('Content-Length'))
+    if (inResponse.headers.get('Last-Modified')) outResponse.setHeader('Last-Modified', inResponse.headers.get('Last-Modified'))
+    Readable.fromWeb(inResponse.body).pipe(outResponse)
   })
   .catch(function (err) {
     console.log(err)
