@@ -5,13 +5,13 @@ var protocol = (process.env.API_SSL == "true")? "https" : "http";
 var api_host = `${protocol}://${process.env.API_HOST}`
 
 module.exports = function() {
-  this.apifetch = function(path, options = {}) {
+  this.apifetch = async function(path, options = {}) {
     // options.agent = global.apiagent
-    return fetch(getApiPath(path), options)
+    return await fetch(getApiPath(path), options)
   },
-  this.externalfetch = function(path, options = {}) {
+  this.externalfetch = async function(path, options = {}) {
     // options.agent = global.apiagent
-    return fetch(path, options)
+    return await fetch(path, options)
   },
   this.grab = async function(path) {
     var res = await apifetch(path)

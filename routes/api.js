@@ -37,21 +37,19 @@ router.get('/*', function(req, res, next) {
   });
 })
 
-var serve_remote_file = function (req, outResponse, next, urltofetch) {
-  externalfetch(urltofetch, {headers: {'If-Modified-Since': req.headers['if-modified-since']}})
-  .then(function (inResponse) {
+var serve_remote_file = async function (req, outResponse, next, urltofetch) {
+  const inResponse = await externalfetch(urltofetch, {headers: {'If-Modified-Since': req.headers['if-modified-since']}})
+  try {
     outResponse.status(inResponse.status)
     outResponse.setHeader('Content-Disposition', inResponse.headers.get('Content-Disposition'))
     outResponse.setHeader('Content-Type', inResponse.headers.get('Content-Type'))
     outResponse.setHeader('Content-Length', inResponse.headers.get('Content-Length'))
     if (inResponse.headers.get('Last-Modified')) outResponse.setHeader('Last-Modified', inResponse.headers.get('Last-Modified'))
-    Readable.fromWeb(inResponse.body).pipe(outResponse)
-  })
-  .catch(function (err) {
+    if (inResponse.status !== 304) Readable.fromWeb(await inResponse.body).pipe(outResponse)
+  } catch(err) {
     console.log(err)
     next(err)
-  });
+  }
 }
-
 
 module.exports = router;
