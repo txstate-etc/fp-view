@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
-// var fetch = require('node-fetch');
+var fetch = require('node-fetch');
 var shared = require('../shared/javascripts/shared-functions.js')
 require('./fp-api.js')();
 var image_handler = require('./image-handler')
-const { Readable } = require('stream')
 
 router.get('/files/*', function(req, res, next) {
   var urltofetch = getApiPath('/files/'+req.params[0]);
@@ -37,19 +36,20 @@ router.get('/*', function(req, res, next) {
   });
 })
 
-var serve_remote_file = async function (req, outResponse, next, urltofetch) {
-  const inResponse = await externalfetch(urltofetch, {headers: {'If-Modified-Since': req.headers['if-modified-since']}})
-  try {
-    outResponse.status(inResponse.status)
-    outResponse.setHeader('Content-Disposition', inResponse.headers.get('Content-Disposition'))
-    outResponse.setHeader('Content-Type', inResponse.headers.get('Content-Type'))
-    outResponse.setHeader('Content-Length', inResponse.headers.get('Content-Length'))
-    if (inResponse.headers.get('Last-Modified')) outResponse.setHeader('Last-Modified', inResponse.headers.get('Last-Modified'))
-    if (inResponse.status !== 304) Readable.fromWeb(await inResponse.body).pipe(outResponse)
-  } catch(err) {
+var serve_remote_file = function (req, res, next, urltofetch) {
+  externalfetch(urltofetch, {headers: {'If-Modified-Since': req.headers['if-modified-since']}})
+  .then(function (result) {
+    res.status(result.status)
+    res.setHeader('Content-Disposition', result.headers.get('Content-Disposition'))
+    res.setHeader('Content-Type', result.headers.get('Content-Type'))
+    res.setHeader('Content-Length', result.headers.get('Content-Length'))
+    if (result.headers.get('Last-Modified')) res.setHeader('Last-Modified', result.headers.get('Last-Modified'));
+    result.body.pipe(res)
+  })
+  .catch(function (err) {
     console.log(err)
     next(err)
-  }
+  });
 }
 
 module.exports = router;

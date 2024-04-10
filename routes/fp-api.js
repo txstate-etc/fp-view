@@ -1,17 +1,17 @@
-// var fetch = require('node-fetch');
+var fetch = require('node-fetch');
 var shared = require('../shared/javascripts/shared-functions.js')
 
 var protocol = (process.env.API_SSL == "true")? "https" : "http";
 var api_host = `${protocol}://${process.env.API_HOST}`
 
 module.exports = function() {
-  this.apifetch = async function(path, options = {}) {
+  this.apifetch = function(path, options = {}) {
     // options.agent = global.apiagent
-    return await fetch(getApiPath(path), options)
+    return fetch(getApiPath(path), options)
   },
-  this.externalfetch = async function(path, options = {}) {
+  this.externalfetch = function(path, options = {}) {
     // options.agent = global.apiagent
-    return await fetch(path, options)
+    return fetch(path, options)
   },
   this.grab = async function(path) {
     var res = await apifetch(path)
