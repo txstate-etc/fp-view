@@ -1,0 +1,36 @@
+version: "3"
+services:
+  fp-view:
+    build: .
+    platform: linux/amd64
+    environment:
+      API_HOST: fp-api
+    links:
+      - fp-api
+  fp-api:
+    build: ../fp-api
+    platform: linux/amd64
+    environment:
+      DB_HOST: mongodb
+    links:
+      - mongodb
+  mongo-seed:
+    build: ../fp-api/mongo-seed
+    restart: on-failure
+    links:
+      - mongodb
+    depends_on:
+      - fp-view
+  mongodb:
+    image: mongo:latest
+  testing-container:
+    depends_on:
+      - fp-view
+    build:
+      context: .
+      dockerfile: test/Dockerfile
+    volumes:
+      - ./test/test-results:/test-results
+volumes:
+  facultyprofilesdb: {}
+  facultyprofilesfiles: {}
